@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@mongodb-js/zstd": "^7.0.0"
+  }
+}

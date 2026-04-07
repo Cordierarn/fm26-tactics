@@ -1,0 +1,1242 @@
+nonogaming014@gmail.com 05 Apr 2026
+
+FM26
+
+Mastering FM26: Build A Club, Not Just A Tactic
+A MODERN GAFFER'S GUIDE TO FOOTBALL MANAGER 2026: TACTICS, RECRUITMENT, DYNAMICS, FINANCES, LONG TERM SAVES AND THE NEW UI
+ROY ROVERS
+
+nonogaming014@gmail.com 05 Apr 2026
+Copyright Copyright © 2025 FM Blog (FootballManagerBlog.org) and Roy Rovers All rights reserved. No part of this publication may be reproduced, stored in a retrieval system or transmitted in any form or by any means, electronic, mechanical, photocopying, recording or otherwise, without the prior written permission of the publisher, except in the case of brief quotations used in reviews, articles or critical discussions. This eBook is an unofficial guide to Football Manager 2026. It is not endorsed by, affiliated with or associated in any way with Sports Interactive, SEGA or any other licence holder. Football Manager, the Football Manager logo, Sports Interactive and the Sports Interactive logo are either registered trademarks or trademarks of SEGA Holdings Co., Ltd. or its affiliates. All other trademarks are property of their respective owners and are used here for identification purposes only. Every effort has been made to ensure the accuracy of the information contained in this book at the time of writing. However, game mechanics, databases and features may change through patches and updates. The author and publisher accept no responsibility for any loss or outcome arising from the use of this material.
+
+nonogaming014@gmail.com 05 Apr 2026
+About FM Blog
+FM Blog (FootballManagerBlog.org) is one of the longest running independent Football Manager websites, offering tactics, guides, wonderkid shortlists, save ideas and tools for players who want more from the game than a quick plug in tactic. FM Blog has grown into a home for gaffers who enjoy thinking about football, not just winning at any cost. If you are reading this eBook, you are very likely one of them. You can find more content, downloads and save inspiration at: FootballManagerBlog.org
+About Roy Rovers
+Roy Rovers is the gaffer voice of this guide. He talks to you like a manager in the dugout, not a pundit in a studio, cutting through menus and numbers to get to what actually matters in your saves. Across these chapters, Roy speaks directly to you as a fellow Football Manager obsessive: The kind of person who will happily stay up too late tweaking a tactic, rebuilding a fallen giant, or arguing with a virtual board about wage budgets. His job in this book is simple. To turn FM26 features into real football decisions, to ask the hard questions you sometimes avoid, and to give you practical routines you can drop straight into any save. If you ever hear a small voice in your head saying "Right, gaffer, think before you click" while you are about to make a big decision in FM26, that is Roy doing exactly what he is meant to do.
+
+nonogaming014@gmail.com 05 Apr 2026
+Table of Contents
+Introduction: So You Want To Be An FM26 Gaffer.....................................................................5 Chapter 1: Your FM26 Manager DNA ........................................................................................7
+1. Roy's Dressing Room Talk: Why FM26 Needs Proper Gaffers Again ..................................9 2. From Save File To Legacy: What Are You Actually Trying To Build?..................................10 3. Club Vision, But For You: Writing Your Own Manager Manifesto ....................................11 4. Tactical Identity: Who Are You On The Touchline?...........................................................13 5. Understanding The FM26 Journey: Seasons, Cycles And Turning Points.........................14 6. Risk Profile: Are You A Gambler Or A Safe Pair Of Hands?...............................................15 7. Non Negotiables: Rules You Will Not Break In This Save .................................................16 8. Translating Real Life Football Values Into FM26 Decisions ..............................................17 9. Your First Big Choice: Picking The Right FM26 Starting Club............................................18 Chapter 1 ­ Roy's checklist...................................................................................................19 Chapter 2: Building Your FM26 World .....................................................................................20 1. The First Click: When "Start New Game" Actually Matters..............................................22 2. Choosing Leagues Like A Pro: Performance, Story And Player Pool.................................23 3. Database Size And Custom Setups: Do You Really Need The Whole World?...................26 4. Game Detail, Sim Speed And Your Machine: Keeping FM26 Smooth..............................28 5. Attribute Masking, Hidden Data And How Much You Want To "Know" ..........................29 6. Staff Responsibilities, Auto Functions And What You Must Never Delegate ...................31 7. Installing Skins, Graphics And Quality Of Life Tools Without Breaking The Save .............33 8. Using The Pre Game Editor And In Game Editor Without Ruining The Challenge...........34 9. Realism Sliders: Injuries, VAR, Work Permits And Other Painful Joys ..............................35 10. Locking It In: Final Pre Season Checklist Before You Hit Continue .................................36
+0
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 2 ­ Roy's checklist...................................................................................................38 Chapter 3: From Whiteboard To Match Engine .......................................................................39
+1. Roy's First Training Session: Why We Are Not Copying "Meta" Tactics Anymore............41 2. How The FM26 Match Engine And Tactical Planner Actually See Your Two Shapes........42 3. From Manager DNA To Dual Shapes: Picking Your In And Out Of Possession Formations .............................................................................................................................................. 44 4. Player Roles Without Duties: Building Relationships Instead Of Clicking Labels .............46 5. Team Instructions And The Visualiser: Designing Behaviour Phase By Phase .................47 6. Transitions: The Three Moments That Decide Every FM26 Match ..................................49 7. Player Instructions: Fine Tuning In A Roles First World....................................................50 8. Set Pieces: The Easiest Way To Look Like A Genius In The New Engine...........................51 9. Testing Your Tactic: Pre Season Labs, Visualiser And Data Hub .......................................52 10. Plan B And Plan C: Adapting Without Throwing Your Identity Away .............................55 Chapter 3 ­ Roy's checklist...................................................................................................57 Chapter 4: Building Your FM26 Squad .....................................................................................58 1. Welcome To The War Room: Roy's First Tour Of The Recruitment Hub ..........................60 2. From Tactic To Target List: Using The Squad Planner Properly ........................................62 3. Recruitment Focus In FM26: Scouting For Roles, Not Just Positions ...............................64 4. TransferRoom Requirements: Telling The Market Exactly What You Want .....................66 5. Pitch Opportunities: Selling Your Club Like A Real Sporting Director...............................68 6. Smarter Scout Reports: Fitting Players To Your In & Out Of Possession Systems ............69 7. Backroom Team 2.0: Building A Modern Scouting And Analytics Department ...............70 8. Budget, Wages And Sell On Clauses: Playing The Long Transfer Game ...........................71 9. Women's Football, Youth Intakes And Global Reach In FM26 .........................................72 10. Roy's Recruitment Ritual: A Simple Window By Window Workflow .............................73 Chapter 4 ­ Roy's checklist...................................................................................................75
+1
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 5: Keeping The Dressing Room Onside ......................................................................76 1. Roy's Story From The Tunnel: When One Sulking Striker Ruins A Season .......................78 2. Personalities, Traits And Pressure: What Still Matters In FM26 .......................................79 3. Hierarchy And Social Groups: Who Really Runs Your Dressing Room..............................80 4. Squad Status And Playing Time Plans: Promises You Cannot Fake Anymore...................82 5. Morale, Form And Confidence: Reading The Mood Before It Explodes ..........................84 6. Captains, Leaders And Bad Apples In A Dual Tactics World .............................................85 7. Team Meetings, One To Ones And Interaction Flow In FM26..........................................87 8. Press Conferences, Media And Protecting Your Players...................................................88 9. Fans, Supporter Confidence And The Fan Liaison Officer ................................................89 10. Roy's Weekly Ritual: A Simple FM26 Dynamics Check Up .............................................90 Chapter 5 ­ Roy's checklist...................................................................................................92
+Chapter 6: Running The Club Like A Gaffer, Not A Gambler ....................................................93 1. Roy Opens The Finances Screen: Winning Games, Losing Money...................................95 2. Board Confidence, Club Vision And Supporter Confidence In FM26 ...............................96 3. Reading The Numbers: Balance, Projections And The Finances Tab ...............................97 4. Transfer And Wage Budgets: How Much You Really Have To Spend................................98 5. Building A Wage Structure That Matches Your Squad Hierarchy .....................................99 6. FFP, PSR And Surviving Modern Rulebooks....................................................................100 7. Income Streams: Prize Money, TV, Transfers And Merch...............................................101 8. Facilities And Infrastructure: Spending On Bricks Instead Of Just Boots .......................102 9. Choosing The Right Save Type For Your Wallet ..............................................................103 10. Roy's End Of Season Financial Review: A Simple FM26 Health Check.........................104 Chapter 6 ­ Roy's checklist.................................................................................................106
+Chapter 7: Owning The FM26 Week ......................................................................................107 1. Roy's Monday Morning: Planning The FM26 Week From The Calendar First, Not Last 109 2
+
+nonogaming014@gmail.com 05 Apr 2026
+2. Who Runs Training In FM26: You, Your Assistant Or A Hybrid Setup.............................111 3. Building FM26 Training Schedules: Principles Before You Download Anything.............112 4. Youth And B Teams: Aligning Every Squad With Your Idea ............................................113 5. Part Time Clubs And Training Limitations: Surviving With Fewer Sessions....................114 6. Match Preparation In FM26: Familiarity Over Fiddling ..................................................115 7. Fitness, Rotation And Congested Schedules: Protecting Legs For The New Match Day 116 8. Match Day 2.0 In FM26: From Tunnel To Final Whistle..................................................117 9. Data Hub In FM26: What To Actually Look At ................................................................118 10. Roy's FM26 Weekly Routine: A Plug And Play Template ..............................................119 Chapter 7 ­ Roy's checklist.................................................................................................121 Chapter 8: Playing The Long Game In FM26..........................................................................122 1. Roy's Ten Season Save: The Night He Nearly Rage Quit.................................................124 2. Planning Beyond One Season: Vision For Years 1, 3 And 5 ............................................125 3. Age Profiles And Succession Planning: Replacing Heroes Before They Die On The Pitch ............................................................................................................................................ 126 4. Regens, Newgens And FM26 Youth Cycles.....................................................................128 5. Long Term Tactical Evolution: Staying Fresh Without Identity Crisis .............................129 6. Rebuild Seasons: Knowing When To Take A Step Back To Go Forward ..........................130 7. Burnout, Save Fatigue And Knowing When To Walk Away ............................................131 8. Roy's Long Term Template: From First Contract To Testimonial Match .........................133 Chapter 8 ­ Roy's checklist.................................................................................................135 Chapter 9: Surviving The New FM26 UI .................................................................................136 1. Roy Opens FM26 For The First Time: "Where's My Sidebar, Lads?"..............................138 2. The Portal: Your New Home Screen In FM26 .................................................................139 3. Tiles And Cards: How The New Layout Actually Works..................................................140 4. Top Nav Bar, Not Sidebar: Relearning Navigation Muscle Memory ...............................141
+3
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Bookmarks And Favourites: Building Your Own FM26 Workspace ................................143 6. Power Search And FMPedia: Type First, Click Less.........................................................146 7. Match Day UI: New Cameras, New Overlays, Same Job For You ...................................147 8. Common Complaints And How To Work Around Them.................................................148 9. New Players vs FM Veterans: Two Short Onboarding Tours ..........................................149 10. Roy's 15 Minute UI Warm Up For Every New Save ......................................................151 Chapter 9 ­ Roy's checklist.................................................................................................153 Chapter 10: Bringing It All Together.......................................................................................154 1. The Five Pillars Of Your FM26 World ..............................................................................156 2. Daily And Weekly Rituals: What You Do Between Matches...........................................157 3. Seasonal Cycle: Pre season, Mid season, Post season ...................................................159 4. A Fictional Ten Season Career: From Chaos To Legacy...................................................162 5. Final Words From Roy.....................................................................................................165
+4
+
+nonogaming014@gmail.com 05 Apr 2026
+Introduction: So, You Want to Be an FM26 Gaffer?
+Football Manager used to be simple. You slapped together a 4-4-2, signed a quick winger, found a cheap poacher, and let the match engine sort itself out. If it worked, you told your mates you were a genius. If it didn't, you blamed the game and started a new save. FM26 is not that world any more. You are managing in a game with:
+· Dual tactics - In and Out of Possession · Smarter AI and more detailed data · Boards and supporters whose judgment exceeds just results · A new Portal-based interface, tiles, cards and search bar · A club structure that actually remembers what you have done over ten seasons You can still throw a `plug n' play' tactic at it and hope for the best. You might even win for a while. But you will always be one bad run away from chaos. The board will turn. The dressing room will sulk. The finances will creak. The world will move on without you. This book is for gaffers who want to do more than just survive. It is for the players who want to sit down with FM26 and feel like they have a plan. Not a rigid script that kills the fun, but a framework that lets you enjoy the chaos without being swallowed by it and a platform from which to build your stories upon. You are going to learn how to: · Decide what kind of manager you actually are, and what football you believe in · Build a game model that uses FM26's all-new In Possession and Out of Possession
+systems properly · Recruit players and staff who fit that model instead of just chasing attributes · Keep a dressing room full of egos on your side through Dynamics, Promises and
+leadership · Run a club that doesn't blow up its wage bill and collapse after three good seasons · Use Training, Data Hub and Match Preparation to help bring your ideas to life on the
+pitch · Play the long game over ten seasons, rather than burning out after two · Tame the new FM26 UI so it works for you, rather than against you
+5
+
+nonogaming014@gmail.com 05 Apr 2026
+The tone of the book is simple. I am not here as a YouTuber showing you a one-click tactic. I am here as a fellow gaffer on the training ground, leaning on the fence with a coffee, talking you through what actually works in a real save. Sometimes I will speak in stories. The time a golden generation arrived at exactly the wrong moment. The time a rebuild season nearly cost a job. The time a broken promise from three years earlier came back to bite at the worst possible moment. Sometimes, I will speak in checklists; Buttons to press on a Monday, questions to ask at the end of a season, screens to bookmark so you stop getting lost in the new interface. This is not a theoretical coaching manual. It is not a dry list of menus either. It sits somewhere in the middle. Enough structure that you know where you are. Enough personality that it still feels like Football Manager. You will notice a pattern as you read. Every chapter tries to give you:
+· A way of thinking about the problem · A handful of practical habits · A short story that shows what happens when you ignore those habits We start with you and your identity. Then we move through tactics, squad building, people management, money, training and match day. We zoom out to talk about ten-season saves and finish by tackling the new UI head-on so that the Portal, tiles and cards become useful tools, instead of nagging headaches. By the time you reach the epilogue you will have:  A weekly routine  A seasonal cycle  A long-term plan  And a way of navigating FM26 that feels natural You will still lose games. You will still make bad signings. You will still have saves that fade out because life gets in the way. The difference is that, when you sit down to start an FM26 world that you care about, you will not just be hoping for magic. You will know how to build it. So, pour yourself a drink, pick a club, and open a fresh save. Let us transform FM26 from something that happens to you into something you are in charge of. Gaffer, it is time to build a club, not just a tactic.
+6
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 1: Your FM26 Manager DNA
+Why the game has never needed you more
+7
+
+nonogaming014@gmail.com 05 Apr 2026
+Picture this: It is a cold Tuesday night, rain sliding down the dugout roof, and you are sitting in front of your monitor. FM26 is loaded, floodlights on, the new match engine humming. Your assistant is feeding you nonsense in the inbox, social media is screaming about "plug n' play" tactics, and somewhere deep down you know one thing: If you keep playing the way you always have, this save is dead by Christmas. Hi gaffer, Roy here. FM is not what it used to be. The game has grown smarter. The match engine punishes lazy decisions. Players have more personality. Boards expect a long-term vision, not just a lucky run in February. Everyone has access to the same downloaded tactics, the same wonderkid lists, the same YouTube breakdowns. What they do not have, however, is you. Your brain, your style, your identity. So, before we talk about tactics, transfers or clever little set pieces, we start here. With you, the gaffer. With your FM26 Manager DNA. This chapter is your dressing room, before the first whistle of the save. Close the door, turn the volume down, and be honest with yourself. We are going to decide what kind of manager you are, what you actually want from this game, and which rules you refuse to break once that first contract is signed. Ready? Boots on. Let us start the team talk.
+8
+
+nonogaming014@gmail.com 05 Apr 2026
+1. Roy's Dressing Room Talk: Why FM26 Needs Proper Gaffers Again
+Here is the blunt truth: The old way of playing Football Manager was simple. Fire up a save, search on Google for the "best FM tactic", download the first one with a shiny thumbnail, spam it on every club from Accrington to Real Madrid, complain when it stops working, rage-quit in March, repeat next year. In FM26, that is a recipe for boredom. The game now rewards managers who think. The match engine understands shape, distances, body orientation, decision-making. Your players care about their role, their promises, their pathway. One lazy decision in pre-season can echo into the run-in. That is why FM26 needs proper gaffers again. Gaffers who can look at a squad and see more than attributes. Gaffers who have a plan beyond "sign fast striker". Gaffers who know when to double down on their identity and when to adapt. This guide is not here to give you a tactic that works like magic. It is here to turn you into the kind of manager who could open any club in any league and still build something that makes sense. We start by answering the most important question of all: What are you actually trying to build?
+9
+
+nonogaming014@gmail.com 05 Apr 2026
+2. From Save File to Legacy: What Are You Actually Trying to Build?
+Most people load up a new FM save like they open Netflix. Scroll, click something that looks fun, watch for a bit, quit when it slows down. The best gaffers do it differently. They start with a story. Ask yourself, before you even touch the "Add New Manager" button: "If this save went perfectly, what would the final screenshot look like?" Is it you holding ten league titles with the same club, a proper dynasty? Is it a `moneyball' project, endless profit on clever signings? Is it a youth-only epic, full of academy graduates lifting the Champions League? Is it a journeyman tale, trophies scattered across three continents? Write it out. Literally. One or two sentences is enough.
+· "Turn a mid-table club into a possession-based machine that dominates domestically and makes money every year."
+· "Win the Champions League with a squad that is 80 percent homegrown." · "Become the most decorated manager in South America, before retiring in Europe." That is your north star. Every decision you make in FM26 is either pulling you closer to that picture or dragging you away from it. Once the destination is clear, we can build the road.
+10
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Club Vision, But for You: Writing Your Own
+Manager Manifesto
+The Board has its vision. "Develop youth," "sign high reputation players," "play attacking football." Sometimes it is helpful, sometimes it is nonsense. You need your own. Think of your Manager Manifesto as your private set of principles. If the Board sacked you today, and you joined a new club tomorrow, these principles would follow you. Open a note and write a few short lines under these headings: Playing Style How do you want your teams to look, regardless of club?
+· High-pressing, vertical, aggressive? · Calm possession, control through the middle? · Compact low block, ruthless counter-attacks? Pick one main sentence. For example: "High tempo, vertical football with intelligent pressing and quick wide attacks." Player Profile What kind of players do you trust? · Technical over physical? · Versatile squad players over specialists? · Leaders and strong personalities over raw talent? For example: "Prioritise decision-making, work rate, and versatility. Hard work beats talent if talent doesn't work hard." Squad Building Philosophy Are you the type to splash or to build? · "Always keep wages under control, sell at peak value, reinvest in younger players." · "Will pay big for one or two game-changers, but never for ageing stars." Youth vs Ready Made Where do you sit? · Pure youth project? · Balanced, 2 or 3 experienced leaders plus academy products?
+11
+
+nonogaming014@gmail.com 05 Apr 2026
+· Mostly proven players with the odd wonderkid? This does not have to be perfect. It just has to be honest. Your manifesto is the filter for every future decision. If a signing, a tactic, or a staff member does not fit what you wrote here, think twice.
+12
+
+nonogaming014@gmail.com 05 Apr 2026
+4. Tactical Identity: Who Are You on The
+Touchline?
+Next question: What do your teams actually play like? Not what you think is meta, not what your favourite YouTuber uploaded this week - but you. Imagine the camera pans to the touchline in real life. The commentator says: "You know exactly what you get from a [Your Name] side." What is he describing? Here are a few classic identities. You might be one, or a blend of two.
+· The Pressing Evangelist You live for counter-pressing, traps in wide areas, centre-backs on the halfway line. You accept the risk of balls over the top because you want to suffocate the opposition.
+· The Control Freak You want ninety minutes of structure and calm. Slow build up, calculated risk, players always offering passing lanes. You would rather win 1-0 with 70 percent possession, than 4-3 as a result of chaos.
+· The Counter Assassin Compact block, disciplined shape, then lightning-fast transitions. You love seeing the opposition full-backs caught high and your winger sprinting into the space left behind.
+· The Hybrid Pragmatist You mix it. Press high against weaker sides, sit off against giants, switch shapes comfortably. You are defined by adaptability, not by one idea.
+Pick the one that matches your personality. Do not lie. If you hate slow football, do not pretend to be a possession-oriented coach. You will get bored and abandon the save. In later chapters, we will translate this identity into exact roles and instructions. For now, all we need is your headline: "My FM26 tactical identity: __________." Write it. That is your touchline badge.
+13
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Understanding the FM26 Journey: Seasons, Cycles, And Turning Points
+FM saves are not one long blur, even if they feel like it at 2 a.m. They are made of cycles. Think in blocks of three seasons:
+· Season 1 ­ Discovery and survival. Learn the squad, stabilise results, move on obvious deadwood, set the tone.
+· Season 2 ­ Consolidation. Core of the team is now yours, tactics feel natural, finances start to reflect your decisions.
+· Season 3 ­ Statement. Title challenge, deep Cup runs, or a clear identity that everyone recognises.
+Then the cycle restarts. New leaders emerge, old heroes age, expectations rise. Within each cycle, there are turning points.
+· The first, big derby win, which buys you time. · The first dressing room revolt, which exposes weaknesses in your authority. · The big sale that funds your rebuild, or the big signing that upsets the wage
+structure. Good managers anticipate these moments. They do not panic when they arrive because they already know what they stand for. In this guide, we will often ask "Where are you in the cycle?" so keep this in your head. It will stop you making desperate decisions just because you lost three on the bounce in October.
+14
+
+nonogaming014@gmail.com 05 Apr 2026
+6. Risk Profile: Are You a Gambler or a Safe Pair of Hands?
+Every decision in FM sits somewhere on a risk line. · Selling your top scorer to fund a flurry of youngsters. · Promising a player "top half finish" when the media predicts relegation. · Pushing your defensive line higher than you really trust.
+There is no correct level of risk. The wrong move is pretending you are one thing when you are actually another. Ask yourself a few quick questions:
+1. When a big club bids for your star player, do you usually say yes or fight to keep him? 2. When you see a raw 19-year-old with great potential, but mediocre current ability,
+do you feel excited or concerned? 3. With the scores tied level, do you regularly push for the win or take the point? If you often chase upside, you are naturally more of a gambler. If you usually protect what you have, you are more of a safe pair of hands. Neither is wrong. But each demands a different approach. · Gamblers must become disciplined with finances and promises, because one reckless
+decision can break a save. · Safe managers must push themselves to take calculated shots when opportunity
+knocks, or they will stagnate. Write your risk type next to your tactical identity. For example: "Aggressive presser, medium risk" or "Control style, low risk." Now we are really starting to see who you are.
+15
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Non-Negotiables: Rules You Will Not Break in This Save
+Every great dressing room has rules on the wall. Some are obvious: `Be on Time, Work Hard'. The powerful ones are personal. Your FM26 save should have the same. These are your non-negotiables. Once you write them, you keep them. No excuses at 1 a.m. when the classic transfer deadline panic sets in. Here are examples you can steal or adapt:
+· "No players aged over 30 on long-term, high-wage deals." · "Always keep at least one academy graduate in the starting eleven when possible." · "Never sign from direct rivals, unless it fits the story of the save." · "No rage-quitting, every bad run must be solved inside the game." · "Do not change tactics more than twice in a season without a clear reason." Write three to five. Put them somewhere visible. You will be amazed how much stronger your save feels when you stop bending your own rules.
+16
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Translating Real Life Football Values into FM26 Decisions
+Everyone who loves FM loves real football first. You probably already have managers you admire, teams you still watch highlights of, and football ideas that make you smile. We are going to use them. Think of one or two real managers you respect. They do not have to be serial winners. They can be underdog specialists, youth developers... Whatever matches you. Ask:
+· What do I like about their team/s? · How do they behave after a defeat? · How do they handle stars, or kids, or the media? Then translate that into behaviour on FM. If you love how a certain manager trusts the academy, reflect that in your `Playing Time' plans. If you admire a coach who never blames the referee, stop hammering officials in press conferences every time you drop points. This is how your saves become more than numbers. They start to feel like a long-running series, with you as a consistent main character instead of a random name on the touchline. Your football values are already inside you; FM26 simply gives you a sandbox to live them out.
+17
+
+nonogaming014@gmail.com 05 Apr 2026
+9. Your First Big Choice: Picking the Right FM26
+Starting Club
+Now, at last, we talk about clubs. Every year people ask, "Who should I manage?" as if there is one magic answer. There is not. There is only "Who fits your Manager DNA best?" Use your notes from this chapter and test clubs against them. Ask for each option:
+· Does this club suit my preferred playing style? A pressing identity might struggle at first in a very slow, ageing squad, which is fine if you enjoy a rebuild but painful if you want instant results.
+· Does the financial situation match my risk profile? If you are a natural gambler, a club on the edge of administration might be emotional suicide. If you are cautious, a `sugar daddy' club could feel dull.
+· Does the club's culture align with my manifesto? Youth-focused managers will be happier at clubs with good facilities and a history of developing players.
+· Does the league's structure fit the story I want to tell? Promotion battles feel different in England than in leagues with play-offs or confusing, foreign registration rules.
+Write down three candidates: 1. One comfort pick that feels like a perfect match. 2. One slightly harder pick that will challenge you. 3. One wildcard that you are secretly drawn to.
+In the next chapter, we will dive into the FM26 ecosystem and how to set up the save so that your choice comes to life on screen. For now, you have done the most important work. You are no longer "some bloke playing FM26." You are a manager with a vision, a style, a risk profile, and a set of rules. FM26 has never needed that more. Close this chapter, grab a drink, and when you come back, we will build the world your new club is about to live in.
+18
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 1 ­ Roy's checklist
+Roy's checklist  Decide what kind of manager you are and write it down in one sentence.  Pick one core strategy you want to use to win matches, not five.  Choose a difficulty level and club that matches your available time and patience.  Turn off or on features (interviews, meetings, extra detail) so the game fits your life,
+not the other way around.  Commit to learning FM26 as it is, not trying to force it to behave like an older version. If you only remember 3 things from this chapter... 1. Identity first, tactics second. 2. You choose how "realistic" or "arcade" your FM26 world will be. 3. The game is deep enough that you must decide what you will ignore, as well as what
+you will follow.
+19
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 2: Building Your FM26 World
+Save setup, databases, and the invisible decisions that make or break a career
+20
+
+nonogaming014@gmail.com 05 Apr 2026
+You know that feeling when you walk into a dressing room and everything just feels wrong? Changing room is cramped, kit is all over the place, tactics board half rubbed out from last season. No shape, no order, no plan. Most gaffers start FM26 like that. They smash "Start New Game", click through every screen as fast as possible, pick a few leagues because "more is better", whack the database on "Large", and then complain three weeks later that the game is slow, the regens are weird and they cannot find the right players. So, before we sign a single striker or build one clever tactic, we are going to sort your world out. This chapter is you and me at the laptop, coffee on the table, FM26 loading up. I am going to put a hand over your mouse a few times and say: "Easy, gaffer, that click matters."
+21
+
+nonogaming014@gmail.com 05 Apr 2026
+1. The First Click: When "Start New Game" Actually Matters
+You fire up FM26; big, shiny menu. Music. The temptation is screaming: New Career, let us go! Slow down. The first few screens are not admin. They are architecture. What you choose here decides:
+· How many players exist in your universe · How quickly your seasons will process · How realistic your scouting feels · How long your save will last before your machine starts wheezing like an old `keeper
+in extra time Imagine you are building a training ground from scratch. You would not just say, "Yeah, chuck five pitches, two gyms, and a pool in there and see what happens." You would plan according to budget, weather, staff, academy. Same with your FM world. When you click "Start New Game", think: "I am not just starting a save, I am designing the stage my entire story is going to be played on." Treat it with that respect, and suddenly these menus stop feeling boring and start feeling powerful.
+22
+
+nonogaming014@gmail.com 05 Apr 2026
+2. Choosing Leagues Like a Pro: Performance, Story And Player Pool
+The first big decision is leagues. Most people think in two ways:
+· "I want to manage in England, Spain, Italy - chuck them all in." · "The more leagues, the more players, the better." This is how laptops die. Instead, think in three layers: Layer 1: Your main league This is where you will manage, where you want full depth and detail. You want all tiers you realistically might reach. · If you are doing a long-term English save, go deep. Championship and below. · If you are managing a top club in a smaller nation, you may only need 1 or 2 tiers.
+23
+
+nonogaming014@gmail.com 05 Apr 2026
+Layer 2: Talent feeder leagues These are leagues you will buy from regularly.
+· Wonderkid factories like Brazil, Argentina, Portugal, the Netherlands. · Nearby countries that make sense geographically and financially for your club. You usually want these leagues as fully playable or, at least, highly detailed, so the players develop properly.
+Layer 3: Flavour and context leagues These are here more for realism and options than heavy use.
+· A few big leagues for Champions League opponents and transfer gossip. · Maybe a rival league you might move to later in a journeyman story. You can often put these on "view only" to save performance if you do not need every lower division.
+24
+
+nonogaming014@gmail.com 05 Apr 2026
+Ask yourself for each league: · Does it help my story? · Will I actually interact with it? · Is my machine going to handle this?
+If the answer is not a clear yes, you do not need it. Fewer focused leagues create a sharper, more coherent world.
+25
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Database Size and Custom Setups: Do You Really Need the Whole World?
+Next screen: Database size. Small, medium, large. And a lovely "Advanced" button that whispers, "Come on, gaffer, add everyone." Reality check. A massive database does not automatically mean "better". It means:
+· Longer processing between days · Heavier strain on your hardware · A lot of players you will never even scout The trick is to match the database to your story and to the length of save you imagine.
+Shorter save, 3 to 5 seasons, top division club Medium database is usually perfect, with a few custom tweaks for key regions.
+Long-term youth or `moneyball' project Large or custom database that focuses on:
+· Nations with strong youth production · Regions you want to dominate · Players of certain nationalities or playing in specific continental competitions Use the custom setup smartly:
+26
+
+nonogaming014@gmail.com 05 Apr 2026
+· Add all players from continents you will scout heavily. · Or add players from top divisions only, plus youth internationals, instead of every
+semi-pro league on earth.
+Think of it like building a scouting network. You want it broad enough to find gems, but not so bloated that you waste all your time sorting through average players from leagues you do not care about.
+27
+
+nonogaming014@gmail.com 05 Apr 2026
+4. Game Detail, Sim Speed, and Your Machine: Keeping FM26 Smooth
+Let me tell you a story. Years ago, I tried to run half of Europe on a tired, old laptop. Every "Continue" felt like watching a glacier move. I spent more time waiting than managing. When the game finally got to matchday, I was already annoyed. That is not heroic. That is stupid. FM26 gives you a lot of control over how detailed the simulation is. Use it. Key areas to look at:
+· Detail Level for Leagues Your main league can be set to "high" detail, with full match simulation. Secondary leagues can be "medium" or even "low", especially if you are not checking their matches often.
+· 2D vs 3D If your machine struggles, 2D can give you all the tactical information you need and shave minutes off each match. There is no shame in dots.
+· Highlight settings `Full Match' or `Extended' is lovely for big games, but will drain your time across a long season. Consider switching to key highlights for routine matches, then dial it up for derbies and finals.
+· Auto save frequency Frequent autosaves are safe but can add pauses. Find a balance you trust.
+The rule is simple: If your FM26 world feels like a chore to load, you will abandon the save before it gets good. Be kind to your machine. Design a world that runs smoothly on it. You want your mind focused on football, not on loading bars.
+28
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Attribute Masking, Hidden Data, and How Much You Want To "Know"
+Attribute Masking is one of the most important decisions for how your save feels. Turn it off, and the world is an open book. Every player's numbers are clean and readable from day one. Turn it on, and suddenly you are managing in fog. You see sketches of players based on scouts, coaches, and matches. Knowledge grows. Mistakes happen. Most gaffers think of masking as a handicap. I think of it as flavour. With masking on:
+· Scouting actually matters. · The quality of your staff is crucial. · You might sign a player who looks good on limited info and later discover a flaw. Ask yourself: · Do I want a puzzle, or do I want a database? · Am I playing to feel like a real manager, or am I playing more like an analyst? There is no shame in turning masking off if you are new, or you just enjoy perfect information. But, if you want the FM26 world to feel alive and uncertain, masking can be your best friend. You can also tweak other realism options: · In-Game Editor enabled or disabled · Attribute values vs ranges · Stars for Current and Potential Ability Decide how much you want to "know", then stick with it. Changing mid-save kills immersion.
+29
+
+nonogaming014@gmail.com 05 Apr 2026
+30
+
+nonogaming014@gmail.com 05 Apr 2026
+6. Staff Responsibilities, Auto Functions, and What
+You Must Never Delegate
+FM26 is packed with responsibilities. Training, press, friendlies, contract renewals, youth intake, opposition instructions, and more. You could try to do it all, but you will almost definitely burn out. The trick is to decide:
+· What defines your identity as a manager? · What can be safely automated without losing your fingerprints on the team? Here is a simple framework. Never delegate: · Tactical decisions on matchday · Core training philosophy · Key first-team transfers in and out · Promises to important players If you let the assistant decide shape and mentality, you are not managing, you are supervising. Often safe to delegate, especially early on: · Friendly Match scheduling · Opposition Instructions (you can override in big games) · Individual Training for fringe players once you set the general approach · Press Conferences if you really hate them, although they do affect dynamics Case by case: · Contract Renewals. If you trust your DoF (Director of Football) and your wage
+structure is clear, you can let them handle lesser players. Big contracts should still go through you. · Youth development and Loans. Some managers like full control, others prefer a Head of Youth Development to handle routine decisions. In the Staff Responsibilities screen, walk through each area and ask: "Does this decision express my FM26 Manager DNA, or is it just admin?" If it expresses you, keep it. If it is admin, delegate it to someone competent and move on.
+31
+
+nonogaming014@gmail.com 05 Apr 2026
+32
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Installing Skins, Graphics, and Quality of Life Tools Without Breaking the Save
+Now we get to the fun, cosmetic stuff. Skins, facepacks, logos, custom scoreboards. None of this affects results directly, but it absolutely changes how connected you feel to the world. A good skin can:
+· Make key information easier to see · Put data in one place instead of ten clicks deep · Make your club and players feel more "real" Facepacks and logos do something even more important. They give identity. That 16-yearold regen striker with a random face quickly becomes "your" kid when you recognise him by face in the team list. Just remember a few basics: · Always back up your original graphics and skin folders. · Read the installation instructions carefully and follow them step by step. · After adding new content, restart the game. Quality of life tools like custom views, analysis panels, or training schedules are part of your toolbox, not cheats. They are spreadsheets with better lighting. If, at any point, your game starts crashing after a new skin or pack, disable the add-on and test again. Your world comes first. Cosmetics are there to serve the save, not destroy it.
+33
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Using the Pre-Game Editor and In-Game Editor
+Without Ruining the Challenge
+Let us talk about the editors. There is a spectrum. On one end, pure purists. Everything default, nothing touched. On the other end, people who give themselves a billion pounds and 200 Current Ability, then wonder why they are bored. You do not have to live at either extreme. The Pre-Game Editor can be perfectly fair when used like this:
+· Fixing obviously bugged data; For example, a player at the wrong club after a licensing issue.
+· Creating a custom lower-league system or fantasy scenario as a specific challenge. · Adjusting starting finances slightly to match a real-world situation. The In-Game Editor is where you must be very honest with yourself. Ask: · Am I using this to correct something genuinely broken, or to avoid dealing with
+consequences? · Is this a one-off fix or a habit? Examples that can be reasonable: · Removing a freak career-ending injury in pre-season if you feel it ruins the save
+before it starts. · Tweaking a stadium's capacity to match reality, where licensing blocked it. Examples that drain all tension: · Boosting the attributes of your new signing because you like him. · Cancelling debt with two clicks, instead of learning to manage finances. · Editing results after a loss. You can absolutely enjoy the Editors as creative tools. Just remember that challenge is not your enemy. It is the thing that makes your FM26 stories worth telling.
+34
+
+nonogaming014@gmail.com 05 Apr 2026
+9. Realism Sliders: Injuries, VAR, Work Permits,
+and Other Painful Joys
+FM has plenty of settings that affect how harsh the world feels. Injuries. Referees. Work permits. Even the impact of weather, in some databases. Instead of leaving everything default without thinking, build a world that matches the type of story you want. Questions to ask:
+· Injuries Do you want a gritty, realistic grind where squad rotation matters and players break down if abused, or a more forgiving world where your best eleven plays almost every week?
+You can lower injury frequency slightly if you feel the game is too punishing, but be careful. Too low, and you remove a huge part of squad management.
+· VAR and referees Turning VAR off can make the game feel more old school. Leaving it on creates those dramatic moments where you are screaming at the screen. Again, decide your taste, not what Twitter tells you.
+· Work permits and registration rules These can be annoying, but they are also part of the strategic puzzle. If you plan to manage in England, or other strict countries, I recommend keeping them realistic. Learning to dance around these rules is part of being a top gaffer.
+· Discipline and suspensions Hard tackling, aggressive pressing, and emotional players will lead to cards. If you don't want a yellow card lottery every week, you might tone the realism slightly - but remember, risk is part of identity.
+Treat these options as realism sliders, not difficulty levels. Ask yourself: "If this happened in real life, would I accept it as part of the job?" If the answer is yes, keep it in your FM world.
+35
+
+nonogaming014@gmail.com 05 Apr 2026
+10. Locking It In: Final Pre-Season Checklist Before
+You Hit Continue
+We have talked a lot. Time to summarise. Before you hit that first "Continue" in your brand new FM26 career, run through this quick checklist:
+1. Leagues selected with purpose o Main league and tiers you actually plan to use o Feeder leagues for talent o A few flavour leagues on `view only' if you want extra context
+2. Database tuned to your story and machine o Small, medium, or large chosen deliberately o Custom selections for key regions if needed
+3. Detail and performance aligned o Your main league on higher detail o Secondary leagues on sensible settings o Graphics and highlights tailored to your hardware
+4. Realism and information level set o `Attribute Masking' decision made and understood o Editors disabled or used under clear personal rules
+5. Staff responsibilities written in your name o You control tactics, key transfers, and big promises o Assistants and staff trusted with routine admin
+6. Cosmetics installed without chaos o Skins, logos, and faces working properly o Backups kept safe
+7. Realism sliders chosen consciously o Injuries, work permits, VAR, and discipline set the way you want your football world to feel.
+36
+
+nonogaming014@gmail.com 05 Apr 2026
+When all of that feels right, you are not just starting a game. You are stepping into a world you designed on purpose. Take a breath, gaffer. Your FM26 Manager DNA from Chapter 1 is ready. Your FM26 world from Chapter 2 is built. In the next chapter, we walk onto the training pitch for the first time and start building a tactical identity that actually fits everything you have just created.
+37
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 2 ­ Roy's checklist
+Roy's checklist  Decide if this save is a realistic career mode or a fun sandbox, and set up leagues
+accordingly.  Load enough nations and players to support your scouting plans without killing
+performance.  Think about whether you want a small, focused world or a huge, sprawling one.  Make an intentional choice about starting club. Do not just click the first offer.  Turn on any extra views (e.g. Women's game when available, B teams, youth leagues)
+that matter to your story. If you only remember 3 things from this chapter... 1. Your database and league setup are the foundation of everything that follows. 2. Choose a club and world that fits your time, not your ego. 3. A good save starts on the "New Career" screen, not on the tactics tab.
+38
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 3: From Whiteboard to Match Engine
+Building a tactical identity that actually works in FM26
+39
+
+nonogaming014@gmail.com 05 Apr 2026
+You walk out onto the virtual training pitch for the first time in FM26. The tactics screen looks different. No duties. Two formations staring back at you instead of one. Tabs for In Possession and Out of Possession. A new thing called the Visualiser that shows your players sliding across a grid like magnets on a whiteboard. The whole thing feels like Pep's tactics board had a baby with a UI designer. Breathe, gaffer. This is good news for people like you. FM26 finally plays the way the modern game is talked about - in phases, in structures, in rotations. You are no longer locked into one frozen, 2D shape that pretends to do everything. You can now decide how your team looks with the ball and without it, select roles that only exist in each phase, and see it all previewed before a single ball is kicked. This chapter is me and you at that tactics screen, marker in hand, working out how to turn your Manager DNA from Chapter 1 into a dual shape that the FM26 match engine actually respects.
+40
+
+nonogaming014@gmail.com 05 Apr 2026
+1. Roy's First Training Session: Why We Are Not Copying "Meta" Tactics Anymore
+In FM24, you could more or less get away with this: · Pick a popular 4-3-3 or 4-2-3-1 · Copy a set of roles and duties from YouTube · Maybe tweak the line of engagement and hope for the best
+The game still had depth, but the canvas was flatter. One formation, one set of roles covering both with, and without, the ball. Now, FM26 has split that world into two full tactical systems - one for In Possession, one for Out of Possession, each with its own formation and role set. If you just grab some random "meta" file now, you are not only outsourcing your identity, but you are also trusting that someone else understands both shapes and both role sets for your squad better than you do. So, the FM26 rule is simple: You do not copy tactics until you understand what they are doing in each phase. The good news is that FM26 gives you better tools than ever to understand that. The rest of this chapter is about using them like a grown-up manager, not a tactic tourist.
+41
+
+nonogaming014@gmail.com 05 Apr 2026
+2. How the FM26 Match Engine and Tactical Planner Actually See Your Two Shapes
+First key mental shift: FM26 does not think in "4-3-3 forever". It thinks in:
+· In Possession shape · Out of Possession shape · The way players move between them When you create a tactic, you start by picking your team's Tactical Style. The selection of options to choose from are preset tactical frameworks that can be edited upon, so they aren't really worth fussing over too much. Once you bypass this selection, you can begin choosing your team's In Possession formation. That is your structure when you build up how you occupy width, depth, and central spaces as you work the ball forward.
+Then, the game suggests a few Out of Possession formations that naturally flow from that. For example, a 4-3-3 on the ball might drop into a 4-1-4-1 block, or a more compact 4-4-2, depending on how aggressive you want your press and rest defence to be.
+42
+
+nonogaming014@gmail.com 05 Apr 2026
+Under the hood, the match engine has been taught to respect these two structures much more clearly. Passing risk is recalculated with better awareness of support options, dribblers vary their speed and angles, defenders shift and step up more intelligently, and presses form as coordinated shapes, rather than random sprints. So, when you are looking at the tactics screen, do not just see dots in a formation. See:
+· Build-up routes in the In Possession shape · Defensive coverage and pressing lanes in the Out of Possession shape · The paths your players will travel when the state flips from one to the other That is the language FM26 speaks now. We are going to speak it too.
+43
+
+nonogaming014@gmail.com 05 Apr 2026
+3. From Manager DNA to Dual Shapes: Picking Your In and Out Of Possession Formations
+You already wrote your Manager Manifesto in Chapter 1. Maybe you are a high-pressing maniac. Maybe you are a control freak. Maybe you live for compactness and counter-attacks. Now we translate that into two structures. Step 1: Choose your In Possession formation Ask:
+· Where do I want my overloads? · Which zones must always be occupied in build-up and final third? · How much depth do I want in attack? Examples: · If you love aggressive wide play and cutbacks, a 4-3-3 or 4-2-3-1 with two high
+wingers and an advanced full-back makes sense. · If you are obsessed with central combinations, a 4-3-1-2 or 3-2-4-1 might be better. Your In Possession shape is your attacking skeleton. It defines how you can create triangles, who steps into half spaces, and how you protect yourself if the ball is lost. Step 2: Choose your Out of Possession formation Now ask: · Do I want a front-two to press opposition centre-backs? · Do I want a defined holding midfielder shielding the defence? · How much horizontal coverage do I need in my first line? Common transitions: · 4-3-3 in possession to 4-1-4-1 out of possession for a safer rest defence. · 3-2-4-1 in possession to 5-4-1 or 4-4-2 out of possession for stronger wide coverage.
+44
+
+nonogaming014@gmail.com 05 Apr 2026
+The key is that these two shapes must be related enough that your players are not teleporting 30 yards between phases. FM26 will literally warn you on the tactics screen if your positional changes between phases are too extreme and create holes.
+Start with sensible, natural transitions for Season 1. You can push the extremes when your squad's understanding, and your own understanding, is stronger.
+45
+
+nonogaming014@gmail.com 05 Apr 2026
+4. Player Roles Without Duties: Building
+Relationships Instead of Clicking Labels
+Here is a big one: Duties are gone in FM26. In FM24, you were always thinking in "Defend; Support; Attack". In FM26, roles themselves carry the behaviour and you pick a different role set for each phase.
+· In Possession roles describe how a player moves and positions when your team has the ball.
+· Out Of Possession roles describe how that same player behaves when you are defending.
+Some roles are familiar, some are renamed, some are brand new. Examples of new or reworked In Possession roles include the Overlapping Centre-Back, Playmaking Wing-Back, Wide Central Midfielder, Wide Forward, and Channel Forward. Instead of thinking "I need three Attack duties", you now think in relationships:
+· On the left, maybe you use a Playmaking Wing-Back, who tucks inside, behind a Wide Forward who attacks space in-behind from a wider initial position.
+· In the middle, a Midfield Playmaker might be supported by a more mobile role that is akin to a classic `Box-to-Box' role.
+· On the right, you might want a more conservative Full-Back behind a traditional Winger.
+Then you mirror that logic in your Out of Possession selections: · That Playmaking Wing-Back might become a more basic `Wide Defender' role out of possession, such as a `Holding Full-Back'. · Your Wide Forward might drop into a `Wide Midfielder' position to help you form a compact 4-4-2 block.
+The philosophy is: Build mini-partnerships in each zone instead of spraying "Attack" labels across the pitch. Pick roles that clearly complement each other in both shapes. If you cannot explain what a combination is meant to do with and without the ball, it is probably not right.
+46
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Team Instructions and The Visualiser: Designing Behaviour Phase by Phase
+Team Instructions have been revamped to match the dual-phase world. Instead of three separate panels for In Possession, In Transition, and Out of Possession, FM26 uses a grid of instructions tied to the attacking and defensive thirds, with separate versions for In and Out of Possession. This is where the Visualiser becomes your best friend.
+· You open Team Instructions. · The pitch is split into three vertical zones. · You can view how your team behaves in each third, in each phase. · As you tweak Width, Tempo, or defensive line, you literally watch the shape bend
+and stretch in the Visualiser.
+Practical use: · Want to see if your narrow, possession-based game is leaving the far flank empty in the final third? Click the attacking third In Possession view, adjust Width, and watch the dots. 47
+
+nonogaming014@gmail.com 05 Apr 2026
+· Worried your Out of Possession block is too passive? Go to the middle third Out of Possession view and see how your Line of Engagement and pressing settings alter your wall.
+The message here is simple: In FM26, you do not guess how Team Instructions affect shape. You check in the Visualiser. Use it like a live tactics board. Nudge one thing, watch the effect, ask if it fits your Manager DNA from Chapter 1.
+48
+
+nonogaming014@gmail.com 05 Apr 2026
+6. Transitions: The Three Moments That Decide Every FM26 Match
+FM26's match engine has had its "brain" rewired to understand risk, support, and pressure better - especially when the game flips from one phase to another. For you, that means three moments matter more than ever:
+1. Losing the ball o Where are your rest defenders in the In Possession shape? o Do you have at least one or two players in positions that can delay the counter?
+2. Winning the ball o Do you have immediate outlets in your Out of Possession shape, or are you all standing behind the ball? o Are your wide players high enough to threaten, or too deep to hurt anyone?
+3. Settling into the block o How quickly do your players drop into the Out of Possession structure you chose? o Are there obvious gaps between lines where the AI can park a playmaker?
+Because your formations are now explicit for both phases, a lot of the old "transition" sliders are baked into how you shape the system. Then you add flavour with things like Pressing Intensity, Counter or Hold Shape, Counter-Press or Regroup. Use the Visualiser and match highlights together. If you keep getting hit with balls into the channels, it is often because the rest defence in your In Possession shape and Out of Possession block do not quite marry up.
+49
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Player Instructions: Fine Tuning in A Roles-First World
+With roles carrying more of the behaviour and fewer hardcoded instructions under the hood, Player Instructions are now genuinely what they should always have been - seasoning, not the whole meal. Good use cases:
+· Asking your Wide Forward to "Sit narrower" to connect better with your striker in certain patterns, adding flexibility to your attacks.
+· Telling a Playmaking Wing-Back to "Cross from deeper" if you want him to be more Cancelo than Cafu.
+· Giving your central midfielder a "Get Further Forward" nudge if the default role is a bit too timid.
+Bad use cases: · Stacking 6 or 7 instructions on every player because you do not trust the role. · Clicking instructions that completely contradict the role's natural behaviour.
+Roy's rule: If you need more than 2 or 3 instructions on a player's role to make him behave, you picked the wrong role or the wrong shape. Start light. Let the roles and dual formations do the heavy lifting. Then, add one or two surgical PIs (Player Instructions) to solve specific problems you see in the match engine.
+50
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Set Pieces: The Easiest Way to Look Like a Genius in The New Match Engine
+The tactical revolution has reached set pieces too. FM26 brings them up to the same level of detail as the rest of the tactical system, with more control over assignments and clearer behaviour in the box. Why this matters:
+· Defending near post corners has been improved, so some FM24 exploits are dead. · Marking and stepping up logic is sharper, which makes poor organisation more
+expensive. Your job as gaffer:
+· Build at least one solid attacking corner routine that matches your team profile. Big dominant centre backs? Load the six-yard box. Smaller, technical side? Use short routines and attack into cutback zones.
+· Build one safe, defensive routine that does not leave your slowest centre back 40 yards from goal.
+· Pay attention to Out of Possession roles when defending set pieces. Some of your IP (In Possession) attackers might be better used protecting the edge of the box or providing an outlet.
+You do not need to be a set piece scientist. You just need to care more than your AI opponent. Most people still click "default" and hope.
+51
+
+nonogaming014@gmail.com 05 Apr 2026
+9. Testing Your Tactic: Pre-Season Labs, Visualiser, and Data Hub
+Pre-season in FM26 is your laboratory. Here is how to use it without wasting time:
+1. Lock your dual shapes in first Do not keep switching between 4-3-3, 3-4-3, and 4-2-3-1 every two days. Pick your In and Out of Possession formations that match your DNA and commit to them for a block of friendlies.
+2. Use the Visualiser before you even kick a ball o Check spacing in all thirds. o Check how extreme the movement is between phases. o Fix the obvious structural nonsense before it is punished.
+52
+
+nonogaming014@gmail.com 05 Apr 2026
+53
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Schedule varied friendlies o One or two games where you are a clear favourite. o One or two against stronger sides. o A mix of low block and high-pressing opponents.
+4. Read the Data Hub early Even with a small sample, look for: o Shot locations for and against o Where you are losing the ball most often o Pass maps that show whether your intended overloads are actually occurring
+5. Make small, logical tweaks o If your full-backs are constantly caught high in transition, adjust their roles or your IP shape rather than ripping the whole tactic up. o If your striker is isolated, check whether your IP midfield roles has anyone actually joining him or positioning between the lines.
+Think like a coach on the training ground, not a panicked fan on social media. Change one or two things, test again, repeat.
+54
+
+nonogaming014@gmail.com 05 Apr 2026
+10. Plan B And Plan C: Adapting Without Throwing Your Identity Away
+The temptation with a new, complex system is to panic as soon as results wobble. In FM26, that is fatal. If you redesign both your In Possession and Out of Possession shapes every time you hit a sticky patch, your players will never build familiarity and you will never build understanding. Instead, build your Plan B and Plan C inside the same framework. Examples:
+· You play a 4-3-3 In Possession and 4-1-4-1 Out of Possession as your default. o Plan B: Keep the same shapes, but change a couple of roles and pressing settings to be more cautious away to elite sides. o Plan C: Push one of the central midfielders higher in the IP shape, lean into a more aggressive "4-2-4" variant for chasing games.
+· You use a 3-2-4-1 IP and 5-4-1 OP. o Plan B: Flip one wing-back to a more conservative Out of Possession role to protect a lead. o Plan C: Shift a centre-back into an Overlapping Centre-Back IP role when you need extra chaos down one side.
+Your identity stays the same. The flavour and risk change. FM26 rewards managers who are brave enough to commit to a clear idea and smart enough to tweak it, not break it.
+55
+
+nonogaming014@gmail.com 05 Apr 2026
+You have now walked through the new tactical world of FM26 with your eyes open. · You know why there are two formations instead of one. · You understand that Roles have replaced Duties and are phase-specific. · You know how to use the Visualiser and revamped Team Instructions to shape behaviour, rather than guess it. · You have a process for testing and tweaking without losing yourself.
+In the next chapter, we will move from the whiteboard and training pitch to the people who actually have to carry it all out - your players. We will dive into scouting and recruitment in a world of In Possession and Out of Possession roles, and how to build a squad that can genuinely bring your FM26 vision to life.
+56
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 3 ­ Roy's checklist
+Roy's checklist  Write one sentence that describes your game model in football words, not FM
+jargon.  Build one main In Possession shape and one main Out of Possession shape that
+actually make sense together.  Choose roles and duties in pairs and chains, not as isolated icons.  Make a simple Plan B and Plan C that still live inside your identity, not random
+formations.  Test your tactic in a short run of matches and use basic data to see if it fits what you
+wanted. If you only remember 3 things from this chapter... 1. FM26 tactics are about a united game model, not a magic shape. 2. In Possession and Out of Possession systems must be designed as a pair, not
+separately. 3. A tactic is good if it creates the chances and defensive situations you actually planned
+for.
+57
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 4: Building Your FM26 Squad
+Recruitment Hub, TransferRoom, and turning tactics into real players
+58
+
+nonogaming014@gmail.com 05 Apr 2026
+There is a moment in every save where tactics are no longer theory, rather characterising that of human beings. Not dots. Not numbers. Faces. Agents. Wage demands. Grumpy veterans. Teenagers who think they are Mbappé because they scored twice in pre-season. That moment is your transfer room. In FM26, the whole thing has been rewired. Recruitment is no longer ten different inbox items and three hidden menus. You have a proper Recruitment Hub, TransferRoom Requirements, clearer scout feedback, and a Squad Planner that actually talks to your tactic. So, in this chapter, I am taking you into that room, closing the door and showing you how to build a squad that fits the lovely In Possession and Out of Possession system you created in Chapter 3. Tactics are what you believe. Recruitment is what you are willing to pay for.
+59
+
+nonogaming014@gmail.com 05 Apr 2026
+1. Welcome to The War Room: Roy's First Tour of The Recruitment Hub
+Picture this. You click into the Recruitment Hub for the first time. It is not just a rebranded shortlist. It is your club's transfer brain in one screen. Across the top you have your key areas:
+· Squad Planner · Recruitment Focus · Transfer Targets and Shortlists · Staff suggestions and analyst reports
+On the right, you see notes from your team: Scouts telling you where the gaps are, analysts pointing at weaknesses, maybe your Director of Football quietly suggesting a player he likes. I want you to change how you think about this screen. Most gaffers treat scouting as shopping.
+60
+
+nonogaming014@gmail.com 05 Apr 2026
+"Let me see what is on sale." You are not browsing a sale rack. You are running a department. The Recruitment Hub is where everything you did in Chapters 1 to 3 comes together:
+· Your Manager DNA · Your In and Out of Possession shapes · Your budget and wage structure This is the war room. You do not open this screen to randomly browse. You open it with a question. "What exactly do we need to move this team one step closer to the vision?" To answer that, we start with the clearest tool FM26 gives you.
+61
+
+nonogaming014@gmail.com 05 Apr 2026
+2. From Tactic to Target List: Using the Squad Planner Properly
+Most people underuse the Squad Planner. They click it once when they arrive at a club, nod, and then forget it exists. In FM26, you cannot afford that. Open the Planner and switch the view so it mirrors your In Possession shape. Role by role, line by line, you now see:
+· Who you have for each spot · Their Current Ability and Potential · Their age profile · Their depth compared to what you want
+Then, you flip to the Out of Possession view and do the same. This is where the power kicks in. Maybe, in possession, you use a Playmaking Wing-Back on the left. Out of possession, that same position becomes a more conservative Holding Full-Back. In the Planner, you can see
+62
+
+nonogaming014@gmail.com 05 Apr 2026
+whether the player you are trusting for that side can genuinely handle both behaviours. If not, that is a recruitment problem. Use the Planner to answer questions like:
+· Where are we one injury away from disaster? · Which roles in our system have no player that is a natural fit at all? · Where are we hoarding three or four similar players who do not actually fit how we
+play? When I go through a new club with a gaffer, I make them:
+· Tag every player as "core", "rotation", "development", or "sell when possible" · Write at least three "priority holes" in the tactic · Write two or three "overstuffed areas" where we can sell to fund transfers and a
+potential rebuild Only once that is clear, do we let ourselves look at new faces.
+63
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Recruitment Focus in FM26: Scouting for Roles, Not Just Positions
+Transfers in FM26 are built around the Recruitment Focus. Think of each Focus as a very specific mission you hand to your scouts and analysts. Bad Focus: "Find strikers." Good Focus: "Find a Channel Forward type who can stretch the last line, aged 18 to 24, within our wage budget and structure, who fits our pace and work rate profile." The magic of FM26 is that you are no longer stuck saying, "ST, good finishing please." You can dive deeper and target the actual In Possession and Out of Possession roles from your tactic. Set up your Focus like this:
+· Pick the area of the pitch, linked to a role you genuinely use · Set age range according to your project · Set approximate transfer and wage expectations that match your budget · Decide the priority level, so scouts know what matters most this window Then you leave it to run.
+64
+
+nonogaming014@gmail.com 05 Apr 2026
+The colours and statuses that appear next to each Focus tell you how warm that trail is. Green means your staff feel they have solid options. Amber means they are still searching. Red means you are dreaming or looking in the wrong places. Here is the key: It is better to have three or four razor-sharp Recruitment Focuses that run all season, than fifteen messy ones you never check. For example, across a season you might run:
+· One Focus for a future first-choice `keeper · One for a left-sided defender who can play both IP and OOP roles · One to find a successor to an ageing playmaker · One for a young, wide forward to develop
+Every time reports land, read them through the lens of your tactic. You are not collecting cards. You are building a cohesive system.
+65
+
+nonogaming014@gmail.com 05 Apr 2026
+4. TransferRoom Requirements: Telling the Market Exactly What You Want
+FM26 adds another toy that I love: TransferRoom style requirements. Instead of passively waiting for scouts, you can send a clear message to the football world: "We are looking for this type of player, at this level, for this role in our team." You set:
+· Position or Role · Expected Playing Time you can offer · Transfer Budget range · Wage ceiling · Any key Traits you care about Then agents, clubs, and your own staff respond with players who supposedly fit. Used badly, this turns your inbox into a landfill of average names. Used well, it is like having a Head of Recruitment making phone calls all day, every day.
+66
+
+nonogaming014@gmail.com 05 Apr 2026
+The trick is to be honest. · Do not list a player as "Star Player" opportunity if you know he is going to fight three others for minutes. · Do not pretend you can offer £100k per week if your wage structure falls apart at £40k per week. · Do not ask for a world class player when you are in the second division with a midtable budget.
+Be accurate, not greedy. The more grounded your requirements, the better the quality of responses and the easier it is to spot the one or two genuine fits in the pile.
+67
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Pitch Opportunities: Selling Your Club Like a Real Sporting Director
+Getting the right player to notice you is half the battle. Getting him to believe in your project is the other half. FM26's Pitch Opportunities screens are where you put on your suit and play Sporting Director. Here is where you show the player:
+· Which role he will fill in your In Possession and Out of Possession systems · How much game-time he can realistically expect to receive · How your club is progressing and what competitions he might play in · Who he will be linking up with on the pitch The temptation here is to click the most ambitious promises to win the race. It is also the fastest way to destroy your dressing room and tactical plan. If you tell a new winger he will be an automatic starter, you better be comfortable dropping someone. If you promise Champions League football in two years when you are barely Europa Conference League material, you are setting a ticking time-bomb. Before you confirm any pitch, ask: · Can my tactic actually give this player the role I am promising? · Does this promise fit the rotation pattern I had in mind from the Squad Planner? · Does his Wage and status break the balance in the dressing room? If the answer to any of those is shaky, walk away. There will always be another player. There will not always be another dressing room that respects you.
+68
+
+nonogaming014@gmail.com 05 Apr 2026
+6. Smarter Scout Reports: Fitting Players to Your In & Out of Possession Systems
+Scout reports in FM26 are less "here are some numbers" and more "here is how this player fits the way you play." When you view a target, you will see not only attributes, but also:
+· Comments on how well he suits your current tactical shape · Notes on whether his strengths align with your chosen roles · Suggestions on positional versatility inside your IP and OOP structures So, instead of asking "is he good?", you start asking, "is he good for us?" Practical habits: · Always check the section that mentions suitability for your tactic or system. If your
+scouts say "would struggle in a high-pressing style" and you built your whole identity around pressing, that is a red flag. · Filter your Scout Report's view to show key attributes for the specific roles you are recruiting for, not just general ability. · Pay attention to negatives that matter in your system. Poor concentration in a BallPlaying Centre-Back, in a risky high-line is not a small detail, it is a disaster waiting to happen. Scouts are not perfect. They have their own limitations and biases. But FM26 finally gives them a clearer voice that speaks the same language as your tactics screen. Use them as a second opinion. Not gospel, not noise. A second coach in the room when you make a call.
+69
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Backroom Team 2.0: Building A Modern Scouting and Analytics Department
+You cannot run a modern recruitment operation alone. In FM26, your backroom is not flavour text. It is leverage.
+· Chief Scout sets the tone and quality of your scouting network. · Scouts bring in the raw information. Their Judging Ability and Judging Potential
+matter more than ever. · Recruitment Analysts and Data Analysts turn numbers into patterns: where your
+current squad is lacking, which profiles seem to over or under perform, which markets look under-priced. Roy's rule for staff is simple: Treat them the way you treat players. Sign for roles, not just star ratings. If you want a youth-heavy project, prioritise staff with great Potential judgement and youth knowledge. If you are a `moneyball' merchant, find analysts with high tactical knowledge and data skills. Once they are in, structure their work: · Assign scouts to key regions that match your Recruitment Focus. · Do not waste your best scout on a nation you will never sign from. · Use analysts to regularly produce reports on your own team, not just opponents, so that recruitment conversations start from data, not vibes. If you walk into a club and see a 45-year-old Chief Scout with 9 for Judging Potential and no knowledge outside his country, that is an immediate recruitment target.
+70
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Budget, Wages, and Sell-On Clauses: Playing the Long Transfer Game
+Every signing you make in FM26 has two price tags: · The fee you pay · The effect it has on your Wage and Clause structure
+Long-term stability comes from respecting both. Some principles to live by:
+· Decide a loose wage band for each squad status. Key Players, First Teamers, Rotational, Backups, Hot Prospects. Try not to let anyone punch too far above their band unless they are obviously special (Ballon d'Or-level talent, for example).
+· Use instalments smartly. Paying 50 percent now and 50 percent over three years can turn a risky move into a manageable one, as long as you are tracking future commitments.
+· Do not be afraid of sell-on clauses in both directions. Keeping a slice of a player you sell can fund your future rebuilds if he explodes. Adding sell-on clauses instead of higher fees can make deals happen that you could not otherwise afford.
+Most importantly, link financial decisions back to your tactic. If a player does not fit your IP and OOP roles, he is not a "bargain". He is dead money. The wage you are giving him could be used to sign the exact profile you actually need. Regularly review your wage list and ask for each higher earner: "Is this player a pillar of my system or an expensive compromise?" If it is the second, you know what to do.
+71
+
+nonogaming014@gmail.com 05 Apr 2026
+9. Women's Football, Youth Intakes, and Global Reach in FM26
+FM26 expands the playable world again, including the arrival of Women's Football and richer youth structures in many nations. For you as a gaffer, that means three things:
+1. More pathways You can now build parallel projects. One in the Men's game, one in the Women's game, each with its own recruitment and development horizon.
+2. More youth variety Youth Intakes give you more diverse profiles from more regions. You can lean into this by setting Recruitment Focuses for specific age groups and nations that you want to build around.
+3. More reasons to stay grounded With so many options, it is easy to turn your save into a chaotic FIFA career mode, hoarding talent from everywhere.
+So, once again, let your Manager DNA guide you. · If you love youth, invest big in facilities, youth staff and academy recruitment, then resist the urge to buy five players for every position. · If you are more of a senior squad builder, pick your academy battles, but still treat Youth Intake Day as an event. There is nothing like signing a local kid who fits your IP and OOP roles perfectly.
+The global reach of FM26 is a gift. Just remember that every player you add must still fit the story you are telling at your club.
+72
+
+nonogaming014@gmail.com 05 Apr 2026
+10. Roy's Recruitment Ritual: A Simple Window by
+Window Workflow
+Let's finish this chapter with something very practical. Here is the ritual I use with gaffers every transfer window in FM26. Copy it, tweak it, make it yours.
+1. Open Squad Planner first, not the transfer list o Review your IP and OOP depth by Role. o Mark three priority holes to recruit for and two areas to sell from.
+2. Update Recruitment Focus o Turn off old Focuses that are no longer relevant. o Set two to four clear new missions based on the holes you just identified.
+3. Define or refine TransferRoom Requirements o For each priority role, set one realistic requirement package. o Keep Wage and Status Promises honest.
+4. Wait for the reports to flow in o Read new Scout Reports through the lens of your tactic. Ignore "good" players who do not suit your system. o Shortlist only those who clearly fit both your IP and OOP ideas.
+5. Run a quick financial check o Look at current and projected Wage spend. o Decide in advance which sales will fund which arrivals.
+6. Use Pitch Opportunities wisely o When you move, move decisively. o Make promises that you have already budgeted for in the Squad Planner.
+7. Review dressing room impact before finalising o Check Personalities, Status, and Wage compared to current leaders. o Imagine how this player behaves after three games out of the team.
+8. Close the window and stick to what you built
+73
+
+nonogaming014@gmail.com 05 Apr 2026
+o Do not panic buy on Deadline Day unless you have lost someone unexpectedly.
+o Trust the process you just followed. Follow this ritual for two or three windows and you will feel it. Your squad will start to look like an intentional group, rather than a random sticker album. You will walk into the Recruitment Hub, and it will not feel like a casino. It will feel like an office. And that is where I want you, gaffer. In the next chapter we will step away from agents and spreadsheets and talk about what happens when all these personalities share a dressing room. Dynamics, Leadership, Promises, and how to keep your FM26 world from turning into a mutiny the first time you drop the wrong player.
+74
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 4 ­ Roy's checklist
+Roy's checklist  Start every window by opening Squad Planner, not by opening the transfer list.  Tag players as `core', `rotation', `depth', `for sale', and `for development'.  Use Recruitment Focus and Recruitment Hub to search for profiles, not just
+wonderkid lists.  Check TransferRoom and similar tools for realistic targets within your financial budget
+and Reputation level.  Judge signings on their fit for your game model and wage structure, not only on stars
+and YouTube hype. If you only remember 3 things from this chapter... 1. Squad building is long-term; Transfer windows are only chapters in that story. 2. Recruitment is about profiles and roles first, Attributes and stars second. 3. A good signing is one who fits the tactic, the wage bill and the dressing room.
+75
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 5: Keeping The Dressing Room Onside
+Dynamics, Promises, and the new emotions of FM26
+76
+
+nonogaming014@gmail.com 05 Apr 2026
+There is a moment just before a big game when the tactics board goes blurry. You look around the dressing room, and you realise it is not about your clever In Possession shape or the little tweak you made to the block out of possession. It is about the faces in front of you. One striker staring at the floor because you broke a promise. One senior player folding his arms because you gave the armband to someone else. One youngster trying to look confident while half the room silently doubts him. FM26 has made everything on the pitch smarter. Match engine, pressing, rotations, all of it. That means your biggest advantage compared to the AI is not some super-secret corner routine. It is whether you can keep twenty-five egos pulling in, roughly, the same direction. This chapter is not about sliders. It is about people. And if you get this wrong, your Unity powered, beautifully animated, tactically perfect FM26 side will still collapse under the weight of one sulking striker.
+77
+
+nonogaming014@gmail.com 05 Apr 2026
+1. Roy's Story from The Tunnel: When One Sulking Striker Ruins a Season
+Let me tell you a story I have seen a hundred times in FM. You take over a club in FM26. Your best player is a striker, a proper talisman. Media star, top Wage, Team Leader in Dynamics. You sit down to renegotiate his contract and, in your enthusiasm, you promise him:
+· `Star Player' status · Leading the line in every big game · A tilt at European football in two seasons Then you build your new tactical identity from Chapter 3. High-pressing, disciplined block, lots of work off the ball. Three months later, that same striker has scored three goals, presses like a pensioner, and refuses to track back. The data says your team looks better with a more mobile forward. You do the brave thing. You drop him. What happens next is pure FM26 Dynamics. · His morale tanks. · His happiness panel flips to "concerned." · Other senior players in his Social Group start to worry. · The Team Leaders section in Dynamics suddenly shows a big red negative face next
+to your name. It does not matter that your replacement has better xG per 90. Your season is now living on the emotional edge because you made promises your tactical plan could not keep. That is the core lesson of this chapter: Every decision you make in Dynamics should match the way you built your tactics and recruitment. If it does not, the dressing room will eventually punish you.
+78
+
+nonogaming014@gmail.com 05 Apr 2026
+2. Personalities, Traits and Pressure: What Still Matters in FM26
+FM26 has changed a lot on the pitch, but the language of player Personalities is still your first line of defence off it. You will still see:
+· Professional, Fairly Professional, Low Determination, Temperamental types · Player traits that interact with your style, like "Places Shots", "Dwells on Ball", "Gets
+into Opposition Area" · Mental attributes like Determination, Work Rate, Teamwork, and Composure that
+affect how players behave when things get tense. The difference is that, in a smarter engine and more advanced Dynamics setup, these things show up more clearly. A Highly Ambitious player with good Determination might react badly to being stuck behind two others in his position. A casual youngster with low professionalism will be much more likely to slack on training and fall behind the curve. Your job is to stop thinking of personalities as flavour text and start thinking of them as risk profiles. When you sign someone, ask:
+· Does his Personality fit the culture I am trying to build? · Do his Traits help or hurt my In Possession and Out of Possession ideas? · How will he react if I have to rotate him for tactical reasons? You are not just recruiting Attributes. You are recruiting behaviour under pressure.
+79
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Hierarchy and Social Groups: Who Really Runs Your Dressing Room
+Open the Dynamics screen and really look at it. At the top you have your Hierarchy:
+· Team Leaders · Highly Influential Players · Other Influential Players · The rest
+These names matter more than your tactical screen, because they are the people everyone else is watching. Then you have Social Groups:
+· Core Social Group · Secondary Social Groups · Maybe an isolated player or two
+80
+
+nonogaming014@gmail.com 05 Apr 2026
+This is FM26 quietly telling you where the lines of tension and loyalty sit. If you fall out with a fringe player who barely speaks to anyone, the impact is limited. If you lie to a Team Leader, the entire Core Social Group will often join the revolt. Practical uses:
+· When you are about to break a Promise or drop someone, always check his place in the Hierarchy first. The higher he is, the more careful you must be.
+· When signing a new player, check his likely social fit. Players from the same nation or language group will tend to bond automatically, for good or bad.
+· When choosing who to defend in a dispute, look at who stands behind them in the social groups. You are not just dealing with one player, you are dealing with his circle.
+In other words, the Dynamics screen is not a side feature. It is your political map. You can either learn to read it or keep walking into coups by accident.
+81
+
+nonogaming014@gmail.com 05 Apr 2026
+4. Squad Status and Playing Time Plans: Promises You Cannot Fake Anymore
+FM has always had squad statuses, but FM26 makes the gap between what you promise and what you deliver feel sharper because the whole game around it is more alive. You still see:
+· Star Player · Important Player · Regular Starter · Squad Player · Fringe Player · Youngster or Breakthrough Prospect types On top of that, you set Playing Time plans over a season, which the player and his agent actually remember.
+82
+
+nonogaming014@gmail.com 05 Apr 2026
+If you label someone Star Player and his minutes look like a rotation option, you are planting a time-bomb in Dynamics. If you tell a youngster he will "become a Regular Starter in the near future", then immediately loan him out to a team where he does not play, he is going to feel cheated. The fix is boring, but brilliant. Plan before you promise. Use your Squad Planner and tactics from earlier chapters and ask:
+· How many realistic minutes are there in this role? · Can my team carry two players with Star Player expectations in the same position? · Which youngsters are actually in line for serious minutes, not just vibes? Set statuses a little more cautiously than your heart wants. It is nearly always better to upgrade a player later than to downgrade him and fight the explosion.
+83
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Morale, Form, and Confidence: Reading the Mood Before It Explodes
+Morale is the most misunderstood thing in the game. Most gaffers check the smiley face's colour and move on. In FM26, that is not enough. You have to read context. Think about three layers:
+1. Individual morale o Has this player had a run of games or has he been in and out of the team? o Is his morale low because of poor form, broken promises, or outside noise like transfer bids?
+2. Unit morale o Is everyone in one area of the pitch a bit miserable? That might be a tactical or rotation problem. o Are your defenders frustrated because your new attacking system leaves them exposed?
+3. Team momentum o A run of wins can hide all kinds of small concerns. A run of losses can make even small frustrations feel huge.
+Practical habits: · After a bad week, open Dynamics before you open the Tactics screen. If you see fresh concerns, deal with them quickly, even if the solution is only a calm, one-to-one chat. · Use matchday body language and reactions as extra clues. If multiple players look anxious or frustrated, even when you are winning, something deeper is brewing. · Do not be afraid to rest a mentally exhausted player, even if he is physically fine. In a long FM26 season, a well-timed rest can repair morale and keep a leader onside.
+Confidence is fragile. Treat it like a resource, not a side effect.
+84
+
+nonogaming014@gmail.com 05 Apr 2026
+6. Captains, Leaders, and Bad Apples in a Dual
+Tactics World
+Choosing a captain in FM26 is not just a tick-box exercise. Your captain is the person who will carry your tactical identity into the dressing room when you are not in the room. If he hates rotation, hates the style you play, or has poor professionalism, he will quietly poison your work. When you pick your Captain and Vice-Captain, look at:
+· Leadership, Teamwork, Determination · Personality description · Role in your In Possession and Out of Possession system · Position in the Hierarchy and Social Groups Ideally, your Captain is: · A nailed-on starter in your main system · Respected in the Hierarchy · A carrier of your culture, not just your armband Bad apples are tougher. Sometimes your best player is also your worst character. You can try three things: 1. Reform
+o Use Mentoring Groups with positive leaders. o Emphasise responsibility in team talks and interactions. o Be consistent and fair with discipline. 2. Ring-fence o Accept that he is who he is. o Protect the rest of the squad from his influence by not giving him more status
+than necessary. o Avoid making him Captain or your public face. 3. Remove o If he is dragging multiple social groups into conflict, sell him while his value is
+high and build around better characters.
+85
+
+nonogaming014@gmail.com 05 Apr 2026
+FM26 will not sugar coat the fallout. Get a leadership call wrong, and you will feel it in Dynamics and performances.
+86
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Team Meetings, One-to-Ones, and Interaction Flow in FM26
+Conversations are where you apply soft power. FM26 still gives you:
+· Team Meetings before big runs of fixtures, or after slumps · Individual talks about form, training, promises, and the future · Half-time and full-time team talks that shape morale and motivation week-to-week The mistake most managers make is clicking through them on autopilot. My advice: · Use Team Meetings sparingly. If you call one every time you lose two games, the
+squad will start to ignore you. Save them for real turning points: A brutal losing streak, a title run-in, a major injury crisis. · Be specific in one-to-ones. Do not just say "you have been poor." Point to the form, acknowledge the reason, and give a clear expectation. "Form has dipped, but I believe in you. Keep working and you will get your place back." · Match your tone to reality. If analysts say you were battered, do not tell the team you were unlucky. If you robbed a win, do not crucify them. Pay attention to the little reaction text. If a player "seems delighted", bank that. If multiple players "seem to lose confidence", adjust how you talk to them next time. You are not only setting instructions. You are setting narratives.
+87
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Press Conferences, Media, and Protecting Your Players
+FM26 has dressed the media side up more, but underneath, the same old truths remain. The press can:
+· Amplify pressure on underperforming players · Turn quiet discontent into full supporter unrest · Give you a chance to protect your own or throw them under the bus You do not need to attend every press event personally. Delegating some to your Assistant Manager is perfectly reasonable if you hate them. But every time you do step in front of the microphones, have a plan. Golden rules: · Protect young players in bad form. Deflect blame, talk about potential, remind
+everyone they are learning. · Be measured with criticism. Calling out the whole squad publicly after every defeat
+will numb the effect very quickly. · Use media to manage expectations. If you are overachieving, it is fine to gently
+remind everyone that survival was the target. Also watch for press questions that poke at known dressing room issues. If reporters are hinting at a split or a player being unhappy, that usually means Dynamics is already registering it. Deal with the problem inside the club, not through the newspapers.
+88
+
+nonogaming014@gmail.com 05 Apr 2026
+9. Fans, Supporter Confidence, and the Fan Liaison
+Officer
+FM26 has put more emphasis on supporters as their own entity with their own expectations. They care about:
+· Results, obviously · Style of play · Use of youth talent · Transfer decisions, especially selling heroes or making controversial signings · How you handle derbies and big rivals The supporter confidence panel and feedback from your Fan Liaison-type staff member give you a second opinion alongside the Board. Sometimes, the two will agree. Sometimes, they will be miles apart. Maybe the Board is delighted you are stable in mid-table, but fans are furious you have gone too pragmatic and abandoned the attacking identity the club is known for. Maybe supporters love that you are giving academy kids minutes, even while the board nags you about prize money. You cannot please everyone. But you can avoid obvious, unnecessary fights. Practical habits:
+· Before making a controversial sale, check what the fans think of that player. Selling a Fringe Player they do not care about is fine. Selling a "club icon" without a clear replacement will carry a cost.
+· Pay attention to fan opinions on style. If they value attacking football, and you have been too cautious, consider using your Plan B and Plan C tactics to give them more in games where you can afford it.
+· Treat Cup derbies like events. Winning one big rivalry game can buy a surprising amount of patience.
+Supporters are not just a bar at the top of the screen. They are another player in your political game.
+89
+
+nonogaming014@gmail.com 05 Apr 2026
+10. Roy's Weekly Ritual: A Simple FM26 Dynamics
+Check-Up
+Let's finish this chapter the same way we finished the recruitment one: with a ritual. Once per week (in-game), preferably before you smash Continue on a new block of fixtures, do this:
+1. Open Dynamics o Check the Hierarchy. Any new faces moving into or out of key tiers? o Look at Social Groups. Has anyone become isolated or moved between groups?
+2. Review Happiness and Promises o Filter your Squad View to show Happiness, Concerns, and Promises. o Note anyone who has gone from "Content" to "Concerned" since last week.
+3. Check Supporter Confidence o Read the Supporter Summary. What are they pleased with? What worries them? o Are there any red flags around style, youth usage, or a recent transfer?
+4. Scan Morale and Form o Sort the squad by Morale. Identify one or two key players you might need to lift with a chat or rotated rest. o Check recent form, especially for your leaders and Captain.
+5. Look At the Schedule Ahead o Identify a week where you can give a tired Leader a rest without disaster. o Spot any big games where a Team Meeting or strong team talk might help.
+6. Pick Two or Three Actions Examples: o Have a calm word with a Fringe Player about his playing time. o Praise a youngster for form to strengthen his buy-in. o Promise a clear pathway to an unhappy rotation player if you genuinely intend to use him. o Adjust your starting eleven to avoid breaking a playing time Promise for a key status player. 90
+
+nonogaming014@gmail.com 05 Apr 2026
+Then you go back to your tactics with a clean conscience. You will still have blow-ups. You will still have grumpy stars and awkward questions. That is football. But with this ritual, you will catch fires when they are still sparks, not when the whole dressing room is flaming. In the next chapter, we zoom out once more and talk about the other half of being a modern FM26 manager: the money. Budgets, Wages, Clauses, Facilities, and how to keep your club financially stable while you chase your tactical dream.
+91
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 5 ­ Roy's checklist
+Roy's checklist  Check Dynamics at least once a week in-game.  Know who your Team Leaders and most influential players are.  Match squad status, Wages and Actual Playing Time as closely as you can.  Be careful with Promises, and only make ones you are genuinely prepared to keep.  Pay attention to Supporter Confidence, as well as Board Confidence when making big
+calls on heroes. If you only remember 3 things from this chapter... 1. You manage people first, players second. 2. Most dressing room explosions start as one or two small broken promises. 3. Dynamics and Supporter Mood can save or sink a tactic that is "good on paper".
+92
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 6: Running The Club Like a Gaffer, not a Gambler
+Board Confidence, FM26 Finances, and building a club that survives your ideas
+93
+
+nonogaming014@gmail.com 05 Apr 2026
+You know what separates the managers who last ten seasons from the ones who get sacked halfway through year two? It is not always trophies. Plenty of gaffers win things and still get binned because the board are staring at a minus sign on the balance sheet, the wage bill is out of control and the Club Vision screen looks like a failed school report. FM26 has made the football smarter. It has also made the context louder. Board confidence, Supporter Expectations, financial graphs, and rules pop up more clearly. The game is basically asking you: "Can you play the romantic on the touchline and the accountant in the office at the same time?" In this chapter, we step out of the dugout and into the boardroom. Keep the tracksuit on, though. You still need to smell of grass while we talk numbers.
+94
+
+nonogaming014@gmail.com 05 Apr 2026
+1. Roy Opens the Finances Screen: Winning Games, Losing Money
+Picture this. You are flying on the pitch in FM26. Your new tactic from Chapter 3 is humming, your recruitment from Chapter 4 looks clever, your Dynamics from Chapter 5 are stable. Then you click the Finances tab. The Overall Balance is sliding down each month. The wage total is passionately kissing the red line. The board's confidence on "club finances" is quietly drifting from green to yellow. You open the Club Vision screen and see a line like:
+· "Work within wage budget: Not Satisfied" Welcome to modern football. FM26 does a better job of showing you this early. The Finances tab gives you graphs of Income and Expenditure, long-term Projections, and a breakdown of what is actually killing you. The rules around financial discipline are explained in-game, so you do not have to use the alt tab and search every time you get a warning. The lesson is simple. You cannot ignore that tab until the bank is empty and then cry about it. So, we are going to go through it like you would go through an Opposition Report. Calm, curious, honest.
+95
+
+nonogaming014@gmail.com 05 Apr 2026
+2. Board Confidence, Club Vision, and Supporter
+Confidence in FM26
+Think of yourself as having two bosses in FM26. One wears a suit. The other sits in the stands. The board judge you through Board Confidence and Club Vision. They care about:
+· League position versus expectations · Progress in cups and Europe · Financial health · Whether you are hitting agreed goals, like "Develop players through the youth
+system" or "Sign high reputation players" Supporters have their own Supporter Confidence view. They care about:
+· Results, obviously · Style of play · How you handle rivals and derbies · Transfers, especially selling heroes or signing unpopular players · Use of youth and homegrown talent FM26 presents these two reports side by side much more clearly. That is important, because you can be smashing one and failing the other. · You might be a board favourite because you are keeping costs down and finishing
+where expected, while fans are furious because your style of play is dull. · Or fans might adore you for attacking football and giving kids a chance, while the
+board are stressed because you keep missing financial targets. You need to read both. Before each season, look at the Club Vision screen and ask:
+· What are the non-negotiables for the board this year? · Which parts of Supporter Confidence matter most to me? Then plan your football and your finances to hit the overlap. That is where safety lives.
+96
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Reading the Numbers: Balance, Projections, and the Finances Tab
+Let's break the Finances screen down into human language. When you open it, focus on three things:
+1. Overall Balance o Is the number rising, staying steady, or falling over time? o Use the graphs to look over 12 or 24 months, not just this week.
+2. Profit and Loss o Are you making money most months, or only when prize money hits and transfer windows open? o Are wages and other running costs obviously higher than regular income?
+3. Projections and Debt o Does the projection show you sliding into a hole in two or three seasons if you keep this up? o What loans and interest payments are you carrying?
+Ignore the temptation to only look at the "transfer budget" number and nothing else. That is like reading just the headline of a news story and acting like you know the whole thing. If the graph is heading downhill, you are not unlucky. You are running a deficit. And just like you would not ignore a tactical pattern where you keep conceding the same goal, you do not ignore a financial pattern where every month ends in red ink.
+97
+
+nonogaming014@gmail.com 05 Apr 2026
+4. Transfer and Wage Budgets: How Much You Really Have to Spend
+Everyone loves that inbox message. "The board have set the initial budgets for next season." You see the transfer number. You see the wage number. Your brain immediately starts drawing up shopping lists. Slow down, gaffer. Those numbers are not free money. They are part of a wider ecosystem. Key points:
+· The transfer budget is not a challenge to spend every penny. It is a ceiling. · The wage budget is tied heavily to board confidence and financial rules. Blow it, and
+you will be told to cut costs ­ sometimes at the worst possible time. · Many leagues in FM model versions of financial sustainability rules. That means
+persistent overspending will eventually trigger restrictions. Use the budget slider between wages and transfers sensibly. For example:
+· If you have room in wages, you can sometimes lower the Wage Budget slightly to add a bit more in the transfer kitty.
+· If you have signed big earners and wages are tight, you might have to sacrifice some transfer room to stay within limits.
+Treat it like balancing the shape of your tactic. You do not want one side of the screen overcommitted and the other empty. Before any big signing, ask:
+· What is his fee, including instalments and add-ons? · What is his weekly wage and bonus structure? · How does that look when I project a year or two ahead? If the answer makes the graphs look ugly, he might not be "affordable" - no matter what the transfer budget says this window.
+98
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Building a Wage Structure That Matches Your Squad Hierarchy
+Remember that Hierarchy you saw in Dynamics? Now imagine it as a wage list. If a Regular Starter, who sits in the "Other Influential" section, is earning more than your Team Leaders and Captain, you are asking for trouble. A simple, powerful habit is to build wage bands that match your squad statuses:
+· Star Player band · Important Player band · Regular Starter band · Rotation band · Youngster band You do not need exact numbers written down, but you should have a feel. For example: · Star Players are between 80 and 100 on your scale · Important Players between 60 and 80 · Regulars between 40 and 60 · Rotation 20 to 40 · Youngsters under 20 Then, when you negotiate, you keep people roughly inside their band. If a player who is clearly a rotation piece demands wages in the Important band, you either: · Refuse and risk losing him · Or prepare to upgrade his squad status and role to match The wage bill is more than a financial number. It is a respect map. If you let one agent bully you into breaking the structure, you can expect others to knock on your door soon.
+99
+
+nonogaming014@gmail.com 05 Apr 2026
+6. FFP, PSR, and Surviving Modern Rulebooks
+You do not need to be a lawyer to manage finances in FM26, but you do need to respect the rulebook. Different competitions in the game model variants of Financial Fair Play, profit and sustainability, and similar regulations. The details differ by league, but the principle is the same. Spend wildly beyond your means for long enough and you will:
+· Receive warnings · Face restrictions on spending · Risk fines, limits on squad registration, or, in some cases, tough board demands The polite emails about "keeping within financial regulations" are not decorations. They are early warning sirens. When you see them, do three things: 1. Open the Finances tab and check projected Profit and Wage spend. 2. Look at big earners who are not core to your plan. 3. Consider whether you can delay large, instalment-heavy deals to another window. FM26 also does a better job of explaining rules and terms inside the game, so use the ingame help panels when they appear next to complex subjects. If the game is offering you a clear explanation of what a rule means, read it like you would read a Scouting Report. You are not expected to rule the system. But you are expected to acknowledge it.
+100
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Income Streams: Prize Money, TV, Transfers, and Merchandise
+Most managers in FM think income means "board injection" and "selling players". There is more to it. Your club's money in FM26 comes from several channels:
+· Prize money from league position and cups · TV revenue and solidarity payments · Matchday income and season tickets · Commercial deals and sponsorships · Player sales and sell-on clauses You do not have direct buttons for most of these. You influence them through performance, style, and smart trading over several seasons. Examples: · A strong league finish and good cup run one year will often bump prize money and
+interest the next. · Reaching European competitions can transform your balance almost overnight. · Developing and selling players for profit builds a reputation that can help attract
+better young talent and future fees. · Attractive football and star names can boost attendance and, over time, help
+commercial income. The key is to think long-term. You might deliberately accept a slightly smaller fee now in exchange for a healthy sell-on percentage, betting that the player will move again later at a big price. You might decide to keep a promising academy graduate rather than cashing in early, knowing that his contribution to performances and morale outweighs the immediate fee. Money in FM26 is a river, not a pond. The more you respect its flow, the easier it is to avoid droughts.
+101
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Facilities and Infrastructure: Spending on Bricks Instead of Just Boots
+Transfers are exciting. Training ground expansions are not... Until year five, at least. All those wonderkids you keep signing will hit a development ceiling if your facilities are poor. All those staff you scouted so carefully in Chapter 4 are less effective if they are working in a shed. Facilities matter. You will usually see things like:
+· Training Facilities · Youth Facilities · Youth Recruitment · Junior Coaching · Stadium: Capacity and condition When you request improvements from the board, you are asking for long-term investment. The board will judge these requests against both Finances and Club Vision. Some practical guidelines: · If you are running a youth-heavy project, upgrades to Youth Facilities and Coaching
+should be a priority as soon as finances allow. · If your training facilities lag behind the level of league you are trying to reach, ask for
+improvements as part of a wider "we are serious now" push. · Do not ask for everything at once when the Balance is already fragile. Pick one
+upgrade, let it land, then revisit later. Think of Facilities as invisible attributes for your club. They do not win the next match. They tilt the next decade.
+102
+
+nonogaming014@gmail.com 05 Apr 2026
+9. Choosing the Right Save Type for Your Wallet
+Different clubs in FM26 play by different financial rules in practice, even if the basic mechanics are the same. You will see a few broad types. Sugar daddy clubs
+· Constant injections of cash · Huge transfer budgets, high wages · The Board may be generous, but also impatient Here, your job is not to hoard every penny, but to avoid building a bloated, fragile squad. You can afford mistakes, but not a dressing room full of egos on long deals. Fallen giants with debt · Huge stadiums and fanbases · Big reputations, but heavy loans and a negative balance · Tighter wage and transfer parameters than the name suggests Here, you are essentially a cleaner. Your early seasons are about survival and smart consolidation, not instant, galactic domination. Underdogs and rebuilds · Small budgets · Reliance on loans, free transfers, and youth · Every financial decision hurts or helps Here, you live on the edge. A single bad contract can lock you out of two other signings you desperately need. But the upside is that every smart deal feels enormous. Before you even click "Start Game", be honest with yourself: · Do I want the pressure of managing a giant budget? · Do I enjoy clawing my way out of debt with clever trading? · Do I fancy the scrap of bargain-hunting in lower leagues? Then design your financial mindset around the type of club you chose. Do not play a sugar daddy save like a non-league grind, and do not play a bankrupt giant like a fantasy sandbox.
+103
+
+nonogaming014@gmail.com 05 Apr 2026
+10. Roy's End of Season Financial Review: A Simple
+FM26 Health Check
+Just like we built weekly and window rituals in earlier chapters, I want you to build an endof-season ritual for money. Once the last ball of the season has been kicked, before you dive into transfer rumours, sit down with a coffee and run this check.
+1. Open Finances o Look at the Balance graph over the season. Did you move up, down, or sideways? o Check Profit and Loss. Were you net-positive without transfers, or did player sales bail you out?
+2. Review wage spend o Compare current wage bill to the start of the season. o Identify any high-earners who are no longer key to your tactic or hierarchy.
+3. Check Club Vision and Board Confidence o Are the financial objectives green, amber, or red? o Did you overspend or meet the wage rules as promised?
+4. Check Supporter Confidence o How do fans feel about your transfer business and general direction? o Did you sell anyone they are still angry about?
+5. Scan facilities and infrastructure o Have you upgraded anything in the last season or two? o If not, is next season the time to push for a training or youth improvement?
+6. Set three goals for next season One sporting, one financial, one infrastructural. For example: o Sporting: "Qualify for Europe." o Financial: "Reduce wage bill by 10 percent while keeping core players." o Infrastructural: "Secure one training facility upgrade."
+7. Then, and only then, open the transfer hub
+104
+
+nonogaming014@gmail.com 05 Apr 2026
+o With those goals written down, you go back into Squad Planner, Recruitment Focus, and TransferRoom knowing exactly how aggressive you can be.
+Do this for two or three seasons in a row, and you will feel a shift. You will stop being surprised by financial emails, because you will already know where the numbers are going. You will negotiate with agents from a position of clarity, not panic. And you will build squads that can survive your ambition, without dragging the club into a mess. That is what being a proper FM26 gaffer looks like. In the next chapter, we circle back to the training ground and matchday. We will build practical routines, training blocks, and match preparation habits that squeeze every drop out of the squad and club structure you have put so much thought into.
+105
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 6 ­ Roy's checklist
+Roy's checklist  Open the Finances tab regularly, not only when the board shouts at you.  Keep a rough wage structure that matches your hierarchy and stick to it.  Read Club Vision and financial objectives properly at the start of each season.  Understand how your club actually makes money, not just where the transfer budget
+number sits.  Treat facilities and infrastructure upgrades as long-term investments, not optional
+decorations. If you only remember 3 things from this chapter... 1. You cannot ignore the balance sheet and call yourself successful. 2. Wages usually kill you faster than transfer fees. 3. A club that invests in facilities and keeps finances under control will outlast any short-
+term project.
+106
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 7: Owning the FM26 Week
+Training ground, Data Hub, and matchday routines that actually fit the new game
+107
+
+nonogaming014@gmail.com 05 Apr 2026
+There is a trap that ruins more FM saves than any tactic ever will. You hit Continue. You play the next game. You hit Continue again. Repeat until the squad is half-dead and everyone is training on "whatever the assistant picked." FM26 is too sharp for that. The match engine is smarter, your dual tactic from Chapter 3 is more complex, your recruitment is more precise. If the week between games is still chaos, you are pouring petrol into a Ferrari and then driving it like a shopping trolley. This chapter is about owning the rhythm of the week. Not in some spreadsheet-based, nerdy way. In a very simple "Roy walks in on Monday morning, looks at the calendar, and builds a plan" way.
+108
+
+nonogaming014@gmail.com 05 Apr 2026
+1. Roy's Monday Morning: Planning the FM26 Week from the Calendar First, Not Last
+Imagine Monday morning at your virtual training ground. You open FM26, your inbox is shouting at you, your assistant wants friendlies, your physio wants scans, the media want quotes. Ignore them for one minute. Go to the Calendar. Look at:
+· How many matches you have in the next fourteen days · How much travel there is · Where the gaps are for full training days · Any brutal `three games in seven days' runs
+109
+
+nonogaming014@gmail.com 05 Apr 2026
+That view decides everything else. If you have one game on Saturday and nothing midweek, you can afford:
+· One tough, physical and tactical day early in the week · One heavy, tactical and unit-based day · A crisp match preparation block before the weekend If you are staring at Saturday, Tuesday, Thursday, Sunday - you are not building "perfect football training". You are managing survival. The mistake most gaffers make is starting with "What is the best schedule?" instead of "What does this week allow?" Roy's rule: Calendar first, schedule second, ego last.
+110
+
+nonogaming014@gmail.com 05 Apr 2026
+2. Who Runs Training in FM26: You, Your Assistant,
+Or a Hybrid Setup
+FM26 still lets you decide how hands-on you want to be with training. You have three broad options:
+1. Full control You design every schedule, every day, every block. Maximum control, maximum time sink.
+2. Full delegation You hand training to your assistant and only occasionally peek at what he is doing. Minimal hassle, mixed results depending on how good he is.
+3. Hybrid You let the assistant handle the boring base work, and you take control of key weeks and key sessions.
+For most gaffers, Hybrid is the sweet spot. Here is how it can look:
+· Day to day, your assistant runs a balanced schedule that keeps fitness and familiarity ticking over.
+· Before big runs of games, you jump in and edit that week. · You add extra Match Preparation, Set Piece, and Tactical sessions where needed. · You drop intensity a touch when tiredness indicators start to worry you. The important bit is this: If you delegate, hire the right assistant. Check his attributes for: · Tactical Knowledge · Determination and Discipline · People Management If he is a clown, your training will reflect it. Do not be afraid to bin a poor assistant the same way you would bin a poor striker.
+111
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Building FM26 Training Schedules: Principles
+Before You Download Anything
+You will see hundreds of "Best FM26 Training Schedules" on forums and YouTube. They can be useful. They can also be completely wrong for your squad, your level, and your style. Before you borrow anyone's work, understand the core principles. Each week, you are balancing:
+· Physical work Fitness, endurance, sharpness, but also fatigue and injury risk.
+· Technical work First touch, passing, finishing, defending drills.
+· Tactical work Team shape, pressing triggers, transitions, your In and Out of Possession ideas.
+· Match Preparation Familiarity with your systems, set piece routines, specific opponent focus.
+· Recovery and rest Because tired players do not learn or perform.
+Then you wrap that around your identity. · High-pressing side: More physical and tactical work on pressing, transition, and stamina, but with strict control on fatigue. · Possession-based side: More technical and tactical work, less pure running, lots of game-based drills. · Counter-attacking side: Work heavily on defensive shape, transitions, and decisionmaking.
+If you adopt a community schedule, read it like a menu, not scripture. Ask:
+· Does this schedule make sense for the number of matches I play at my level? · Does it match my style from Chapter 3, or is it built for a completely different idea? · Can my players at this club actually handle this intensity without breaking? If you cannot answer yes, tweak before you apply.
+112
+
+nonogaming014@gmail.com 05 Apr 2026
+4. Youth and B Teams: Aligning Every Squad with Your Idea
+Your first team is only half of your football club. The rest are the kids and the nearly men. FM26 gives you enough control to make sure your U18s, U19s, U21s, and B teams are not just doing random drills while you chase glory with the seniors. Use that.
+· Set similar overall training philosophies for the youth squads, as you do for the first team. If your senior side is built around pressing and quick transitions, do not let the youth sides train slow, controlling tiki-taka all year.
+· Use individual training to push key wonderkids towards the roles you actually use in your tactical system.
+· Check youth training from time to time. If your Head of Youth Development is spamming generic schedules that ignore your identity, step in and adjust.
+Also think seasonally. You might decide:
+· Early season: More physical and tactical work for the entire club, including youth, to set standards.
+· Mid-season: Stabilise - focus on tactical cohesion and maintaining sharpness. · Late season: Protect legs, especially in youth if they are backing up your first team. The point is not to micromanage every kid. It is to make sure the pathway from academy to first team does not feel like switching to a different sport.
+113
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Part Time Clubs and Training Limitations: Surviving with Fewer Sessions
+If you are managing lower down the pyramid, you will quickly notice you are not working with the same daily calendar as the elite. Part-time clubs have:
+· Fewer training days per week · Shorter windows for sessions · Players who work real jobs in FM terms, which limits intensity This is not a bug. It is your reality. With limited sessions, you cannot do everything. You must prioritise. Good patterns for part-time sides: · One session focused on defensive shape and set piece defending · One session focused on attacking patterns and set piece attacking · Light physical work when possible, but not at the expense of basic tactical
+understanding Match Preparation becomes more valuable here. You have less time, so you use it to hammer home the absolute core of your plan. When your club turns professional later in the save, and you unlock full-time schedules, you will feel the difference. That is when you can start adding more refined technical and physical work without sacrificing the basics. Until then, think like a non-league coach. One clear idea, trained well, beats eight ideas trained badly.
+114
+
+nonogaming014@gmail.com 05 Apr 2026
+6. Match Preparation in FM26: Familiarity Over Fiddling
+Match Preparation has always been one of the most misunderstood sections. In FM26, with your dual tactics, it is even more tempting to spam "Match Tactics" and hope for a magic familiarity bar. Here is a calmer approach. Use Match Prep. to:
+· Reinforce tactical familiarity early in the season, or after significant tactical changes · Work specifically on newly-installed set piece routines · Prepare slightly for a very different type of opponent than usual Do not use it to: · Fill every available slot blindly · Replace all physical and technical work week after week · Fix bad tactics with extra training, instead of better ideas Remember that actual matches do a huge amount of the familiarity work for you. If you keep changing entire systems, no amount of Match Prep. will save your cohesion. So, especially in the first season with a new tactic: · Add some Match Tactics and Set Piece work on weeks where you only have one
+game · Focus more on Rest and Recovery around tight schedules, trusting matches to drive
+familiarity · Avoid panicking and suddenly ripping up your weekly plan because you lost one big
+game Match Preparation is seasoning. Your core training is the meal.
+115
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Fitness, Rotation, and Congested Schedules: Protecting Legs for the New Match Day
+FM26's match engine punishes dead legs and soft tissue injuries just as hard as older versions, sometimes harder, because the pace and pressing in modern football is modelled more aggressively. Your job is to stop heroes turning into hobblers. Tools you have:
+· Medical Centre reports on injury risk · Training Intensity indicators · Heart (Condition) and Sharpness icons that show who is ready and who is running on
+fumes During congested periods:
+· Drop overall intensity a notch. You do not need high-intensity, physical sessions when you play three times in eight days.
+· Make friends with Recovery and Rest. A proper recovery day after a brutal away game can save you more in performance than yet another half-baked training drill.
+· Rotate based on role demands. Pressing forwards and box-to-box style midfielders need more protection than the calm Deep-Lying Playmaker who jogs and passes.
+Use your Data Hub too. Look at:
+· Distance Covered · Sprints per Match · Late game drop-off If you see a key player falling off a cliff in the last twenty minutes of games, you are either overtraining him, using him in a role he cannot sustain, or refusing to rotate. None of those are noble.
+116
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Matchday 2.0 In FM26: From Tunnel to Final
+Whistle
+Matchday in FM26 feels different. New engine, new presentation, different angles, more detail. It is easy to get lost in the spectacle and forget you are still the Manager, not a spectator. Here is how I want you to approach it. Before kick-off:
+· Reassess your dual shapes. Are the In and Out of Possession formations you picked still right for this opponent and this day?
+· Confirm that key roles are filled by players who are fit enough to do the job. · Set a clear idea of how you expect the first twenty minutes to look. During the match: · Use Key Highlights or Extended, depending on how deep you want to read the game.
+Too much, and you will drown. Too little, and you will miss patterns. · Use the tactical tablet to monitor shots, key passes, and where you are winning or
+losing duels. · Make small adjustments first. Nudge the Line of Engagement, tweak pressing on one
+flank, adjust a role, rather than flipping the entire system at the first sign of trouble. At half-time:
+· Look at more than the score. Shot quality, territory, body language. · Decide if the issue is tactical, mental, or physical. Only change what matches the
+diagnosis. Late in the game:
+· Save big switches for when the situation really demands them. · Remember your Plan B and Plan C from Chapter 3. Use them deliberately, not in
+panic. FM26's matchday is built to make you feel like you are on the touchline. Treat it that way. You are there to observe and make targeted calls, not to click every available button.
+117
+
+nonogaming014@gmail.com 05 Apr 2026
+9. Data Hub in FM26: What to Actually Look At
+The Data Hub is where numbers stop being abstract and become useful coaching tools. In FM26, it still offers:
+· Shot Maps, both For and Against · xG trends over several matches · Passing Networks · Defensive actions and pressing zones · Player performance data across positions and roles You do not need all of it every week. You are not running a PhD. You are running a football team. Focus on: · Last Match Summary after big games, good or bad: Are you consistently getting
+outshot, out-created, or simply losing on finishing luck? · Shot Maps and xG across a block of games: Are your shots mostly from good, central
+areas, or are you spamming low-percentage long shots? Are you allowing high-xG chances against? · Pass Maps for your key creator and your pivot: Are you actually building through the zones your tactic claims to use? Then link it back to training. If the data says: · You are conceding too many chances from wide crosses; add defensive wide work and tweak full-back roles. · Your forwards are shooting from silly angles; Add Chance Conversion sessions and tweak roles to encourage better movement and passing options. · Your midfielders are not showing for the ball in build-up; Work on possession and support patterns. Use the Hub as a weekly "what do we sharpen next?" tool, not as an excuse to redesign everything.
+118
+
+nonogaming014@gmail.com 05 Apr 2026
+10. Roy's FM26 Weekly Routine: A `Plug N' Play'
+Template
+Let's stitch all this together into something you can actually use. Here is a simple template for a one-game week. Monday
+· Morning: Recovery for players who started, normal training for those who did not. · Afternoon: Match Review in the Data Hub. One or two notes for tactical or training
+focus. Tuesday
+· Physical and tactical work. · Drills focused around your main style. If you are pressing: Lots of intensity and shape
+work. If you are possession-focused: Lots of rondos and structured, attacking patterns. Wednesday · Technical and unit work. · Focus on combinations in the zones that matter to your dual shapes. Back four, midfield three, front line. Thursday · Match Preparation. · Teamwork and Tactics sessions, plus Set Piece routines. Light top-up of Sharpness. Friday · Lighter tactical session. · Walk through key match ideas. Maybe a bit of attacking movement and set piece refreshers. Protect legs, keep minds sharp. Saturday · Match day. · Before kick-off: A quick check of roles, fitness, and opposition scouting. After the game: Log mental notes for Monday's review. Sunday · Rest day for starters.
+119
+
+nonogaming014@gmail.com 05 Apr 2026
+· Optional light session for subs and reserves to keep them sharp.
+For two-game weeks, you compress: · Less heavy physical work · More Rest and Recovery · More targeted Match Preparation on the days between fixtures · More trust in Data Hub and match performances to carry familiarity
+You do not have to copy this exactly. The point is to stop living day to day and start running weeks with intent, because FM26 is not only about the ninety minutes; It is about the rhythm before and after. In the next chapter, we will zoom out to the long game. Ten-year saves, culture building, handling ageing squads, succession planning, and how to bow out like a legend, instead of a cautionary tale.
+120
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 7 ­ Roy's checklist
+Roy's checklist  Start each week by looking at the Calendar, not at the Training screen.  Decide who runs training: You, the Assistant, or a hybrid scheme, and set it up
+intentionally.  Use Match Preparation and Recovery sensibly around congested schedules.  Read Data Hub after matches and choose one focus to feed back into training.  Learn the match day UI tabs you actually care about and stick mostly to those. If you only remember 3 things from this chapter... 1. What you do between games matters as much as what you click on matchday. 2. Training, rotation, and Data Hub should work together, not live in separate worlds. 3. A simple, consistent weekly routine will beat random sessions and panic changes
+over a season.
+121
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 8: Playing The Long Game in FM26
+How to build a legacy, instead of just another save file
+122
+
+nonogaming014@gmail.com 05 Apr 2026
+There is a special kind of pain that only Football Manager people know. You are in season seven. You have lifted trophies, broken records, signed heroes, watched wonderkids grow. Then, over the course of eighteen, grim months, the whole thing rots. Your 32-year-old Captain suddenly looks 38-years-old. Your pressing machine cannot run anymore. Your fans are bored of you. The board vision has moved on. Your regen "golden generation" has not arrived yet. You look at the squad, then at the table, and you feel it: "If I start again now, I could have a new save up and running in an hour." That is the night most gaffers rage quit and go hunting for a shiny, new club. FM26 is the perfect game to do the exact opposite. The match engine is deeper, the Recruitment Hub is smarter, the youth systems are richer, the Supporter Confidence and board vision are clearer. It has never been easier to build a ten-season story that actually feels like a journey, not a series of one-season experiments. This chapter is about that long game. Not the sprint to the first trophy. The marathon to your testimonial.
+123
+
+nonogaming014@gmail.com 05 Apr 2026
+1. Roy's Ten-Season Save: The Night He Nearly
+Rage Quit
+Let me tell you mine. Ten seasons in. One club. I had built a monster.
+· High-pressing in and out of possession, like we set up in Chapter 3 · A recruitment machine that kept feeding me clever signings · Dynamics under control, finances solid, facilities maxed out Then the first cracks appeared. My original core, the boys who dragged us from mid-table mediocrity to champions, all hit the wrong side of thirty within two years. · The captain, who used to dominate duels, was suddenly a half-second late to every
+ball · The full-back with endless stamina started pulling hamstrings for fun · My star striker was still a legend for the fans, but living on reputation, not numbers Results dipped. Not dramatically. Just enough. Third instead of first. Quarter-Final instead of Semi. Awkward Cup exits. I did the typical gaffer things: · Blamed the tactic · Blamed the match engine · Blamed "FM scripting" when we conceded late The truth was simple. I had done what most managers do. I had built a great team. But, I hadn't built a great club. I had no proper succession plan. I had let heroes run the show for too long. I had hoarded regens without a clear pathway into the starting eleven. When the old guard declined, there was no bridge. Just a cliff. That save only turned around when I started thinking in three and five-year blocks, instead of season by season. I want that for you, gaffer. Without the crash.
+124
+
+nonogaming014@gmail.com 05 Apr 2026
+2. Planning Beyond One Season: Vision for Years 1,
+3, And 5
+FM26 gives you two tools that are perfect for long-term thinking: · Club Vision and Board Expectations · Supporter Expectations and Confidence
+Most people read them as pressure. You are going to read them as scaffolding. At the start of a save, sit down and sketch three checkpoints:
+· End of Season 1 Where do you realistically want to be in the league, Europe, squad-building, and finances?
+· End of Season 3 What should have changed by then? Core of the team, style of play, place in the league pecking order?
+· End of Season 5 If everything goes well, what does your club look like? Are you a title challenger, a regular European visitor, a youth powerhouse?
+Write down simple statements, like: · Season 1: Stabilise mid-table, clear dead wages, implement my game model · Season 3: Qualify for Europe, core eleven in prime age, wage structure under control · Season 5: Consistent title challenge, academy producing first-teamers, finances in the black
+Then, line those up against your Club Vision. · If the board are demanding a league title by Season 3, but your plan is still "maybe Europe", you know there is friction coming. · If supporters want attacking football and youth, while the board are conservative, you know you will have to be clever in your communication.
+The point is not to predict everything. The point is to stop treating each season as an episode and start treating it as a chapter in one story. FM26 is brilliant for that because it remembers. Your past league finishes, cup runs, transfers, promises, and style all colour how future seasons feel. So, you might as well give those seasons a plan.
+125
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Age Profiles and Succession Planning: Replacing
+Heroes Before They Die on The Pitch
+Open your Squad Planner and Views. Add a column for Age. Now, instead of just seeing Positions and Ability stars, you see something else:
+· Clusters of players in similar age ranges · Positions where everyone is young · Positions where everyone is old · A spine that might be peaking, or rotting What you want, long-term, is a rolling spine. · One or two leaders in their late twenties or early thirties · A good chunk of `prime' players between 23 and 28 · A few youngsters who are already contributing and ready to step up What you must avoid is an entire spine ageing together. For example: · 29-year-old goalkeeper · 31-year-old centre-back pair · 30-year-old holding midfielder · 30-year-old star striker That looks lovely in the short term. Experienced, cohesive, strong. Then, two seasons later, they all hit a decline at once, and you are trying to replace half your spine in one window. Succession planning in FM26 looks like this: · In Season 2 or 3, you deliberately sign or promote a 22-year-old centre-back to learn
+under the 31-year-old leader · You bring in a young holding midfielder before your veteran looks weathered, not
+after · You sign your striker's understudy while he is still scoring, not when he has already
+fallen off a cliff This means making awkward calls. Sometimes, you sell a favourite one or two seasons before you absolutely have to. It hurts in the short-term. But it saves you from a crisis later.
+126
+
+nonogaming014@gmail.com 05 Apr 2026
+Always ask: "If this player disappears tomorrow, who replaces him in the next 18 months?" If you do not have an answer, you have homework.
+127
+
+nonogaming014@gmail.com 05 Apr 2026
+4. Regens, Newgens, and FM26 Youth Cycles
+Regens are the secret spice of any long-term save. In FM26, with bigger worlds, more competitions, and better tools to view data, it is easy to drown in them. One minute you are scouting sensibly, next minute you have thirty 17-yearolds on your books and no idea what to do with them. So, let's get disciplined. Think of regens in three layers.
+1. Your own Youth Intake This is your club's personality. You cannot sign everyone from Brazil and then complain that your local fans feel disconnected. o Treat Youth Intake day as an event every season. o Immediately tag 3-5 prospects as "genuine candidates" for long term in the first team. o Give them tailored training and realistic pathways, not just token contracts.
+2. Domestic regens These help with registration rules and supporter identity. o Keep an eye on your league's intakes. o Snap up standouts who fit your style and homegrown quotas. o Remember that fans love seeing local lads succeed.
+3. Global regens This is where it can get silly if you are not careful. o Use Recruitment Focus and Scouting Assignments to target specific regions or profiles. o Do not sign every five-star potential teenager. Think about the pathway and work permit rules. o If you bring them in, have a two or three-year plan: loan, B team, then firstteam integration.
+A handy self-assessment: · How many academy players do I want in my first-team by Season 5? · How many squad slots do I genuinely have for long-term regen projects? · How many regens have I signed in the last two seasons that I already know will never play?
+FM26 rewards you for depth of planning, not just volume of collecting.
+128
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Long-Term Tactical Evolution: Staying Fresh
+Without Identity Crisis
+There is a dangerous moment that happens around Season 4 or 5. You are winning... or at least competing. But there is a nagging feeling the AI has "figured you out", or that your beloved shape is just not as sharp as it was. So, you hit the nuclear button. You abandon your identity and try a completely new tactic you saw on some video. In FM26, with its dual In Possession and Out of Possession systems, that is even more extreme. You risk confusing your squad, your recruitment, and your own brain in one go. Instead, I want you to think in evolution cycles. Every two or three seasons, you:
+· Keep your main game model (high-pressing side, possession-based side, low-block and counters - whatever you built in Chapter 3)
+· But you refresh the details o Try a new Role pair on one flank o Adjust your OOP height and width slightly o Change how your number ten behaves between lines o Add or remove one or two pressing triggers
+You might also adopt a new Plan B that lives inside your identity. Example:
+· Years 1 to 3: 4-3-3 In Possession, 4-1-4-1 Out of Possession, heavy pressing · Years 4 to 6: Similar base, but you drop pressing slightly to reflect older legs and work
+more on positional play in possession · Years 7 to 10: You introduce a three-at-the-back option that uses the same player
+profiles, but gives you more flexibility late in games and in Europe The key is that your recruitment and training still make sense across these shifts. If you were a high-pressing side for six seasons, and suddenly decide to shift to a pure lowblock, half of your current squad is the wrong profile for the new idea. You have not evolved. You have panicked. Make changes on the back of clear data and clear patterns, not boredom.
+129
+
+nonogaming014@gmail.com 05 Apr 2026
+6. Rebuild Seasons: Knowing When to Take a Step
+Back to Go Forward
+Every long-term save has a season where you have to take your medicine. You will recognise it:
+· Too many key players are on the wrong side of their 20s and declining · Finances are stretched after years of high wages and transfer gambles · Young players are itching for game time · Results are wobbling, but not catastrophic yet At that point, you can try to patch and push. Or you can deliberately declare a rebuild season. This does not mean announcing relegation. It means you shift your targets. Instead of "we must win the title again", you quietly decide: · "If we qualify for Europe while cleaning the squad and blooding youth, that is
+success." Practically, a rebuild season looks like:
+· Selling one or two big names at peak value, not squeezing their final year · Letting three or four ageing squad players go on free transfers or cheap deals · Promoting academy prospects or signing younger replacements who fit your game
+model · Accepting that cohesion might wobble for a little while You communicate this carefully. · With the board, via Club Vision, you frame it as refreshing the squad and stabilising
+finances. · With the fans, you lean into the excitement of youth and new energy. · With the dressing room, you are honest with veterans about where they stand. If you manage that season without panic-sacking and tactical meltdown, you will often find that the season after the rebuild is the most fun you will ever have. Your squad feels fresh again. Your style is refreshed. Your finances breathe. Most gaffers never get there because they quit during the pain.
+130
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Burnout, Save Fatigue, and Knowing When to
+Walk Away
+We need to talk about you, not just the pixels. Long-term saves can burn you out.
+· Endless tweaking · Watching the same kits in the same stadiums · Feeling like every decision is work, not play FM26, with all its data, systems, and shiny screens, can amplify that. You start out full of joy and then, somewhere in Season 6, it begins to feel like admin. You have three options. 1. Refresh your challenge inside the same save
+o New internal target: Win a Champions League with at least seven homegrown players in the matchday squad.
+o Take over the club's Women's team if the structure allows, and build a parallel project.
+o Decide to rebuild the youth system from scratch and commit to a three-year academy push.
+2. Change club inside the same universe o Resign at the top and join a struggling side in the same league. o Move to another nation whilst keeping your reputation, so the story of your career continues. o Take an International Team job on top of your club work for a different flavour.
+3. End it with intention o Set a final objective. "If we win the Club World Cup, the story ends there." o When you hit it, play one last season as a `farewell tour'. o Retire your manager, instead of just closing the game in silence.
+The key word is intention. If you know you are drifting, either renew your relationship with the save by changing the context or let it end with a satisfying full stop.
+131
+
+nonogaming014@gmail.com 05 Apr 2026
+Rage quitting mid-January in some random season after a silly defeat leaves a sour taste that bleeds into your next save. You deserve better than that.
+132
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Roy's Long-Term Template: From First Contract
+to Testimonial Match
+To make all of this less abstract, here is a simple long-term template you can adopt and, if you'd prefer, adapt: Think in three-year cycles. Years 1 to 3: Foundation
+· Install your FM26 game model and dual tactics · Clear the wage bill of obvious deadwood · Build a spine aged 23-28 which fits your style · Stabilise league performance and avoid disasters · Secure at least one upgrade to facilities if finances allow At the end of Year 3, do a big review: · Is your spine in the right age range? · Is your wage structure sensible? · Do you have at least three academy or youth signings on the fringe of the first team? Years 4 to 6: Consolidation and First Peak · Push for your first major overachievement: League title, promotion, deep European
+run · Slowly phase in the next generation in two or three positions · Evolve tactics slightly, not wildly · Cash-in on one or two players at peak value to reinvest · Aim to balance books over the cycle End of Year 6 review: · How many of your original heroes are now on reduced roles or gone? · Do you have replacements for any leader/s who might retire soon? · Is there a clear "next Captain" and "next star" in the squad? Years 7 to 9: Regeneration and New Identity Layer · Plan and execute a controlled `rebuild season' if needed · Promote more kids, but only into roles they are ready for
+133
+
+nonogaming014@gmail.com 05 Apr 2026
+· Refresh one major aspect of your style to keep it modern in FM26 context · Possibly move to a new club within the same world if you want a different challenge
+without losing the narrative End of Year 9 review:
+· Is the club clearly stronger than in Year 3? · Is the squad's age curve healthy? · Do you still enjoy logging in to this world? Year 10 and beyond: Testimonial Territory By now, you have written a story. You know when your club was on its knees. You know when it peaked. You know the faces that defined the era. At this stage you can: · Keep going and see how far you can push your dynasty status · Or plan a perfect exit: One last, big objective, one last season, one last handshake. Whatever you choose, you will not have a random collection of memories. You will have a career. And that is the point of playing the long game in FM26. Not just trophies. Not just numbers. A world that remembers what you did, and a story you are proud to tell. This is why we love FM. In the next chapter, we will talk about the thing that has probably annoyed you most since the first time you booted FM26 on Unity: The new user interface (UI). We will break down Portal, tiles, cards, navigation, and everything else so that, whether you are a veteran or a new gaffer, you stop fighting the UI and start using it as a weapon.
+134
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 8 ­ Roy's checklist
+Roy's checklist  Set rough goals for where you want to be after Season 1, Season 3, and Season 5.  Use age profiles to spot positions that will soon need succession planning.  Treat regens and youth as a pipeline, not a collection hobby.  Accept that some seasons are rebuild years and set expectations accordingly.  Decide consciously when to refresh a tactic and when to hold your nerve. If you only remember 3 things from this chapter... 1. Long-term saves are built on planning and patience, not constant restarting. 2. Replace key players before they fall off a cliff, not after. 3. A controlled rebuild year is often the price of a new golden cycle.
+135
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 9: Surviving The New FM26 UI
+From portals, tiles, and cards to feeling at home again
+136
+
+nonogaming014@gmail.com 05 Apr 2026
+There is a special place in UI Hell reserved for the moment you load FM26 for the first time. You have your drink ready, you are hyped after the trailers, you hit Continue. And, instead of the familiar sidebar and Inbox, the game looks at you with a big new Portal screen full of tiles and colours, and your brain goes: "Where the hell is my save, lads, and what have they done to my inbox?" You are not alone. FM26 introduces the biggest interface shake-up the series has had in a generation. New Unity engine, new Portal home screen that replaces the old Home and Inbox, a tiles and cards layout instead of flat lists, redesigned top navigation, Bookmarks, improved search, and an in-game manual called FMPedia. On paper, it is cleaner and more modern. In practice, a lot of long-time players feel like someone has rearranged their kitchen in the dark. Steam reviews and forum posts have not exactly been gentle. This chapter is here to do one job. By the time you finish it, I want you to feel like the FM26 UI is something you can bend to your will, not something you are fighting every time you click.
+137
+
+nonogaming014@gmail.com 05 Apr 2026
+1. Roy Opens FM26 For the First Time: "Where's My Sidebar, Lads?"
+Let's be honest. If you have played FM for years, your hands know the old UI better than your eyes do. Open the game, glance at the sidebar, click Squad, Tactics, Inbox, Job Centre, all on autopilot. FM26 rips that muscle memory away.
+· No classic left sidebar · New Portal that shows tiles for news, fixtures, tasks, and more · New top navigation bar with broad sections, instead of one long list · More pop-up cards and overlays, fewer static pages If your first reaction was "this is horrible", that is normal. You are not actually judging the design yet. You are grieving the old one. So, let's treat this chapter like your first pre-season with a new squad. We are not going to pretend everything is perfect, but we are going to figure out: · What the designers were trying to do · How to use the new toys to make your life easier · Where the pain points are, and how to work around them We start with the new dressing room.
+138
+
+nonogaming014@gmail.com 05 Apr 2026
+2. The Portal: Your New Home Screen in FM26
+Think of the Portal as your new Home and Inbox rolled into one dashboard. It is the first thing you see when you load a save. What lives here:
+· Your important messages and news · Upcoming fixtures and recent results · Tasks that need attention · Bits of club and competition info At the top of the Portal, you will usually see filters along the lines of: · All ­ everything · New ­ what you have not seen yet · Tasks ­ items that require a decision · Unread ­ obvious The idea is that, instead of flicking between Inbox, Calendar, and Fixtures, you have one place that surfaces the important stuff. How to actually use it: · When you load the save, do a quick scan of Tasks and Unread. That is your "to-do"
+list. · Hit New if you have been away and want to catch up on what you have missed since
+last time. · Use All when you are just browsing between matches. If you are an old school Inbox addict, this will feel odd. You can soften the blow by treating Portal as "Inbox, plus Calendar, plus News arranged more visually" rather than a mysterious, new monster. The main mistake is trying to ignore the Portal completely. You can, but then you are back to hunting for things manually and the whole point of the redesign is gone.
+139
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Tiles and Cards: How the New Layout Actually Works
+Under the hood, FM26 screens are built from two pieces: tiles and cards. · A tile is a summary block o Example: A small box on the Portal showing your next match, or a snippet of scouting info. · A card is what you get when you click that tile o A larger pop-up or full screen panel that contains full details, options, and actions.
+This is the core pattern across the whole game: 1. You see a tile with a short headline, maybe a number, maybe a small graphic. 2. You click it. 3. It expands into a card with more detail and buttons.
+Once you know this, the UI suddenly makes more sense. Practical tips:
+· On the Portal, click through any tile that looks important. Treat these like headlines in a newspaper.
+· On player profiles, pay attention to the different cards accessible from the same screen. You will usually have an attributes card, a medical card, a training card, and so on.
+· If a tile feels too cramped or hides information, click first and judge the card instead of the tile. Many complaints about "no space for information" come from looking only at the tile version.
+There are valid criticisms. Some tiles cut off useful bits, and there is dead space that could be used better. Patches are already promised to improve some of these issues. For now, your mindset should be: Tile to spot, card to decide.
+140
+
+nonogaming014@gmail.com 05 Apr 2026
+4. Top Nav. Bar, Not Sidebar: Relearning Navigation Muscle Memory
+FM26 moves the main navigation to the top of the screen, instead of the left sidebar. Instead of a long list of links, you have a handful of big domains. The exact labels may vary slightly, but they cover things like:
+· Squad and players · Tactics and match preparation · Recruitment and scouting · Development centre and youth · Club info, finances, and staff · World, competitions, and jobs
+Inside each domain, you then drill down into more specific cards.
+141
+
+nonogaming014@gmail.com 05 Apr 2026
+How to retrain your fingers: · Spend ten minutes just clicking through the top bar in a friendly save, with no pressure. Learn which domain hides what. · When you catch yourself thinking "I want to see my scouting assignments", pause and ask: "Which domain does that belong to?" Then click that first, instead of hunting randomly. · If you are completely lost, remember you also have Power Search now, which we will come to in a moment.
+Veterans often find this part the most frustrating, because twenty years of habit do not vanish in a day. That is normal. Give yourself a few in-game weeks. Once you internalise where the six main domains live, you will stop missing the old sidebar quite as much.
+142
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Bookmarks and Favourites: Building Your Own FM26 Workspace
+Now, for one of FM26's best quality of life ideas: Bookmarks. Bookmarks let you pin your most used screens so you can jump back to them in one click, instead of endlessly going through the Portal or top nav. Good candidates for bookmarks:
+· Squad view with your custom columns · Tactics screen for your main system · Recruitment Hub or TransferRoom · Dynamics · Finances or Club Vision · Data Hub overview · Training schedules In FM26, you cannot bookmark every single screen in the game. Instead, you have a fixed list of key screens that you can turn into favourites with a star icon.
+Workflow: 1. Click the Bookmarks icon on the top bar. 2. On the right-hand side, you will see a list of all screens that can be bookmarked (First Team, Tactics, Fixture Schedule, Data Hub, Finances, Training, Squad Planner, Transfer Activity, Youth Setup and so on). 3. Click the star next to any screen you want to add. Once starred, it appears in the left column as part of your active bookmarks list. You can have up to 12 at a time. 4. From then on, opening Bookmarks lets you jump to any of those screens with a single click, using them as your own mini sidebar.
+143
+
+nonogaming014@gmail.com 05 Apr 2026
+144
+
+nonogaming014@gmail.com 05 Apr 2026
+Once you have 5-8 strong bookmarks, FM26 starts to feel less like a maze and more like an office where you have your own desk and shortcuts. For example, your daily loop might become: Portal tile for tasks  bookmark for Squad  bookmark for Tactics  bookmark for Recruitment  bookmark for Dynamics  back to Portal. No hunting. No getting lost.
+145
+
+nonogaming014@gmail.com 05 Apr 2026
+6. Power Search and FMPedia: Type First, Click Less
+The other huge change for navigation and learning is Power Search, tied into FMPedia. · Power Search lets you type the name of a screen, feature, or even concept and jump there directly. · FMPedia is an in-game manual and glossary that explains rules, terms, and systems without you needing to leave FM and open a browser.
+Practical uses: · Type "finances" to jump straight to financial screens if you cannot remember which domain they are under. · Type "club vision" or "supporter" and see relevant panels appear. · Type "FFP" or "registration" when a rule confuses you, and FMPedia will explain it in context.
+This is gold for new and returning players, especially with FM26 adding more complexity around tactics, supporters and finances. Your habit should be: If you cannot find it in three clicks, stop clicking and use search. Over time, you will lean on this less - but in the first few weeks with FM26, it is the fastest way to stop feeling lost.
+146
+
+nonogaming014@gmail.com 05 Apr 2026
+7. Matchday UI: New Cameras, New Overlays Same Job for You
+The other place you will really feel Unity and the new UI is matchday. Sports Interactive have rebuilt cutscenes and presentation, especially for competitions with full licences, and changed how some of the match overlays and tablets work. What you will notice:
+· Tunnel and line-up scenes feel more cinematic · Camera angles are sharper and more varied · Match stats, xG, and tactical information live in more visually layered panels · There is more happening on screen at once That is all lovely, until you are trying to find your Shot Map and cannot remember where they moved it. Simple approach: · Before your first serious match, use a friendly as a UI test
+o Pause the game and click through the match tablet tabs o Find where xG Story, Shot Maps, Heatmaps, and Player Ratings live o Check how to switch camera, change highlight mode, and open analysis
+panels During real matches:
+· Use one tablet tab as your main "home" view; For example, player ratings and body language.
+· Use a second tab for attacking data (Shots, xG, Key Passes). · Use a third tab for defensive data (Tackles, Interceptions, where you are being
+overloaded). Stick to those, rather than jumping between every possible panel, or you will spend more time UI-wrestling than managing. Remember: The matchday UI is there to inform decisions, not to impress you with graphics.
+147
+
+nonogaming014@gmail.com 05 Apr 2026
+8. Common Complaints and How to Work Around Them
+We need to be honest here. FM26's UI has not landed smoothly with everyone. Steam reviews and forum threads mention:
+· More clicks to do basic tasks · Important information hidden behind tiles with too little text · Dead space on some screens while useful data is cramped · Portal fatigue for people who prefer straight Inbox · Inconsistent behaviour between some cards and panels On the positive side, SI have already talked about: · Ongoing UI optimisation and quality of life patches · Bringing back things like classic spacebar behaviour on matchday and better starting
+eleven saves · Fine-tuning tiles and cards so they display information more cleanly You cannot patch the game yourself, but you can make your life easier: · Use Bookmarks aggressively to cut down on navigation clicks. · Use Power Search instead of hunting for rarely used screens. · Resize or switch views on squad and player panels to show the information you
+actually care about. · Limit how long you sit in the Portal. Deal with tasks, then move to your bookmarks. If the UI genuinely drains you after a couple of hours, you are not weak. A lot of UX folks have written long posts about exactly that. Take breaks, and remember that patches are coming. In the meantime, treat this chapter as your "anti-friction" toolkit.
+148
+
+nonogaming014@gmail.com 05 Apr 2026
+9. New Players vs FM Veterans: Two Short,
+Onboarding Tours
+FM26 has to serve two very different groups: · People who have never touched Football Manager · People who have been here since Championship Manager (CM) days
+They need different tours. For new players If FM26 is your first serious FM:
+1. Start on the Portal o Click through the obvious tiles: Next match, squad news, tasks. o Do not worry about missing things; FM is very keen to tell you when you must act.
+2. Use Power Search o Type "tactics", "squad", "training", "recruitment" and visit each once. o Let FMPedia explain unfamiliar terms as you go.
+3. Play one match o Use the default camera and tablet. o Pause often, click around, experiment.
+Your goal, for the first in-game month, is not to master everything. It is to get comfortable that you can always find help without leaving the game. For FM veterans If you are coming from FM24 or earlier:
+1. Open Portal, accept the pain o Spend five minutes just scanning it. o Click through each tile type once: News, fixtures, tasks.
+2. Rebuild your "old sidebar" as bookmarks o Squad, Tactics, Recruitment, Dynamics, Finances, Data Hub. o These six alone will cover 80 percent of your clicks.
+3. Map old locations to new domains
+149
+
+nonogaming014@gmail.com 05 Apr 2026
+o Remember where Training, Development Centre, and Club Vision now live under the top bar.
+o Use Power Search a few times to embed the new routes. 4. Play a throwaway save for one season
+o Do not judge the game on this. Use it as a sandbox to retrain your hands. o When you start your "real" save, you will be twice as smooth. Once you have done this, you will find that, yes, some things still take more clicks, but others are faster and clearer, especially once using FMPedia and searching becomes second nature.
+150
+
+nonogaming014@gmail.com 05 Apr 2026
+10. Roy's 15-Minute UI Warm-Up for Every New
+Save
+To close the eBook, let me give you one last ritual. Every time you start a fresh FM26 save, before you sign a player or build a tactic, do this fifteen-minute UI warm-up. Step 1: Walk the Portal
+· Check All, New, Tasks, and Unread · Click one of each kind of tile, just to remember how cards open · Note where fixtures, calendar, and key news live Step 2: Set up your bookmarks Pin: · Squad · Tactics · Recruitment Hub · Dynamics · Training · Finances or Club Vision · Data Hub That is your personal control room. Step 3: Test Power Search and FMPedia · Search for a rule that confused you in past games, like FFP or Registration · Open the FMPedia entry and skim it · Search for a screen you rarely use, just to see how quick it is to jump there Step 4: Play one harmless match · A friendly or an early Cup tie · During the game, find the match stats you care about · Learn how to swap tablets, change camera, and pause cleanly Step 5: Decide on your "home views" · Choose your main Squad View and adjust Columns
+151
+
+nonogaming014@gmail.com 05 Apr 2026
+· Pick a default Player Profile layout you like · Decide which Data Hub screen will be your first stop after matches All of this takes less than the time it takes to play one full match. The difference is that, from that point on, you are not wrestling FM26's UI every time you log in. You are driving it. Because, at the end of the day, this is what FM26 is giving you: · A deeper tactical engine · Smarter recruitment and planning tools · A more reactive world with boards, fans and players · And a brand-new interface that can either be a wall or a window Across this eBook, we have talked about building your identity, your squad, your dressing room, your finances, your weeks, and your long-term story. The UI is just the skin that connects all of those ideas. Once you make it serve you, not the other way round, FM26 stops feeling like a strange new game and starts feeling like what it is: The same old obsession, with a new coat, waiting for you to write the next great save.
+152
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 9 ­ Roy's checklist
+Roy's checklist  Accept that FM26 looks different and give yourself time to relearn it.  Use the Portal for tasks and news, then move quickly to your key working screens.  Build a strong Bookmarks list so you have a personal mini sidebar.  Use Power Search and FMPedia when you cannot find something or do not
+understand a rule.  Spend one friendly match just exploring the matchday UI, so you are not learning it in
+a cup final. If you only remember 3 things from this chapter... 1. The UI is a tool, not a test of your patience, once you set it up. 2. Bookmarks and Search will save you more time than any visual tweak. 3. The less energy you spend fighting the interface, the more you can spend managing.
+153
+
+nonogaming014@gmail.com 05 Apr 2026
+Chapter 10: Bringing It All Together
+Roy's epilogue: How to keep your FM26 world under control
+154
+
+nonogaming014@gmail.com 05 Apr 2026
+There is a moment at the end of a long save that feels different from every other click. No press conference. No transfer saga. No big team talk. You sit in your virtual office after another season, look at the league table, the trophy cabinet, the youth products in your first team, the bank balance, the staff list, and it hits you: "I actually built something here." Not a `plug n' play' tactic. Not a one-season wonder. A proper football world that would not exist without you. That is the feeling this whole book has been trying to get you to reach. FM26 gives you all the tools in the world to make a mess. New tactics, new UI, new supporters, new data, new everything. You are never more than three bad decisions away from chaos. The trick is not to avoid mistakes. It is to put a structure around yourself, so the game never runs away from you. This last chapter is that structure. We are going to zoom out completely, pull all the threads together, and leave you with:
+· A simple set of checklists and rituals · A seasonal cycle you can follow in any club · And one fictional, ten-season journey that shows how it all hangs together After that, the save is yours.
+155
+
+nonogaming014@gmail.com 05 Apr 2026
+1. The Five Pillars of Your FM26 World
+Throughout the book, we have really been talking about five things. 1. Identity o Who are you as a manager? o What is your game model and tactical idea? o What kind of football do you actually enjoy watching? 2. People o Players, staff, board, fans o Personalities, Dynamics, promises, leadership, squad hierarchy 3. Resources o Money, facilities, staff time o Board confidence, supporter patience, your own energy 4. Time o Weeks, seasons, cycles of three and five years o Knowing when to push and when to consolidate 5. Interface o The UI, the Portal, your bookmarks, and routines o How quickly you move between problems and solve them
+Whenever a save spins out of control, you can almost always trace it back to one of these being ignored. You lost your identity chasing flavour of the month tactics. You mishandled the people and exploded the dressing room. You burned resources on vanity signings instead of structure. You panicked about time and tried to rush success. Or, you simply never tamed the interface and every session felt like hard work. The rest of this chapter is about turning each pillar into habits that run quietly in the background so your brain can focus on football.
+156
+
+nonogaming014@gmail.com 05 Apr 2026
+2. Daily and Weekly Rituals: What You Do Between
+Matches
+If you run FM26 purely on vibes, you will always feel behind. So, here is a simple daily and weekly checklist. Every in-game day you care about You do not have to click every single date, but on any day where you are thinking actively, run this mini-scan:
+· Portal: o Check Tasks and Unread o Clear anything critical
+· Injuries and fitness: o Quick glance at medical overview o Note any high-risk players
+· Morale spikes: o Scan your Squad view for new orange or red faces o Make a mental note to talk to key players after matches
+That is it. No need for more. Once per in-game week This is your proper Roy's Weekly Review:
+1. Dynamics o Check Hierarchy and Social Groups o Look for new concerns or Morale drops o Ask yourself: "Do I owe anyone a conversation or a start?"
+2. Training and schedule o Open the Calendar o Adjust next week's training for match load o Ensure at least one Match Review or Match Prep. block
+3. Recruitment o Dip into Recruitment Hub or TransferRoom
+157
+
+nonogaming014@gmail.com 05 Apr 2026
+o Check if any key assignments have reported players that fit your plan o Update shortlists and priorities 4. Finances and vision o Quick glance at Finances tab o Check Club Vision for any objectives slipping towards amber or red 5. Data Hub o Review the Last Match report o Pick one aspect to emphasise in training next week Once you get used to this, it takes a couple of in-game minutes, and it stops disasters before they show up as sack meetings.
+158
+
+nonogaming014@gmail.com 05 Apr 2026
+3. Seasonal Cycle: Pre-Season, Mid-season, Post-
+season
+Now we scale up. Every season in FM26 has three phases. Pre-Season: Build the foundation Key jobs:
+· Finalise your tactical plan o Confirm your main game model and Plan B o Train them from day one
+· Shape your squad o Use the Squad Planner to decide who is core, who is rotation, and who is for sale o Align squad statuses and wages
+· Set the tone with the board and fans o Read Club Vision and Supporter Expectations properly o Set realistic competition targets
+Ritual: · Create a pre-season "to-do" list in your head or on a piece of paper · Do not start the league season until you have ticked off: o Basic tactic familiarity o Core eleven identified o Captain and Vice-Captain chosen o Clear understanding of your financial room
+Mid-season: Course correcting Key jobs:
+· Reassess your game model with real data o Are you conceding the same type of goal constantly? o Are your signings performing in their roles? o Is fatigue building up too much? 159
+
+nonogaming014@gmail.com 05 Apr 2026
+· Manage mood and rotation o Watch morale, especially second-string players o Use Cups and easier fixtures to keep people involved
+· Update long term plans o Decide early which contracts you will not renew o Identify one or two positions that will need replacing in the summer
+Ritual: · Around the halfway point, take an evening and do a deep review: o League position versus expectation o Team stats versus your identity o Age profile of your starting eleven o State of finances and board confidence
+Think of it as your mini "winter retreat". Post-season: Reflection and reset Key jobs:
+· Honest review of what happened o What went right through your decisions, not luck? o What went wrong because of choices you made?
+· Decide on a theme for next season o "Consolidate in Europe" o "Refresh the back-line" o "Hand the keys to the golden generation"
+· Execute the first wave of changes o Release, sell, and loan players in line with your long-term idea o Line up early signings that fit your game model and wage structure
+Ritual: · Run the End of Season Financial Review from Chapter 6 · Run a Squad and Age Profile Review from Chapter 8 · Only then touch the new season budget
+160
+
+nonogaming014@gmail.com 05 Apr 2026
+If you repeat this cycle, every season becomes part of a pattern rather than a roulette spin.
+161
+
+nonogaming014@gmail.com 05 Apr 2026
+4. A Fictional, Ten-Season Career: From Chaos to
+Legacy
+To make all this less abstract, let's walk through a fictional FM26 journey. Call the club Southport City. Not quite big, not quite small, just the kind you love to overthink. Seasons 1 to 3: Learning to walk Year 1:
+· You arrive, find a bloated squad, no clear style, mid-table expectations. · You build a simple, aggressive 4-3-3 with clear In Possession and Out of Possession
+shapes. · You clear high earners who do not fit your system; promote a couple of kids; finish
+tenth. · The Board are fairly happy; fans see more intent; finances steady. Year 2: · With the wage bill trimmed, you bring in two key pieces who fit your pressing idea. · Training is more structured now; you use the weekly review. · Dynamics improve because roles and statuses make sense. · You finish sixth, sneak into a European place through a Cup run. Year 3: · Club Vision now asks for "qualify for Europe regularly." · You invest in facilities, instead of splashing on one superstar. · You finish seventh, early European exit, but youth prospects are emerging. · End of cycle review says: Identity installed, spine forming, books healthy. Seasons 4 to 6: First peak Year 4: · You tweak your tactic slightly to be less hectic, leaning into controlled aggression. · Supporters love the style, the Board love the progress, Data Hub shows a consistent
+xG edge. · You finish third, your first proper title challenge. Southport are on the map. Year 5:
+162
+
+nonogaming014@gmail.com 05 Apr 2026
+· Your oldest defender and midfielder are now aged 30+. You sign their understudies and begin phasing.
+· You win the league on the final day. · The wage structure is stretched, but not broken. You surprisingly sell one hero to
+balance the books. Year 6:
+· Champions League football for the first time. · You go deep in Europe, but suffer domestically. · A mix of fatigue and tactical stubbornness leads to a fourth-placed finish. · The seeds of decline are visible if you look: your original Captain is fading, regens are
+impatient. End of cycle review:
+· Club is far stronger than in Year 3. · However, half of your most important players are near, or past, 30. · You are one injury away from the whole thing wobbling. Seasons 7 to 9: Rebuild without collapse Year 7: · You declare, silently, a soft rebuild. · Two legends are sold with full honours when good bids arrive. · You hand the armband to a 26-year-old leader who has grown in your system. · Results are patchy, you finish fifth. Fans grumble, but see the logic. The Board are
+fine. Year 8:
+· The golden youth group you have nurtured finally starts most games. · You adjust your tactical shape to reflect their strengths. Less directness, more
+control. · You lose some big away games through naivety, but the upside is obvious. · Another fourth place and a cup win. You are back on the rise. Year 9: · The full benefit of the rebuild hits. · Your new core is aged 24-27, all comfortable in your FM26 game model.
+163
+
+nonogaming014@gmail.com 05 Apr 2026
+· You reach a European Semi-Final and finish second domestically. · The club has a clear, modern identity and a squad that fits it. Year 10: Choosing your ending At this point, you have three choices: 1. Double down and push for a Champions League title and domestic dominance. 2. Move to another club in the same universe and start a new story with the reputation
+you have earned. 3. Stay for one last season, win something meaningful, and retire as a Southport
+legend. The important part is this: Whatever you choose, the ten seasons make sense. There is a visible line from the mess you inherited in Year 1 to the culture you leave behind in Year 10. That is what happens when you apply everything we discussed:
+· identity, · people, · resources, · time, · and a UI you have bent into shape.
+164
+
+nonogaming014@gmail.com 05 Apr 2026
+5. Final Words from Roy
+If you remember nothing else from this book, remember this. Football Manager 26 is not here to give you a perfect save. It is here to give you a beautifully messy sandbox where:
+· tactics are clever enough to reward real thinking, · people are moody enough to feel alive, · boards and fans are irrational enough to keep you honest, · the interface is annoying enough to force you to build your own shortcuts, · and stories are long enough to stay with you when the laptop is shut. Your job is not to "solve" the game. Your job is to: · pick a way you want to win, · build a club that can play that way, · keep the people inside it just about on your side, · spend money like it is real, · and give yourself time to see the payoff. Do that, and it does not matter if you ever post screenshots or write threads. You will know, in the back of your mind, that somewhere inside your FM26 install, there is a virtual town that remembers when you arrived, what you did, who you trusted, and how it ended. That is your legacy as a gaffer. Now close this eBook, open a new save, and go write it.
+165
+
+
