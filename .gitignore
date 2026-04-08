@@ -1,17 +1,19 @@
 # Node.js
 node_modules/
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+package-lock.json
 
-# Python
-.venv/
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-.pytest_cache/
+# Python / Scripts locaux
+*.py
+*.ps1
+*.fmf
+*.pdf
+*.txt
+*.md
+!README.md
+
+# Claude
+.claude/
 
 # OS / Editor
 .DS_Store
@@ -23,6 +25,12 @@ Thumbs.db
 .env
 .env.*
 
-# Temporary files
+# Temporary
 *.tmp
 *.temp
+
+# CSV exports personnels
+player_export_*.csv
+
+# Dossiers inutiles
+MonoBehaviour/
