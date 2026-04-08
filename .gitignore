@@ -7,6 +7,7 @@ package-lock.json
 *.py
 *.ps1
 *.fmf
+!all_stats.fmf
 *.pdf
 *.txt
 *.md

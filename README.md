@@ -19,9 +19,12 @@ Outil tactique expert pour Football Manager 2026 — entièrement dans le naviga
 ## Utilisation
 
 1. Ouvre [le lien](https://cordierarn.github.io/fm26-tactics/)
-2. Exporte ton effectif depuis FM26 : **Vue joueurs → Exporter en CSV**
-3. Importe le CSV dans l'onglet **Notation Joueurs** ou **Entraînement**
-4. Le tool génère automatiquement la meilleure tactique pour ton groupe
+2. Dans FM26, charge la vue **`all_stats.fmf`** (fichier inclus dans ce repo) : `Vue joueurs → Charger vue → all_stats.fmf`
+3. Exporte l'effectif : **clic droit → Exporter en CSV**
+4. Importe le CSV dans l'onglet **Notation Joueurs** ou **Entraînement**
+5. Le tool génère automatiquement la meilleure tactique pour ton groupe
+
+> **Important** : la vue `all_stats.fmf` est obligatoire pour que les colonnes du CSV correspondent aux attributs attendus par le tool.
 
 ## Fichiers
 
@@ -32,6 +35,7 @@ Outil tactique expert pour Football Manager 2026 — entièrement dans le naviga
 | `data.js` | Données FM26 (rôles, formations, presets, attributs) |
 | `styles.css` | Styles — thème sombre custom |
 | `favicon.svg` | Icône onglet |
+| `all_stats.fmf` | Vue FM26 à charger pour exporter le bon CSV |
 
 ## Notes
 
