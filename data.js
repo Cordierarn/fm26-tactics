@@ -550,11 +550,21 @@ const POSITION_ROLES_IP = {
         { name: 'Latéral Offensif Intérieur', description: 'Reste en place, repique à l\'intérieur comme MD' },
         { name: 'Latéral Offensif Meneur De Jeu', description: 'Repique à l\'intérieur comme MD, créatif' }
     ],
-    'DM': [
-        { name: 'Milieu Défensif', description: 'Protection devant la défense, reste en place, prudent' },
-        { name: 'Meneur De Jeu En Retrait', description: 'Reste en place, exprime sa créativité' },
-        { name: 'Demi-Centre', description: 'Redescend comme DC, prudent' }
-    ],
+    // DM centre : 3 rôles. DM côté : 5 rôles avec Box To Box
+    'DM': {
+        center: [
+            { name: 'Milieu Défensif', description: 'Protection devant la défense, reste en place, prudent' },
+            { name: 'Meneur De Jeu En Retrait', description: 'Reste en place, exprime sa créativité' },
+            { name: 'Demi-Centre', description: 'Redescend comme DC, prudent' }
+        ],
+        side: [
+            { name: 'Milieu Défensif', description: 'Protection devant la défense, reste en place, prudent' },
+            { name: 'Meneur De Jeu En Retrait', description: 'Reste en place, exprime sa créativité' },
+            { name: 'Milieu Box To Box', description: 'Monte comme MO(C), danger devant le but' },
+            { name: 'Demi-Centre', description: 'Redescend comme DC, prudent' },
+            { name: 'Meneur De Jeu Box-To-Box', description: 'Monte comme MO(C), crée le danger' }
+        ]
+    },
     'CM': [
         { name: 'Milieu Axial', description: 'Milieu équilibré de base' },
         { name: 'Milieu Offensif', description: 'Trouve des espaces entre les lignes, danger devant le but' },
@@ -609,17 +619,32 @@ const POSITION_ROLES_IP = {
 // FM26 RÔLES HORS POSSESSION (OOP) - Noms officiels FR
 // Basé sur les vrais noms du jeu FM26
 // ==========================================
+// Certains postes ont des rôles OOP différents selon la variante de position :
+// - "center" : poste en position centrale (x proche de 50)
+// - "side"   : poste excentré à gauche ou à droite (x < 35 ou x > 65)
+// Utilisé par getOOPRolesForSlot(pos, x) dans app.js
 const POSITION_ROLES_OOP = {
     'GK': [
         { name: 'Gardien De But', description: 'Rôle par défaut' },
         { name: 'Gardien Libéro', description: 'Sort de ses buts, proactif' },
         { name: 'Gardien Sur La Ligne', description: 'Reste sur la ligne, réactif' }
     ],
-    'CB': [
-        { name: 'Défenseur Central', description: 'Défense positionnelle classique' },
-        { name: 'Défenseur Central Stoppeur', description: 'Dézone, sûr de lui' },
-        { name: 'Défenseur Central De Couverture', description: 'Reste en place, retenus' }
-    ],
+    // CB centre (2DC) : 3 rôles. CB côté (3DC gauche/droite) : 6 rôles avec variantes Excentré
+    'CB': {
+        center: [
+            { name: 'Défenseur Central', description: 'Défense positionnelle classique' },
+            { name: 'Défenseur Central Stoppeur', description: 'Dézone, sûr de lui' },
+            { name: 'Défenseur Central De Couverture', description: 'Reste en place, retenus' }
+        ],
+        side: [
+            { name: 'Défenseur Central', description: 'Défense positionnelle classique' },
+            { name: 'Défenseur Central Stoppeur', description: 'Dézone, sûr de lui' },
+            { name: 'Défenseur Central De Couverture', description: 'Reste en place, retenus' },
+            { name: 'Défenseur Central Excentré', description: 'S\'écarte sur le côté, libère l\'axe' },
+            { name: 'Défenseur Central Excentré Stoppeur', description: 'Excentré, dézone, sûr de lui' },
+            { name: 'Défenseur Central Excentré De Couverture', description: 'Excentré, reste en place, prudent' }
+        ]
+    },
     'LB': [
         { name: 'Arrière Latéral', description: 'Rôle équilibré par défaut' },
         { name: 'Arrière Latéral De Pressing', description: 'Monte, sûr de lui' },
@@ -640,21 +665,48 @@ const POSITION_ROLES_OOP = {
         { name: 'Latéral Offensif De Pressing', description: 'Monte, sûr de lui' },
         { name: 'Latéral Offensif En Retrait', description: 'Reste en place, prudent' }
     ],
-    'DM': [
-        { name: 'Milieu Défensif', description: 'Rôle équilibré par défaut' },
-        { name: 'Milieu Défensif En Retrait', description: 'Redescend comme DC' },
-        { name: 'Milieu Défensif De Couverture', description: 'Reste en place, prudent' }
-    ],
-    'CM': [
-        { name: 'Milieu Axial', description: 'Rôle équilibré par défaut' },
-        { name: 'Milieu Axial De Pressing', description: 'Monte, sûr de lui' },
-        { name: 'Milieu Axial De Couverture', description: 'Reste en place, prudent' }
-    ],
-    'AM': [
-        { name: 'Milieu Offensif', description: 'Rôle équilibré par défaut' },
-        { name: 'Milieu Offensif De Couverture', description: 'Redescend en couverture, soutient la défense' },
-        { name: 'Milieu De Terrain Offensif De Contre-Attaque Axiale', description: 'Reste haut, joue les contre-attaques' }
-    ],
+    // DM côté : +Couverture Dans La Largeur. DM centre : sans
+    'DM': {
+        center: [
+            { name: 'Milieu Défensif', description: 'Rôle équilibré par défaut' },
+            { name: 'Milieu Défensif En Retrait', description: 'Redescend comme DC' },
+            { name: 'Milieu Défensif De Couverture', description: 'Reste en place, prudent' }
+        ],
+        side: [
+            { name: 'Milieu Défensif', description: 'Rôle équilibré par défaut' },
+            { name: 'Milieu Défensif En Retrait', description: 'Redescend comme DC' },
+            { name: 'Milieu Défensif De Couverture', description: 'Reste en place, prudent' },
+            { name: 'Milieu Défensif De Couverture Dans La Largeur', description: 'S\'élargit pour couvrir les flancs' }
+        ]
+    },
+    // CM côté : +Couverture Dans La Largeur. CM centre : sans
+    'CM': {
+        center: [
+            { name: 'Milieu Axial', description: 'Rôle équilibré par défaut' },
+            { name: 'Milieu Axial De Pressing', description: 'Monte, sûr de lui' },
+            { name: 'Milieu Axial De Couverture', description: 'Reste en place, prudent' }
+        ],
+        side: [
+            { name: 'Milieu Axial', description: 'Rôle équilibré par défaut' },
+            { name: 'Milieu Axial De Pressing', description: 'Monte, sûr de lui' },
+            { name: 'Milieu Axial De Couverture', description: 'Reste en place, prudent' },
+            { name: 'Milieu Axial De Couverture Dans La Largeur', description: 'S\'élargit pour couvrir les flancs' }
+        ]
+    },
+    // AM côté : +Contre-Attaque De Couloir. AM centre : sans
+    'AM': {
+        center: [
+            { name: 'Milieu Offensif', description: 'Rôle équilibré par défaut' },
+            { name: 'Milieu Offensif De Couverture', description: 'Redescend en couverture, soutient la défense' },
+            { name: 'Milieu De Terrain Offensif De Contre-Attaque Axiale', description: 'Reste haut, joue les contre-attaques en axe' }
+        ],
+        side: [
+            { name: 'Milieu Offensif', description: 'Rôle équilibré par défaut' },
+            { name: 'Milieu Offensif De Couverture', description: 'Redescend en couverture, soutient la défense' },
+            { name: 'Milieu De Terrain Offensif De Contre-Attaque Axiale', description: 'Reste haut, joue les contre-attaques en axe' },
+            { name: 'Milieu Offensif De Contre-Attaque De Couloir', description: 'Reste haut, joue les contre-attaques sur le flanc' }
+        ]
+    },
     'LM': [
         { name: 'Milieu Latéral', description: 'Rôle équilibré par défaut' },
         { name: 'Milieu Latéral De Couverture', description: 'Redescend en couverture, soutient la défense' },
@@ -668,20 +720,29 @@ const POSITION_ROLES_OOP = {
     'LW': [
         { name: 'Ailier', description: 'Rôle équilibré par défaut' },
         { name: 'Ailier De Couverture', description: 'Redescend en couverture, soutient la défense' },
-        { name: 'Ailier Intérieur De Contre-Attaque', description: 'Reste haut, joue les contre-attaques' },
-        { name: 'Ailier De Contre-Attaque', description: 'Reste haut, joue les contre-attaques' }
+        { name: 'Ailier Intérieur De Contre-Attaque', description: 'Reste haut, joue les contre-attaques en pivotant' },
+        { name: 'Ailier De Contre-Attaque', description: 'Reste haut, joue les contre-attaques en largeur' }
     ],
     'RW': [
         { name: 'Ailier', description: 'Rôle équilibré par défaut' },
         { name: 'Ailier De Couverture', description: 'Redescend en couverture, soutient la défense' },
-        { name: 'Ailier Intérieur De Contre-Attaque', description: 'Reste haut, joue les contre-attaques' },
-        { name: 'Ailier De Contre-Attaque', description: 'Reste haut, joue les contre-attaques' }
+        { name: 'Ailier Intérieur De Contre-Attaque', description: 'Reste haut, joue les contre-attaques en pivotant' },
+        { name: 'Ailier De Contre-Attaque', description: 'Reste haut, joue les contre-attaques en largeur' }
     ],
-    'ST': [
-        { name: 'Attaquant Central', description: 'Rôle équilibré par défaut' },
-        { name: 'Attaquant Central De Couverture', description: 'Redescend en couverture, soutient la défense' },
-        { name: 'Avant-Centre Point D\'appui Axial', description: 'Reste haut, joue les contre-attaques' }
-    ]
+    // ST centre : 3 rôles. ST côté (2 attaquants) : 4 rôles avec Point D'appui Mobile
+    'ST': {
+        center: [
+            { name: 'Attaquant Central', description: 'Rôle équilibré par défaut' },
+            { name: 'Attaquant Central De Couverture', description: 'Redescend en couverture, soutient la défense' },
+            { name: 'Avant-Centre Point D\'appui Axial', description: 'Reste haut, joue les contre-attaques dans l\'axe' }
+        ],
+        side: [
+            { name: 'Attaquant Central', description: 'Rôle équilibré par défaut' },
+            { name: 'Attaquant Central De Couverture', description: 'Redescend en couverture, soutient la défense' },
+            { name: 'Avant-Centre Point D\'appui Axial', description: 'Reste haut, joue les contre-attaques dans l\'axe' },
+            { name: 'Avant-Centre Point D\'appui Mobile', description: 'Reste haut, joue les contre-attaques en se déplaçant' }
+        ]
+    }
 };
 
 // ==========================================
@@ -699,6 +760,7 @@ const PLAYER_INSTRUCTIONS = {
                 { value: 'narrower', label: 'Restez dans l\'axe', desc: 'Forces les runs vers l\'intérieur' },
                 { value: 'standard', label: 'Standard', desc: '' },
                 { value: 'wider', label: 'Prenez les couloirs', desc: 'Colle la touche, étire la défense' },
+                { value: 'channels', label: 'Prenez les couloirs de jeu', desc: 'Se place dans les espaces entre les lignes adverses' },
                 { value: 'spaces', label: 'Prenez les espaces', desc: 'S\'adapte aux zones libres' }
             ],
             default: 'standard'
@@ -730,11 +792,12 @@ const PLAYER_INSTRUCTIONS = {
         {
             id: 'pi-forward-runs',
             name: 'Courses vers l\'avant',
-            tooltip: 'Tendance du joueur à se projeter vers l\'avant hors possession.\n● Montez davantage : s\'infiltre dans les espaces derrière la défense. Idéal pour MO/milieux box-to-box avec End + Ant élevés.\n● Restez en place : sécurise sa zone, protège la structure défensive. Essentiel pour les MDF et DC.',
+            tooltip: 'Tendance du joueur à se projeter vers l\'avant.\n● Montez davantage : s\'infiltre dans les espaces derrière la défense. Idéal pour MO/milieux box-to-box avec End + Ant élevés.\n● Moins de courses : reste plus bas, joue en retrait, pour les DLF/F9/HB qui décrochent.\n● Restez en place : sécurise sa zone, protège la structure défensive. Essentiel pour les MDF et DC.',
             positions: ['CB', 'LB', 'RB', 'LWB', 'RWB', 'DM', 'CM', 'AM', 'LM', 'RM', 'LW', 'RW', 'ST'],
             options: [
                 { value: 'more', label: 'Montez davantage', desc: 'Runs en profondeur, demande End + Anticipation' },
                 { value: 'standard', label: 'Standard', desc: '' },
+                { value: 'fewer', label: 'Moins de courses', desc: 'Reste plus bas, décroche en retrait' },
                 { value: 'hold', label: 'Restez en place', desc: 'Sécurise la structure, protège derrière' }
             ],
             default: 'standard'
@@ -927,10 +990,14 @@ const ROLE_LOCKED_INSTRUCTIONS = {
     'Gardien À L\'aise Au Pied': { 'pi-pass-risk': 'more', 'pi-passing-style': 'shorter' },
     'Gardien Pragmatique': { 'pi-pass-risk': 'less', 'pi-dribbling': 'less' },
 
-    // CB
-    'Défenseur Central': {},
-    'Défenseur Central Avancé': { 'pi-forward-runs': 'more', 'pi-freedom': 'roam' },
+    // CB (IP)
+    // CentralDefender: holds-position → pi-freedom=hold
+    'Défenseur Central': { 'pi-freedom': 'hold' },
+    // OverlappingCentreBack: gets-further-forward + moves-wide → pi-forward-runs=more + pi-attacking-width=wider
+    'Défenseur Central Avancé': { 'pi-forward-runs': 'more', 'pi-attacking-width': 'wider' },
+    // BallPlayingDefender: expressive + holds-position → pi-pass-risk=more + pi-freedom=hold
     'Défenseur Central À L\'aise Au Pied': { 'pi-pass-risk': 'more', 'pi-freedom': 'hold' },
+    // NoNonsenseCentreBack: holds-position + careful → pi-pass-risk=less + pi-dribbling=less + pi-freedom=hold
     'Défenseur Central Strict': { 'pi-pass-risk': 'less', 'pi-dribbling': 'less', 'pi-freedom': 'hold' },
 
     // LB / RB
@@ -943,39 +1010,66 @@ const ROLE_LOCKED_INSTRUCTIONS = {
     // LWB / RWB
     'Latéral Offensif Avancé': { 'pi-forward-runs': 'more', 'pi-attacking-width': 'wider' },
 
-    // DM
-    'Milieu Défensif': { 'pi-freedom': 'hold' },
+    // DM (IP)
+    // DefensiveMidfielder: holds-position + careful → pi-freedom=hold + pi-dribbling=less + pi-pass-risk=less
+    'Milieu Défensif': { 'pi-freedom': 'hold', 'pi-dribbling': 'less', 'pi-pass-risk': 'less' },
+    // DeepLyingPlaymaker: holds-position + expressive → pi-freedom=hold + pi-pass-risk=more
     'Meneur De Jeu En Retrait': { 'pi-pass-risk': 'more', 'pi-freedom': 'hold' },
-    'Demi-Centre': { 'pi-forward-runs': 'hold', 'pi-pass-risk': 'less' },
+    // HalfBack: aucune consigne lockée (moves-down + careful = comportement positionnel, pas PI)
+    'Demi-Centre': { 'pi-forward-runs': 'fewer', 'pi-pass-risk': 'less' },
+    // BoxToBoxPlaymaker (DM): gets-further-forward + creative-threat → pi-forward-runs=more + pi-pass-risk=more
+    'Milieu Box To Box': { 'pi-forward-runs': 'more' },
+    'Meneur De Jeu Box-To-Box': { 'pi-pass-risk': 'more', 'pi-forward-runs': 'more' },
 
-    // CM
+    // CM (IP)
+    // CentralMidfielder: aucune icône de comportement → aucune PI lockée
     'Milieu Axial': {},
+    // AttackingMidfielder (CM position): aucune PI lockée non plus
     'Milieu Offensif': { 'pi-forward-runs': 'more' },
-    'Meneur De Jeu Avancé': { 'pi-pass-risk': 'more' },
-    'Milieu De Couloir': { 'pi-forward-runs': 'more' },
-    'Meneur De Jeu Du Milieu': { 'pi-pass-risk': 'more' },
+    // AdvancedPlaymaker: finds-space-between-lines + expressive → pi-freedom=roam + pi-pass-risk=more
+    'Meneur De Jeu Avancé': { 'pi-freedom': 'roam', 'pi-pass-risk': 'more' },
+    // ChannelMidfielder: runs-into-channels + creative → pi-attacking-width=channels + pi-pass-risk=more
+    'Milieu De Couloir': { 'pi-forward-runs': 'more', 'pi-attacking-width': 'channels' },
+    // MidfieldPlaymaker: expressive + creative-threat → pi-freedom=roam + pi-pass-risk=more
+    'Meneur De Jeu Du Milieu': { 'pi-freedom': 'roam', 'pi-pass-risk': 'more' },
 
-    // AM
+    // AM (IP)
+    // AttackingMidfielder (AM): aucune PI lockée
+    // FalseNine (AM): moves-down + links-play → pi-forward-runs=fewer + pi-hold-ball (mais FalseNine est ST dans le jeu)
     'Rôle Libre': { 'pi-freedom': 'roam', 'pi-forward-runs': 'more' },
     'Deuxième Avant-Centre': { 'pi-forward-runs': 'more', 'pi-shooting': 'more' },
+    // Trequartista: expressive + creative-threat → pi-freedom=roam + pi-pass-risk=more
+    'Trequartista': { 'pi-freedom': 'roam', 'pi-pass-risk': 'more' },
 
-    // LM / RM
+    // LM / RM (IP)
+    // WideMidfielder: aucune PI lockée
     'Milieu Latéral': {},
-    'Ailier': { 'pi-attacking-width': 'wider', 'pi-run-direction': 'outside' },
+    // Winger: gets-further-forward + moves-wide → pi-forward-runs=more + pi-attacking-width=wider
+    'Ailier': { 'pi-forward-runs': 'more', 'pi-attacking-width': 'wider' },
+    // WidePlaymaker: moves-inside + expressive → pi-run-direction=inside + pi-pass-risk=more
     'Ailier Meneur De Jeu': { 'pi-run-direction': 'inside', 'pi-pass-risk': 'more' },
+    // InvertedWinger: aucune PI lockée dans le jeu
     'Ailier Intérieur': { 'pi-run-direction': 'inside' },
 
-    // LW / RW
-    'Attaquant Intérieur': { 'pi-forward-runs': 'more', 'pi-run-direction': 'inside' },
+    // LW / RW (IP)
+    // InsideForward: moves-inside + goal-threat → pi-run-direction=inside + pi-forward-runs=more + pi-shooting=more
+    'Attaquant Intérieur': { 'pi-run-direction': 'inside', 'pi-forward-runs': 'more', 'pi-shooting': 'more' },
+    // WideForward: moves-wide + goal-threat → pi-attacking-width=wider + pi-forward-runs=more + pi-shooting=more
     'Attaquant Désaxé': { 'pi-attacking-width': 'wider', 'pi-forward-runs': 'more' },
 
-    // ST
-    'Attaquant En Retrait': { 'pi-forward-runs': 'hold', 'pi-hold-ball': 'yes' },
-    'Attaquant Central': { 'pi-forward-runs': 'more' },
-    'Attaquant Pivot': { 'pi-hold-ball': 'yes', 'pi-freedom': 'hold' },
-    'Renard Des Surfaces': { 'pi-forward-runs': 'more', 'pi-shooting': 'more', 'pi-freedom': 'hold' },
-    'Attaquant De Couloir': { 'pi-forward-runs': 'more' },
-    'Faux Neuf': { 'pi-forward-runs': 'hold', 'pi-freedom': 'roam' },
+    // ST (IP)
+    // DeepLyingForward: moves-down + links-play → pi-forward-runs=fewer + pi-hold-ball=yes
+    'Attaquant En Retrait': { 'pi-forward-runs': 'fewer', 'pi-hold-ball': 'yes' },
+    // CentreForward: aucune PI lockée
+    'Attaquant Central': {},
+    // TargetMan: plays-on-last-line + links-play → pi-forward-runs=more + pi-hold-ball=yes
+    'Attaquant Pivot': { 'pi-forward-runs': 'more', 'pi-hold-ball': 'yes' },
+    // Poacher: plays-on-last-line + goal-threat → pi-forward-runs=more + pi-shooting=more
+    'Renard Des Surfaces': { 'pi-forward-runs': 'more', 'pi-shooting': 'more' },
+    // ChannelForward: runs-into-channels + goal-threat → pi-attacking-width=channels + pi-forward-runs=more
+    'Attaquant De Couloir': { 'pi-forward-runs': 'more', 'pi-attacking-width': 'channels' },
+    // FalseNine: moves-down + links-play → pi-forward-runs=fewer + pi-freedom=roam
+    'Faux Neuf': { 'pi-forward-runs': 'fewer', 'pi-freedom': 'roam' },
 
     // ===== RÔLES HORS POSSESSION (OOP) - Verrouillent "Sans le ballon" =====
 
@@ -984,21 +1078,37 @@ const ROLE_LOCKED_INSTRUCTIONS = {
 
     'Défenseur Central Stoppeur': { 'pi-pressing': 'more', 'pi-tackling': 'harder' },
     'Défenseur Central De Couverture': { 'pi-pressing': 'less', 'pi-defensive-position': 'deeper' },
+    'Défenseur Central Excentré': {},
+    'Défenseur Central Excentré Stoppeur': { 'pi-pressing': 'more', 'pi-tackling': 'harder' },
+    'Défenseur Central Excentré De Couverture': { 'pi-pressing': 'less', 'pi-defensive-position': 'deeper' },
 
-    'Arrière Latéral De Pressing': { 'pi-pressing': 'more' },
+    // OPPressingFullBack: moves-up + pace → pi-pressing=more + pi-tackling=harder
+    'Arrière Latéral De Pressing': { 'pi-pressing': 'more', 'pi-tackling': 'harder' },
+    // OPHoldingFullBack: holds-position + cautious → pi-pressing=less + pi-defensive-position=deeper
     'Arrière Latéral En Retrait': { 'pi-pressing': 'less', 'pi-defensive-position': 'deeper' },
 
-    'Latéral Offensif De Pressing': { 'pi-pressing': 'more' },
+    // OPPressingWingBack: moves-up + pace → pi-pressing=more + pi-tackling=harder
+    'Latéral Offensif De Pressing': { 'pi-pressing': 'more', 'pi-tackling': 'harder' },
+    // OPHoldingWingBack: holds-position + cautious → pi-pressing=less + pi-defensive-position=deeper
     'Latéral Offensif En Retrait': { 'pi-pressing': 'less', 'pi-defensive-position': 'deeper' },
 
+    // OPDroppingDefensiveMidfielder: moves-down → pi-defensive-position=deeper
     'Milieu Défensif En Retrait': { 'pi-defensive-position': 'deeper' },
-    'Milieu Défensif De Couverture': { 'pi-pressing': 'less', 'pi-defensive-position': 'deeper' },
+    // OPScreeningDefensiveMidfielder: holds-position + cautious → pi-pressing=less
+    'Milieu Défensif De Couverture': { 'pi-pressing': 'less' },
+    // OPWideCoverDefensiveMidfielder: moves-wide → pi-pressing=less
+    'Milieu Défensif De Couverture Dans La Largeur': { 'pi-pressing': 'less' },
 
+    // OPPressingCentralMidfielder: moves-up + pace → pi-pressing=more + pi-tackling=harder
     'Milieu Axial De Pressing': { 'pi-pressing': 'more', 'pi-tackling': 'harder' },
+    // OPScreeningCentralMidfielder: holds-position + cautious → pi-pressing=less
     'Milieu Axial De Couverture': { 'pi-pressing': 'less' },
+    // OPWideCoverCentralMidfielder: moves-wide → pi-pressing=less
+    'Milieu Axial De Couverture Dans La Largeur': { 'pi-pressing': 'less' },
 
     'Milieu Offensif De Couverture': { 'pi-pressing': 'less' },
     'Milieu De Terrain Offensif De Contre-Attaque Axiale': { 'pi-defensive-position': 'higher' },
+    'Milieu Offensif De Contre-Attaque De Couloir': { 'pi-defensive-position': 'higher' },
 
     'Milieu Latéral De Couverture': { 'pi-pressing': 'less' },
     'Milieu Latéral De Contre-Attaque': { 'pi-defensive-position': 'higher' },
@@ -1008,7 +1118,8 @@ const ROLE_LOCKED_INSTRUCTIONS = {
     'Ailier De Contre-Attaque': { 'pi-defensive-position': 'higher' },
 
     'Attaquant Central De Couverture': { 'pi-pressing': 'less' },
-    'Avant-Centre Point D\'appui Axial': { 'pi-defensive-position': 'higher' }
+    'Avant-Centre Point D\'appui Axial': { 'pi-defensive-position': 'higher' },
+    'Avant-Centre Point D\'appui Mobile': { 'pi-defensive-position': 'higher' }
 };
 
 // Mentality Labels
@@ -1074,10 +1185,10 @@ const PRESETS = {
             'defensive-line': 'much-higher',         // Beaucoup plus haute
             'pressing-trigger': 'much-more',         // Beaucoup plus souvent
             'defensive-transition': 'counter-press', // Contre-pressing
-            'tackling': 'stay',                      // Ne pas se jeter
-            'pressing-crosses': 'prevent',           // Empêcher de centrer
+            'tackling': 'ease',                      // Ne pas se jeter
+            'pressing-crosses': 'stop',           // Empêcher de centrer
             'pressing-trap': 'inside',               // Attirer vers l'axe
-            'defensive-behavior': 'higher',          // Rester plus haut
+            'defensive-behavior': 'step-up',          // Rester plus haut
             'prevent-short-gk': 'yes'                // Oui
         },
         
@@ -1165,10 +1276,10 @@ const PRESETS = {
             'defensive-line': 'much-higher',
             'pressing-trigger': 'much-more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',
-            'pressing-crosses': 'prevent',
+            'tackling': 'harder',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
         
@@ -1343,10 +1454,10 @@ const PRESETS = {
             'defensive-line': 'much-lower',
             'pressing-trigger': 'much-less',
             'defensive-transition': 'regroup',
-            'tackling': 'commit',
-            'pressing-crosses': 'allow',
+            'tackling': 'harder',
+            'pressing-crosses': 'invite',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'lower',
+            'defensive-behavior': 'drop-off',
             'prevent-short-gk': 'no'
         },
         
@@ -1433,9 +1544,9 @@ const PRESETS = {
             'pressing-trigger': 'more',          // Agressif
             'defensive-transition': 'counter-press', // Contre-pressing
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',       // Empêcher centres
+            'pressing-crosses': 'stop',       // Empêcher centres
             'pressing-trap': 'inside',           // Forcer axe
-            'defensive-behavior': 'higher',      // Compact haut
+            'defensive-behavior': 'step-up',      // Compact haut
             'prevent-short-gk': 'yes'            // Presser gardien
         },
         
@@ -1521,7 +1632,7 @@ const PRESETS = {
             'defensive-line': 'standard',        // Pas trop profond
             'pressing-trigger': 'standard',      // Contrôlé
             'defensive-transition': 'counter-press', // Contre-pressing
-            'tackling': 'commit',                // Duels engagés
+            'tackling': 'harder',                // Duels engagés
             'pressing-crosses': 'balanced',
             'pressing-trap': 'outside',          // FORCER VERS EXTÉRIEUR
             'defensive-behavior': 'balanced',
@@ -1609,9 +1720,9 @@ const PRESETS = {
             'pressing-trigger': 'much-more',     // Man-orienté agressif
             'defensive-transition': 'counter-press', // Contre-pressing
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',       // Bloquer centres
+            'pressing-crosses': 'stop',       // Bloquer centres
             'pressing-trap': 'inside',           // Forcer vers l'axe
-            'defensive-behavior': 'higher',      // Compact haut
+            'defensive-behavior': 'step-up',      // Compact haut
             'prevent-short-gk': 'yes'            // Presser gardien
         },
         
@@ -1697,9 +1808,9 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
         
@@ -1784,10 +1895,10 @@ const PRESETS = {
             'defensive-line': 'higher',
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
-            'tackling': 'stay',
-            'pressing-crosses': 'prevent',
+            'tackling': 'ease',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
         
@@ -1872,10 +1983,10 @@ const PRESETS = {
             'defensive-line': 'lower',
             'pressing-trigger': 'less',
             'defensive-transition': 'regroup',
-            'tackling': 'commit',
-            'pressing-crosses': 'allow',
+            'tackling': 'harder',
+            'pressing-crosses': 'invite',
             'pressing-trap': 'outside',
-            'defensive-behavior': 'lower',
+            'defensive-behavior': 'drop-off',
             'prevent-short-gk': 'no'
         },
         
@@ -1958,10 +2069,10 @@ const PRESETS = {
             'defensive-line': 'much-higher',
             'pressing-trigger': 'much-more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',
-            'pressing-crosses': 'prevent',
+            'tackling': 'harder',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'balanced',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
         
@@ -2044,10 +2155,10 @@ const PRESETS = {
             'defensive-line': 'lower',
             'pressing-trigger': 'less',
             'defensive-transition': 'regroup',
-            'tackling': 'commit',
-            'pressing-crosses': 'allow',
+            'tackling': 'harder',
+            'pressing-crosses': 'invite',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'lower',
+            'defensive-behavior': 'drop-off',
             'prevent-short-gk': 'no'
         },
         
@@ -2131,7 +2242,7 @@ const PRESETS = {
             'defensive-line': 'higher',          // Compacte
             'pressing-trigger': 'more',          // Agressif
             'defensive-transition': 'counter-press', // Contre-pressing
-            'tackling': 'commit',                // Engagé
+            'tackling': 'harder',                // Engagé
             'pressing-crosses': 'balanced',
             'pressing-trap': 'outside',          // Forcer extérieur
             'defensive-behavior': 'balanced',
@@ -2220,10 +2331,10 @@ const PRESETS = {
             'defensive-line': 'much-higher',     // Très haute
             'pressing-trigger': 'much-more',     // Agressif total
             'defensive-transition': 'counter-press', // Contre-pressing
-            'tackling': 'stay',                  // Rester debout (timing)
-            'pressing-crosses': 'prevent',       // Empêcher
+            'tackling': 'ease',                  // Rester debout (timing)
+            'pressing-crosses': 'stop',       // Empêcher
             'pressing-trap': 'inside',           // Piège axe
-            'defensive-behavior': 'higher',      // Compact haut
+            'defensive-behavior': 'step-up',      // Compact haut
             'prevent-short-gk': 'yes'            // Forcer construction
         },
         
@@ -2309,7 +2420,7 @@ const PRESETS = {
             'defensive-line': 'higher',          // Ligne haute
             'pressing-trigger': 'much-more',     // Très agressif
             'defensive-transition': 'counter-press', // Contre-pressing
-            'tackling': 'commit',                // Tackle Harder sur tous
+            'tackling': 'harder',                // Tackle Harder sur tous
             'pressing-crosses': 'balanced',
             'pressing-trap': 'balanced',
             'defensive-behavior': 'balanced',
@@ -2397,7 +2508,7 @@ const PRESETS = {
             'defensive-line': 'higher',
             'pressing-trigger': 'much-more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',                // Tackle harder all
+            'tackling': 'harder',                // Tackle harder all
             'pressing-crosses': 'balanced',
             'pressing-trap': 'balanced',
             'defensive-behavior': 'balanced',
@@ -2484,7 +2595,7 @@ const PRESETS = {
             'defensive-line': 'lower',           // LOW DL - clé de la tactique
             'pressing-trigger': 'much-more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',
+            'tackling': 'harder',
             'pressing-crosses': 'balanced',
             'pressing-trap': 'balanced',
             'defensive-behavior': 'balanced',
@@ -2571,7 +2682,7 @@ const PRESETS = {
             'defensive-line': 'standard',
             'pressing-trigger': 'more',
             'defensive-transition': 'standard',
-            'tackling': 'commit',                // Engagé
+            'tackling': 'harder',                // Engagé
             'pressing-crosses': 'balanced',
             'pressing-trap': 'outside',          // Extérieur
             'defensive-behavior': 'balanced',
@@ -2658,9 +2769,9 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
         
@@ -2744,9 +2855,9 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
         
@@ -2829,7 +2940,7 @@ const PRESETS = {
             'defensive-line': 'higher',
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',
+            'tackling': 'harder',
             'pressing-crosses': 'balanced',
             'pressing-trap': 'outside',
             'defensive-behavior': 'balanced',
@@ -2917,10 +3028,10 @@ const PRESETS = {
             'defensive-line': 'higher',
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',
-            'pressing-crosses': 'prevent',
+            'tackling': 'harder',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
 
@@ -3005,10 +3116,10 @@ const PRESETS = {
             'defensive-line': 'higher',
             'pressing-trigger': 'much-more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',
-            'pressing-crosses': 'prevent',
+            'tackling': 'harder',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
 
@@ -3094,7 +3205,7 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'no'
@@ -3181,10 +3292,10 @@ const PRESETS = {
             'defensive-line': 'much-higher',
             'pressing-trigger': 'much-more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',
-            'pressing-crosses': 'prevent',
+            'tackling': 'harder',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
 
@@ -3269,10 +3380,10 @@ const PRESETS = {
             'defensive-line': 'much-higher',
             'pressing-trigger': 'much-more',
             'defensive-transition': 'counter-press',
-            'tackling': 'stay',
-            'pressing-crosses': 'prevent',
+            'tackling': 'ease',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
 
@@ -3360,7 +3471,7 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'yes'
@@ -3457,7 +3568,7 @@ const PRESETS = {
             'pressing-trigger': 'more',              // Plus souvent - bon compromis énergie/pression, pas much-more qui fatiguait l\'équipe
             'defensive-transition': 'counter-press', // Contre-pressing - Hojbjerg (Volume 17) + Vermeeren (Endurance 17) faits pour ça
             'tackling': 'standard',                  // Standard - commit au match aller = 7 fautes + 2 jaunes, au Bernabéu les arbitres siffleront vite
-            'pressing-crosses': 'prevent',           // Empêcher - Mbappé (8.3) et Brahim (7.2) dangereux dans la surface
+            'pressing-crosses': 'stop',           // Empêcher - Mbappé (8.3) et Brahim (7.2) dangereux dans la surface
             'pressing-trap': 'outside',              // Vers les côtés - pousser Madrid loin de l\'axe, forcer des centres que Pavard/Medina défendent
             'defensive-behavior': 'balanced',        // Équilibré - pas higher comme au match aller, choix intelligent quand monter ou reculer
             'prevent-short-gk': 'no'                 // Non - économiser l\'énergie, pas besoin de presser Courtois sur ses relances
@@ -3555,9 +3666,9 @@ const PRESETS = {
             'pressing-trigger': 'more',              // Plus souvent - bon compromis énergie/efficacité du pressing
             'defensive-transition': 'counter-press', // Contre-pressing - Hojbjerg (Volume 17) + Timber (Volume 15) récupèrent vite
             'tackling': 'standard',                  // Standard - éviter les fautes inutiles, Medina (Tacles 14) et Pavard (16) suffisent
-            'pressing-crosses': 'prevent',           // Empêcher de centrer - protéger la surface, Rulli (Un contre un 19) en dernier recours
+            'pressing-crosses': 'stop',           // Empêcher de centrer - protéger la surface, Rulli (Un contre un 19) en dernier recours
             'pressing-trap': 'outside',              // Vers les côtés - pousser l'adversaire sur les flancs, loin de l'axe dangereux
-            'defensive-behavior': 'higher',          // Rester plus haut - maintenir la pression, ne pas reculer inutilement
+            'defensive-behavior': 'step-up',          // Rester plus haut - maintenir la pression, ne pas reculer inutilement
             'prevent-short-gk': 'yes'                // Oui - presser les relances courtes adverses, Aubameyang + Greenwood devant
         },
 
@@ -3659,7 +3770,7 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'yes'
@@ -3771,7 +3882,7 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'yes'
@@ -3882,10 +3993,10 @@ const PRESETS = {
             'defensive-line': 'higher',
             'pressing-trigger': 'much-more',
             'defensive-transition': 'counter-press',
-            'tackling': 'commit',
-            'pressing-crosses': 'prevent',
+            'tackling': 'harder',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
-            'defensive-behavior': 'higher',
+            'defensive-behavior': 'step-up',
             'prevent-short-gk': 'yes'
         },
 
@@ -3994,9 +4105,9 @@ const PRESETS = {
             'pressing-trigger': 'standard',
             'defensive-transition': 'regroup',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
-            'defensive-behavior': 'lower',
+            'defensive-behavior': 'drop-off',
             'prevent-short-gk': 'no'
         },
 
@@ -4105,7 +4216,7 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'yes'
@@ -4206,7 +4317,7 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'yes'
@@ -4297,7 +4408,7 @@ const PRESETS = {
             'pressing-trigger': 'more',              // Presser plus souvent
             'defensive-transition': 'counter-press', // Contre-pressing immédiat
             'tackling': 'standard',                  // Standard
-            'pressing-crosses': 'prevent',           // Empêcher les centres
+            'pressing-crosses': 'stop',           // Empêcher les centres
             'pressing-trap': 'outside',              // Pousser vers le flanc
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'yes'
@@ -4386,7 +4497,7 @@ const PRESETS = {
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
             'tackling': 'standard',
-            'pressing-crosses': 'prevent',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'outside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'yes'
@@ -4471,8 +4582,8 @@ const PRESETS = {
             'defensive-line': 'lower',
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
-            'tackling': 'stay',
-            'pressing-crosses': 'prevent',
+            'tackling': 'ease',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'no'
@@ -4551,8 +4662,8 @@ const PRESETS = {
             'defensive-line': 'lower',
             'pressing-trigger': 'more',
             'defensive-transition': 'counter-press',
-            'tackling': 'stay',
-            'pressing-crosses': 'prevent',
+            'tackling': 'ease',
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'no'
@@ -4637,8 +4748,8 @@ const PRESETS = {
             'defensive-line': 'standard',          // Ligne standard (CBs corrects)
             'pressing-trigger': 'more',            // Presser plus souvent
             'defensive-transition': 'counter-press', // Contre-pressing immédiat
-            'tackling': 'stay',                    // Ne pas se jeter
-            'pressing-crosses': 'prevent',
+            'tackling': 'ease',                    // Ne pas se jeter
+            'pressing-crosses': 'stop',
             'pressing-trap': 'inside',             // Attirer vers l'axe
             'defensive-behavior': 'balanced',
             'prevent-short-gk': 'no'

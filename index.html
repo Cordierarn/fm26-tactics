@@ -1,1 +1,2121 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Tactique FM26 — Outil expert pour Football Manager 26</title>
+    <meta name="description" content="Construis ta tactique FM26 optimale : formation duale IP/OOP, rôles, consignes équipe, plan mercato et notation joueurs depuis ton export CSV.">
+    <meta property="og:title" content="Studio Tactique FM26">
+    <meta property="og:description" content="L'outil tactique expert pour Football Manager 26. Formation duale, rôles, consignes, mercato.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- LANDING PAGE                                   -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="landing-screen" id="landing-screen">
+
+        <!-- Nav -->
+        <nav class="landing-nav">
+            <div class="landing-nav-logo">
+                <i class="bi bi-diagram-3"></i>
+                <span>Studio Tactique</span>
+                <span class="landing-version-badge">FM26</span>
+            </div>
+            <button class="landing-nav-cta" id="landing-nav-enter">
+                <i class="bi bi-arrow-right-circle"></i> Ouvrir le Studio
+            </button>
+        </nav>
+
+        <!-- Hero -->
+        <section class="landing-hero">
+            <div class="landing-hero-content">
+                <div class="landing-hero-tag">
+                    <i class="bi bi-stars"></i> Outil tactique expert
+                </div>
+                <h1 class="landing-hero-title">
+                    Construis la tactique<br>
+                    <span class="landing-hero-accent">parfaite pour FM26</span>
+                </h1>
+                <p class="landing-hero-sub">
+                    Formation duale IP&nbsp;/&nbsp;OOP, rôles précis par poste, consignes équipe automatiques,
+                    plan mercato depuis ton export CSV. Tout ce dont tu as besoin, dans un seul outil.
+                </p>
+                <div class="landing-hero-actions">
+                    <button class="landing-btn-primary" id="landing-enter-main">
+                        <i class="bi bi-play-fill"></i> Lancer le Studio
+                    </button>
+                    <a class="landing-btn-ghost" href="#landing-features">
+                        <i class="bi bi-chevron-down"></i> Voir les fonctionnalités
+                    </a>
+                </div>
+            </div>
+            <div class="landing-hero-visual" aria-hidden="true">
+                <div class="landing-pitch-preview">
+                    <div class="lp-pitch-inner">
+                        <!-- Terrain simplifié décoratif -->
+                        <div class="lp-center-line"></div>
+                        <div class="lp-center-circle"></div>
+                        <div class="lp-box lp-box-top"></div>
+                        <div class="lp-box lp-box-bot"></div>
+                        <!-- Joueurs IP 4-3-3 -->
+                        <div class="lp-player lp-gk" style="left:50%;top:88%"></div>
+                        <div class="lp-player lp-def" style="left:20%;top:72%"></div>
+                        <div class="lp-player lp-def" style="left:38%;top:74%"></div>
+                        <div class="lp-player lp-def" style="left:62%;top:74%"></div>
+                        <div class="lp-player lp-def" style="left:80%;top:72%"></div>
+                        <div class="lp-player lp-mid" style="left:28%;top:53%"></div>
+                        <div class="lp-player lp-mid" style="left:50%;top:50%"></div>
+                        <div class="lp-player lp-mid" style="left:72%;top:53%"></div>
+                        <div class="lp-player lp-att" style="left:22%;top:28%"></div>
+                        <div class="lp-player lp-att" style="left:50%;top:22%"></div>
+                        <div class="lp-player lp-att" style="left:78%;top:28%"></div>
+                        <!-- Phase badge -->
+                        <div class="lp-phase-ip">IP</div>
+                        <div class="lp-phase-oop">OOP</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="landing-features" id="landing-features">
+            <div class="landing-section-header">
+                <h2>Tout ce dont tu as besoin</h2>
+                <p>Un outil complet, pensé pour FM26 de A à Z</p>
+            </div>
+            <div class="landing-features-grid">
+
+                <div class="landing-feature-card">
+                    <div class="lf-icon lf-icon-red">
+                        <i class="bi bi-layout-text-window-reverse"></i>
+                    </div>
+                    <h3>Formation Duale IP / OOP</h3>
+                    <p>Configure deux formations indépendantes — en possession et hors possession — avec rôles précis par poste et variantes centre/côté.</p>
+                </div>
+
+                <div class="landing-feature-card">
+                    <div class="lf-icon lf-icon-blue">
+                        <i class="bi bi-sliders2-vertical"></i>
+                    </div>
+                    <h3>Consignes Équipe Automatiques</h3>
+                    <p>Le tool génère toutes tes consignes (tempo, ligne défensive, pressing, largeur…) à partir du profil réel de ton effectif CSV.</p>
+                </div>
+
+                <div class="landing-feature-card">
+                    <div class="lf-icon lf-icon-green">
+                        <i class="bi bi-clipboard-data"></i>
+                    </div>
+                    <h3>Notation &amp; Scoring Joueurs</h3>
+                    <p>Importe ton export FM26, note chaque joueur selon son rôle IP et OOP, identifie les titulaires optimaux pour ta tactique.</p>
+                </div>
+
+                <div class="landing-feature-card">
+                    <div class="lf-icon lf-icon-orange">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+                    <h3>Plan Mercato Intelligent</h3>
+                    <p>Analyse l'effectif, détecte les postes fragiles, protège les joueurs indispensables et liste les priorités de recrutement avec seuils d'attributs.</p>
+                </div>
+
+                <div class="landing-feature-card">
+                    <div class="lf-icon lf-icon-purple">
+                        <i class="bi bi-lightning-charge"></i>
+                    </div>
+                    <h3>Presets Experts</h3>
+                    <p>Accès à des tactiques prêtes à l'emploi — Pressing Haut, Possession, Contre, Hybride — construites sur les mécaniques FM26.</p>
+                </div>
+
+                <div class="landing-feature-card">
+                    <div class="lf-icon lf-icon-teal">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <h3>Guide du Gaffer</h3>
+                    <p>Comprends les 5 piliers tactiques de FM26 : identité, transitions, phases de jeu, plans B/C et rituels hebdomadaires.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Stats bar -->
+        <section class="landing-stats">
+            <div class="landing-stat">
+                <span class="ls-number">11</span>
+                <span class="ls-label">Modules</span>
+            </div>
+            <div class="landing-stat-divider"></div>
+            <div class="landing-stat">
+                <span class="ls-number">60+</span>
+                <span class="ls-label">Formations</span>
+            </div>
+            <div class="landing-stat-divider"></div>
+            <div class="landing-stat">
+                <span class="ls-number">120+</span>
+                <span class="ls-label">Rôles FM26</span>
+            </div>
+            <div class="landing-stat-divider"></div>
+            <div class="landing-stat">
+                <span class="ls-number">IP + OOP</span>
+                <span class="ls-label">Système dual</span>
+            </div>
+        </section>
+
+        <!-- CTA final -->
+        <section class="landing-cta-section">
+            <h2>Prêt à dominer FM26&nbsp;?</h2>
+            <p>Gratuit, sans inscription, tout en local.</p>
+            <button class="landing-btn-primary landing-btn-large" id="landing-enter-bottom">
+                <i class="bi bi-play-fill"></i> Ouvrir le Studio Tactique
+            </button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="landing-footer">
+            <span><i class="bi bi-diagram-3"></i> Studio Tactique FM26</span>
+            <span class="lf-sep">·</span>
+            <span>Outil non-officiel, non affilié à Sports Interactive</span>
+        </footer>
+
+    </div>
+    <!-- END LANDING -->
+
+    <div class="app-container" id="app-container" style="display:none">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
+                <h1>Studio Tactique</h1>
+                <span class="version-badge">FM26</span>
+            </div>
+            <div class="header-actions">
+                <button id="save-tactic" class="btn btn-primary" title="Sauvegarder (Ctrl+S)">
+                    <span class="btn-icon" aria-hidden="true"><i class="bi bi-floppy"></i></span> Sauvegarder
+                </button>
+                <button id="load-tactic" class="btn btn-secondary" title="Charger une tactique">
+                    <span class="btn-icon" aria-hidden="true"><i class="bi bi-folder2-open"></i></span> Charger
+                </button>
+                <button id="export-tactic" class="btn btn-secondary" title="Exporter en JSON (Ctrl+E)">
+                    <span class="btn-icon" aria-hidden="true"><i class="bi bi-box-arrow-up"></i></span> Exporter
+                </button>
+                <button id="import-tactic" class="btn btn-secondary">
+                    <span class="btn-icon" aria-hidden="true"><i class="bi bi-box-arrow-in-down"></i></span> Importer
+                </button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Navigation Tabs -->
+            <nav class="tab-navigation">
+                <button class="tab-btn active" data-tab="formation">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-layout-text-window-reverse"></i></span>
+                    <span class="tab-text">Formation</span>
+                </button>
+                <button class="tab-btn" data-tab="instructions">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-sliders2-vertical"></i></span>
+                    <span class="tab-text">Instructions</span>
+                </button>
+                <button class="tab-btn" data-tab="analysis">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></span>
+                    <span class="tab-text">Analyse</span>
+                </button>
+                <button class="tab-btn" data-tab="presets">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></span>
+                    <span class="tab-text">Presets</span>
+                </button>
+                <button class="tab-btn" data-tab="visualizer">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-grid-3x3-gap"></i></span>
+                    <span class="tab-text">Visualiseur FM26</span>
+                </button>
+                <button class="tab-btn" data-tab="setpieces">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-flag"></i></span>
+                    <span class="tab-text">Coups de pied arrêtés</span>
+                </button>
+                <button class="tab-btn" data-tab="positioninstructions">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-bullseye"></i></span>
+                    <span class="tab-text">Consignes par poste</span>
+                </button>
+                <button class="tab-btn" data-tab="xireport">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-journal-text"></i></span>
+                    <span class="tab-text">XI détaillé</span>
+                </button>
+                <button class="tab-btn" data-tab="training">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-activity"></i></span>
+                    <span class="tab-text">Entraînement</span>
+                </button>
+                <button class="tab-btn" data-tab="scoring">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-clipboard-data"></i></span>
+                    <span class="tab-text">Notation Joueurs</span>
+                </button>
+                <button class="tab-btn" data-tab="gaffer">
+                    <span class="tab-icon" aria-hidden="true"><i class="bi bi-mortarboard"></i></span>
+                    <span class="tab-text">Guide du Gaffer</span>
+                </button>
+            </nav>
+
+            <!-- Tab Contents -->
+            <div class="tab-contents">
+                <!-- Formation Tab -->
+                <div class="tab-content active" id="formation-tab">
+
+                    <!-- Strikerless meta notice -->
+                    <div id="strikerless-notice" class="strikerless-notice" style="display:none">
+                        <span class="strikerless-icon" aria-hidden="true"><i class="bi bi-exclamation-triangle"></i></span>
+                        <span class="strikerless-text"><strong>Formation sans attaquant (Strikerless)</strong> — Système potentiellement overpowered en FM26. Privilégiez des milieux avec Finition et Hors Balle élevés.</span>
+                    </div>
+
+                    <!-- FM26 Dual Formation Toggle -->
+                    <div class="formation-phase-toggle">
+                        <button class="phase-btn active" data-phase="ip">
+                            <span class="phase-icon" aria-hidden="true"><i class="bi bi-circle-fill"></i></span>
+                            <span>En Possession (IP)</span>
+                        </button>
+                        <button class="phase-btn" data-phase="oop">
+                            <span class="phase-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+                            <span>Hors Possession (OOP)</span>
+                        </button>
+                    </div>
+
+                    <div class="formation-container">
+                        <!-- Left Panel - Formation Selection -->
+                        <div class="formation-panel">
+                            <div class="panel-section">
+                                <h3>
+                                    <span id="formation-phase-title">Formation En Possession</span>
+                                </h3>
+                                <select id="formation-select" class="form-select">
+                                    <option value="4-4-2">4-4-2</option>
+                                    <option value="4-4-2-diamond">4-4-2 Diamant</option>
+                                    <option value="4-3-3" selected>4-3-3</option>
+                                    <option value="4-3-3-dm">4-3-3 MDéf</option>
+                                    <option value="4-2-3-1">4-2-3-1</option>
+                                    <option value="4-1-4-1">4-1-4-1</option>
+                                    <option value="4-3-2-1">4-3-2-1</option>
+                                    <option value="4-4-1-1">4-4-1-1</option>
+                                    <option value="3-5-2">3-5-2</option>
+                                    <option value="3-4-3">3-4-3</option>
+                                    <option value="3-4-2-1">3-4-2-1</option>
+                                    <option value="3-1-4-2">3-1-4-2</option>
+                                    <option value="5-3-2">5-3-2</option>
+                                    <option value="5-4-1">5-4-1</option>
+                                    <option value="5-2-3">5-2-3</option>
+                                    <optgroup label="── Custom ──">
+                                    <option value="4-2-2-2">4-2-2-2 (2 pivot + 2 MAM + 2 AC)</option>
+                                    <option value="4-2-4">4-2-4 (2 pivot + 4 att)</option>
+                                    <option value="4-1-2-1-2">4-1-2-1-2 (Losange)</option>
+                                    <option value="3-2-5">3-2-5 (Guardiola possession)</option>
+                                    <option value="4-6-0">4-6-0 (Tiki-taka faux 9)</option>
+                                    <option value="3-3-3-1">3-3-3-1 (Jeu positionnel)</option>
+                                    <option value="3-2-4-1">3-2-4-1 (3 DC pressing large)</option>
+                                    <option value="4-1-3-2">4-1-3-2 (Milieu dense + 2 AC)</option>
+                                    <option value="5-1-4">5-1-4 (Contre-attaque depuis bloc bas)</option>
+                                    <option value="2-3-5">2-3-5 (Ultra offensif)</option>
+                                    <option value="3-6-1">3-6-1 (Contrôle total)</option>
+                                    <option value="4-3-1-2">4-3-1-2 (Sarri — trequartista + 2 AC)</option>
+                                    <option value="3-4-1-2">3-4-1-2 (3 DC + pistons + MAM + 2 AC)</option>
+                                    <option value="5-2-2-1">5-2-2-1 (5 def compact + 2 MAM)</option>
+                                    <option value="4-5-1">4-5-1 flat (5 milieux à plat)</option>
+                                    <option value="3-1-3-3">3-1-3-3 (Bielsa pressing haut)</option>
+                                    <option value="2-3-2-3">2-3-2-3 (LXS Forum — ultra offensif)</option>
+                                    <option value="5-1-3-1">5-1-3-1 (Forum FM-Arena)</option>
+                                    <option value="5-2-1-2">5-2-1-2 (Forum "Purge")</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <!-- FM26 OOP Suggestions -->
+                            <div class="panel-section" id="oop-suggestions-panel" style="display: none;">
+                                <h3>💡 Formations OOP suggérées</h3>
+                                <div id="oop-suggestions" class="suggestion-list"></div>
+                            </div>
+
+                            <div class="panel-section">
+                                <h3>🎯 Mentalité <span class="help-icon" data-tip="La mentalité influence automatiquement plusieurs paramètres :&#10;● Largeur : + Offensif = + Large&#10;● Tempo : + Offensif = + Rapide&#10;● Passes : + Offensif = + Directes&#10;● Pressing : + Offensif = + Haut&#10;● Ligne défensive : + Offensif = + Haute&#10;● Marquage : + Offensif = - Serré&#10;● Liberté créative : + Offensif = + Expression&#10;● Courses vers l'avant : + Offensif = + Nombreuses&#10;&#10;Défensif : bloc compact, risque minimal&#10;Équilibré : adaptatif, polyvalent&#10;Attaquant/Très Attaquant : tout-en-avant, risqué derrière">?</span></h3>
+                                <div class="mentality-slider">
+                                    <input type="range" id="mentality" min="0" max="6" value="3" class="slider">
+                                    <div class="mentality-labels">
+                                        <span>Défensif</span>
+                                        <span id="mentality-value">Équilibré</span>
+                                        <span>Offensif</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel-section">
+                                <h3>📜 Nom de la Tactique</h3>
+                                <input type="text" id="tactic-name" class="form-input" placeholder="Ma Tactique FM26" value="Ma Tactique FM26">
+                            </div>
+
+                            <!-- Identité Tactique -->
+                            <div class="panel-section identity-section">
+                                <h3>🧬 Identité Tactique</h3>
+                                <div class="identity-dna-live" id="identity-dna-live">
+                                    <p class="identity-placeholder">Configurez vos consignes pour voir votre DNA tactique</p>
+                                </div>
+                                <div class="identity-fields">
+                                    <label class="identity-label">Plan B <span class="identity-hint">(si le plan A est neutralisé)</span></label>
+                                    <input type="text" id="plan-b-input" class="form-input identity-input" placeholder="Ex: repli 4-4-2 compact, contre-attaque">
+                                    <label class="identity-label">Plan C <span class="identity-hint">(option de dernier recours)</span></label>
+                                    <input type="text" id="plan-c-input" class="form-input identity-input" placeholder="Ex: long ball sur pivot, Park The Bus">
+                                    <label class="identity-label">Notes du Coach</label>
+                                    <textarea id="coach-notes" class="form-input identity-textarea" placeholder="Observations, points de vigilance, joueurs clés..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- FM26 Badge -->
+                            <div class="fm26-features-badge">
+                                <div class="badge-title">✨ Nouveautés FM26</div>
+                                <ul class="badge-list">
+                                    <li>Consignes individuelles par joueur dans les presets - Les 12+ presets experts n'incluent pas encore de playerInstructions pour chaque joueur. Ajouter les consignes individuelles optimales par preset rendrait le tool beaucoup plus complet.</li>
+                                    <li>Résumé visuel des consignes individuelles sur le terrain - Afficher un petit indicateur sur chaque joueur (point coloré) quand il a des consignes modifiées, pour voir d'un coup d'oeil la configuration.</li>
+                                    <li>Copier les consignes d'un joueur à un autre - Bouton "Copier consignes" pour appliquer les mêmes réglages à un autre joueur du même type de poste.</li>
+                                    <li>Analyse tactique enrichie - Intégrer les consignes individuelles dans l'analyse. Ex: "3 joueurs ont des courses vers l'avant sur Plus - risque d'espace derrière", ou "Aucun joueur ne conserve la balle - manque de point d'appui".</li>
+                                    <li>Mode comparaison de tactiques - Charger 2 tactiques et les comparer côte à côte (formations, consignes, rôles).</li>
+                                    <li>Export visuel (image/PDF) - Générer une image résumant toute la tactique (terrain + rôles + consignes clés) pour partager sur Discord/Reddit.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Center - Pitch -->
+                        <div class="pitch-container">
+                            <div class="pitch" id="pitch">
+                                <div class="pitch-markings">
+                                    <div class="center-circle"></div>
+                                    <div class="center-line"></div>
+                                    <div class="penalty-area top"></div>
+                                    <div class="penalty-area bottom"></div>
+                                    <div class="goal-area top"></div>
+                                    <div class="goal-area bottom"></div>
+                                </div>
+                                <div class="players-container" id="players-container">
+                                    <!-- Players will be rendered here -->
+                                </div>
+                            </div>
+                            <div class="pitch-info">
+                                <span id="current-phase-indicator" class="phase-indicator ip">EN POSSESSION</span>
+                                <span class="drag-hint">Glissez les joueurs pour ajuster les positions</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel - Player Roles -->
+                        <div class="roles-panel">
+                            <div class="panel-header">
+                                <h3>👤 Rôle du Joueur</h3>
+                                <span id="selected-position-indicator">Sélectionnez un joueur</span>
+                            </div>
+                            <div class="selected-player-info" id="selected-player-info">
+                                <div class="no-selection">
+                                    <span class="no-selection-icon" aria-hidden="true"><i class="bi bi-hand-index"></i></span>
+                                    <p>Cliquez sur un joueur pour voir et modifier son rôle</p>
+                                </div>
+                            </div>
+                            <div class="roles-list" id="roles-list" style="display: none;">
+                                <!-- Roles will be rendered here -->
+                            </div>
+
+                            <!-- FM26 Individual Player Instructions -->
+                            <div class="player-instructions-panel" id="player-instructions-panel" style="display: none;">
+                                <div class="pi-header">
+                                    <h4>Consignes individuelles</h4>
+                                    <div class="pi-legend">
+                                        <span class="pi-legend-item locked-legend"><span class="pi-lock-icon">&#128274;</span> Verrouillée</span>
+                                        <span class="pi-legend-item modified-legend">&#9679; Modifiée</span>
+                                    </div>
+                                </div>
+                                <div class="pi-tabs">
+                                    <button class="pi-tab active" data-pi-tab="withBall">Avec le ballon</button>
+                                    <button class="pi-tab" data-pi-tab="withoutBall">Sans le ballon</button>
+                                </div>
+                                <div class="pi-copy-controls" id="pi-copy-controls">
+                                    <label for="copy-target-player">Copier vers</label>
+                                    <div class="pi-copy-row">
+                                        <select id="copy-target-player" class="form-select"></select>
+                                        <button id="copy-player-instructions" class="btn btn-secondary" type="button">Copier consignes</button>
+                                    </div>
+                                </div>
+                                <div class="pi-content" id="pi-content">
+                                    <!-- Individual instructions will be rendered here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructions Tab -->
+                <div class="tab-content" id="instructions-tab">
+                    <div class="instructions-container">
+                        <!-- In Possession Instructions -->
+                        <div class="instructions-section">
+                            <div class="section-header">
+                                <h3>⚽ En Possession</h3>
+                            </div>
+                            <div class="instructions-grid">
+                                <div class="instruction-group">
+                                    <label>Caract. direct des passes <span class="help-icon" data-tip="Directness des passes = risque offensif.&#10;● Courtes : possession sécurisée, jeu entre les lignes. Nécessite technique + vision.&#10;● Directes : avance vite, plus de pertes mais plus dangereux. Idéal avec attaquants rapides.&#10;⚠️ Combiné avec Rythme rapide + Dans les espaces = risque maximal.">?</span></label>
+                                    <select id="passing-style" class="form-select">
+                                        <option value="much-shorter">Beaucoup plus courtes — Possession max, zéro risque</option>
+                                        <option value="shorter">Plus courtes — Jeu entre les lignes, sécurisé</option>
+                                        <option value="standard" selected>Standard — Équilibre risque/sécurité</option>
+                                        <option value="direct">Plus directes — Progression rapide, plus de pertes</option>
+                                        <option value="much-more-direct">Beaucoup plus directes — Jeu long direct</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Rythme <span class="help-icon" data-tip="Vitesse de circulation du ballon.&#10;● Lent : garde la possession, fatigue l'adversaire. Bon avec joueurs techniques.&#10;● Rapide : surprend la défense avant qu'elle se repositionne. Essentiel en contre-attaque.&#10;⚠️ Rythme rapide + passes directes + dans les espaces = risque maximal mais très dangereux.">?</span></label>
+                                    <select id="tempo" class="form-select">
+                                        <option value="much-slower">Beaucoup plus lent — Possession, patience extrême</option>
+                                        <option value="slower">Plus lent — Contrôle du jeu, épuise l'adversaire</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="higher">Plus rapide — Transition rapide, surprend la défense</option>
+                                        <option value="much-higher">Beaucoup plus élevé — Sprint collectif, risque élevé</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Largeur du jeu offensif <span class="help-icon" data-tip="Étirement horizontal de l'équipe en possession.&#10;● Large : écarte les défenseurs, crée des espaces dans l'axe. Idéal avec ailiers + latéraux offensifs.&#10;● Axial : surcharge le centre. Fonctionne si flancs occupés par des rôles qui rentrent (Ailiers Intérieurs).&#10;⚠️ La mentalité influence aussi la largeur automatiquement.">?</span></label>
+                                    <select id="width-attack" class="form-select">
+                                        <option value="much-narrow">Beaucoup plus axiale — Surcharge du centre</option>
+                                        <option value="narrow">Plus axiale — Jeu intérieur, espaces entre les lignes</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="wide">Plus large — Utilise les flancs, étire la défense</option>
+                                        <option value="very-wide">Beaucoup plus large — Largeur maximale</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Progression <span class="help-icon" data-tip="Zone prioritaire de construction et d'attaque.&#10;● Flancs : idéal si ailiers/latéraux offensifs forts. Crée des centres et situations 1v1.&#10;● Axiale : surcharge le centre via milieux offensifs. Idéal avec Meneur de Jeu.&#10;● Équilibrée : adaptatif selon les espaces disponibles.">?</span></label>
+                                    <select id="attack-focus" class="form-select">
+                                        <option value="balanced" selected>Équilibrée — S'adapte aux espaces</option>
+                                        <option value="center">Axiale — Surcharge le centre</option>
+                                        <option value="left">Gauche — Priorité côté gauche</option>
+                                        <option value="right">Droite — Priorité côté droit</option>
+                                        <option value="flanks">Deux flancs — Attaque par les côtés</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Réception des passes <span class="help-icon" data-tip="Comment les receveurs se positionnent pour recevoir.&#10;● Dans les pieds : balle jouée vers le porteur statique. Possession sécurisée.&#10;● Dans les espaces : les joueurs partent en profondeur avant la passe. Nécessite vitesse + anticipation.&#10;⚠️ Combiné avec passes directes + rythme rapide = risque offensif maximal.">?</span></label>
+                                    <select id="pass-target" class="form-select">
+                                        <option value="feet">Dans les pieds — Possession, sécurité</option>
+                                        <option value="standard" selected>Standard — Équilibré selon situation</option>
+                                        <option value="space">Dans les espaces — En profondeur, vitesse requise</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Zone de finition <span class="help-icon" data-tip="Comment l'équipe cherche à finir dans le dernier tiers.&#10;● Jouer le ballon dans la surface : travaille pour créer une occasion nette. Moins de tirs mais meilleure qualité.&#10;● Centrer tôt : envoie des centres dès que possible. Efficace avec un attaquant dominant en l'air.&#10;● Tirer dès que possible : encourage les frappes lointaines. Surprend les gardiens mais risque de perdre la balle.">?</span></label>
+                                    <select id="crossing-patience" class="form-select">
+                                        <option value="early">Centrer tôt — Centres rapides, idéal avec pivot aérien</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="work-ball">Jouer le ballon dans la surface — Occasions nettes</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Style de centres <span class="help-icon" data-tip="Type de trajectoire sur les centres.&#10;● Mixte : le joueur choisit selon la situation.&#10;● Forts/Tendus : centres rasants — idéal pour buteurs qui finissent dans l'axe (BdS, AC).&#10;● Flottants : ballon en cloche — pour attaquants puissants en l'air (Pivot aérien).&#10;● À ras de terre : centres au sol — contre défenses hautes et gardiens qui sortent.">?</span></label>
+                                    <select id="crossing-style" class="form-select">
+                                        <option value="balanced" selected>Mixte — Le joueur choisit selon la situation</option>
+                                        <option value="floated">Flottants/Hauts — Pour attaquants puissants en l'air</option>
+                                        <option value="drilled">Forts/Tendus — Centres rasants pour buteurs dans l'axe</option>
+                                        <option value="low">À ras de terre — Contre défenses hautes et gardiens sortants</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Dribbles <span class="help-icon" data-tip="Tendance des joueurs à prendre leur adversaire en 1v1.&#10;● Encourager : très utile avec des ailiers techniques et rapides. Crée des déséquilibres défensifs.&#10;● Dissuader : garde la possession, évite les prises de risque. Idéal si l'équipe manque de dribbleurs.">?</span></label>
+                                    <select id="dribbling" class="form-select">
+                                        <option value="discourage">Dissuader — Garde la possession</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="encourage">Encourager — 1v1, déséquilibre la défense</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Tirs de loin <span class="help-icon" data-tip="Propension à tenter des frappes hors surface.&#10;● Encourager : utile si milieux ont bonne frappe. Surprend les gardiens positionnés haut. Risque de perdre la possession dans des zones dangereuses si mal utilisé.&#10;● Dissuader : conserve la balle, tirer uniquement dans de bonnes positions.">?</span></label>
+                                    <select id="long-shots" class="form-select">
+                                        <option value="discourage">Dissuader — Conserve la possession</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="encourage">Encourager — Frappes lointaines, surprend les gardiens</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Liberté créative <span class="help-icon" data-tip="Degré de liberté laissé aux joueurs pour improviser.&#10;● Plus de discipline : suit strictement les consignes de rôle. Cohérence tactique mais moins de création spontanée.&#10;● Plus d'expression : les joueurs improvisent davantage. Essentiel pour les meneurs créatifs.&#10;La mentalité influence aussi ce paramètre automatiquement.">?</span></label>
+                                    <select id="creative-freedom" class="form-select">
+                                        <option value="discipline">Plus de discipline — Suit strictement les consignes</option>
+                                        <option value="balanced" selected>Équilibrée — Liberté dans le cadre du rôle</option>
+                                        <option value="expressive">Plus d'expression — Improvisation, meneurs créatifs</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Réaction au pressing adverse <span class="help-icon" data-tip="Comment l'équipe réagit quand l'adversaire presse haut.&#10;● Gérer le pressing : cherche à jouer court, éviter la pression. Nécessite technique et vision.&#10;● Contourner le pressing : jouer long par-dessus le bloc adverse. Efficace si attaquant remporte les duels aériens.">?</span></label>
+                                    <select id="pressing-strategy" class="form-select">
+                                        <option value="manage">Gérer le pressing — Jeu court sous pression</option>
+                                        <option value="balanced" selected>Équilibrée — Adaptatif</option>
+                                        <option value="bypass">Contourner le pressing — Jeu long par-dessus le bloc</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Obtenir coups de pied arrêtés <span class="help-icon" data-tip="Incite les joueurs à provoquer des fautes pour obtenir des coups de pied arrêtés.&#10;Utile si l'équipe est forte sur corners/coups francs. Peut pénaliser le jeu si mal dosé.">?</span></label>
+                                    <select id="set-pieces" class="form-select">
+                                        <option value="no" selected>Garder le ballon en jeu</option>
+                                        <option value="yes">Obtenir des coups de pied arrêtés</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="checkbox-instructions">
+                                <h4>Courses de soutien — Dédoublement extérieur <span class="help-icon" data-tip="Encourage les latéraux/milieux larges à déborder derrière l'ailier pour créer un surnombre sur le flanc. Augmente l'intention offensive du joueur large. À combiner avec un ailier qui reste excentré (pas un Ailier Intérieur).">?</span></h4>
+                                <div class="overlap-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="overlap-left">
+                                        <span class="checkmark"></span>
+                                        Gauche
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="overlap-right">
+                                        <span class="checkmark"></span>
+                                        Droite
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="overlap-both">
+                                        <span class="checkmark"></span>
+                                        Deux flancs
+                                    </label>
+                                </div>
+                                <h4>Dédoublement intérieur <span class="help-icon" data-tip="Encourage les joueurs larges à rentrer dans l'axe (underlap) plutôt que de déborder. Idéal quand l'ailier est du type Intérieur et que le latéral doit rester sur la ligne. Crée de la profondeur dans les couloirs intérieurs.">?</span></h4>
+                                <div class="overlap-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="underlap-left">
+                                        <span class="checkmark"></span>
+                                        Gauche
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="underlap-right">
+                                        <span class="checkmark"></span>
+                                        Droite
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="underlap-both">
+                                        <span class="checkmark"></span>
+                                        Deux flancs
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Goalkeeper Distribution -->
+                        <div class="instructions-section">
+                            <div class="section-header">
+                                <h3>🧤 Sorties de but / Relances GB</h3>
+                            </div>
+                            <div class="instructions-grid">
+                                <div class="instruction-group">
+                                    <label>Sorties de but <span class="help-icon" data-tip="Comportement du gardien sur les dégagements aux 6 mètres.&#10;● Courtes : relances courtes pour maintenir la possession dès la sortie de but. Risqué si l'adversaire presse haut.&#10;● Variées : le gardien choisit selon la situation.&#10;● Longues : dégagements longs vers l'avant. Utile contre un pressing haut ou avec un attaquant pivot.">?</span></label>
+                                    <select id="goal-kicks" class="form-select">
+                                        <option value="short">Courtes — Possession, risqué sous pressing haut</option>
+                                        <option value="mixed" selected>Variées — Le gardien choisit selon la situation</option>
+                                        <option value="long">Longues — Dégagements vers l'avant, contre le pressing</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Relances GB (cible) <span class="help-icon" data-tip="Vers qui le gardien relance en jeu.&#10;● DC : balle aux défenseurs centraux, reconstruction depuis l'arrière.&#10;● Latéraux : balle aux latéraux, progression par les flancs.&#10;● Meneur de jeu : balle directement au créateur du jeu.&#10;● Pivot : dégagement direct vers l'attaquant cible.&#10;● Par-dessus : balle longue par-dessus la défense adverse pour les attaquants rapides.">?</span></label>
+                                    <select id="distribution-target" class="form-select">
+                                        <option value="balanced" selected>Équilibrées — Le gardien choisit</option>
+                                        <option value="cb">Défenseurs centraux — Construction depuis l'arrière</option>
+                                        <option value="fb">Arrières latéraux — Progression par les flancs</option>
+                                        <option value="flanks">Flancs — Vers les joueurs larges</option>
+                                        <option value="playmaker">Meneur de jeu — Vers le créateur du jeu</option>
+                                        <option value="target">Attaquant pivot — Dégagement direct vers l'avant-centre</option>
+                                        <option value="long">Par-dessus la défense — Pour attaquants rapides</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Relances GB (vitesse) <span class="help-icon" data-tip="Rapidité des relances du gardien.&#10;● Rapides : exploite les espaces avant que la défense adverse se repositionne. Idéal en contre-attaque.&#10;● Lentes : conserve le rythme, donne le temps aux coéquipiers de se placer.">?</span></label>
+                                    <select id="distribution-speed" class="form-select">
+                                        <option value="slow">Lentes — Laisse le temps aux coéquipiers de se placer</option>
+                                        <option value="balanced" selected>Équilibrées — Adaptatif</option>
+                                        <option value="fast">Rapides — Exploite les espaces, contre-attaque</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Perdre du temps <span class="help-icon" data-tip="Fréquence à laquelle les joueurs cherchent à faire passer le temps.&#10;● Plus souvent : utile quand on mène au score et qu'on veut gérer le résultat.&#10;● Moins souvent : agressif, cherche constamment à jouer vers l'avant.">?</span></label>
+                                    <select id="time-wasting" class="form-select">
+                                        <option value="less">Moins souvent — Agressif, toujours vers l'avant</option>
+                                        <option value="normal" selected>Normal — Équilibré</option>
+                                        <option value="more">Plus souvent — Gestion du résultat</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transition Instructions -->
+                        <div class="instructions-section">
+                            <div class="section-header">
+                                <h3>🔄 Transition offensive</h3>
+                            </div>
+                            <div class="instructions-grid">
+                                <div class="instruction-group">
+                                    <label>Transition offensive <span class="help-icon" data-tip="Comportement dès la récupération du ballon.&#10;● Contre-attaque : fond vers l'avant immédiatement après récupération. Idéal contre des équipes très haut. Nécessite joueurs rapides + espace derrière.&#10;● Rester en place : maintient la forme tactique, reconstruit posément. Utile pour consolider un avantage.&#10;⚠️ Se combine avec la Transition défensive adverse.">?</span></label>
+                                    <select id="counter-attack" class="form-select">
+                                        <option value="hold">Rester en place — Reconstruction posée, consolide</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="yes">Contre-attaque — Sprint vers l'avant, espace requis</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Out of Possession Instructions -->
+                        <div class="instructions-section">
+                            <div class="section-header">
+                                <h3>🛡️ Hors Possession</h3>
+                            </div>
+                            <div class="instructions-grid">
+                                <div class="instruction-group">
+                                    <label>Hauteur du pressing (LOE) <span class="help-icon" data-tip="Ligne d'engagement défensif — jusqu'où monter pour presser.&#10;● Haut + Ligne haute : piège offensif agressif, récupération haute mais vulnérable derrière. Nécessite endurance + vitesse de tout le bloc.&#10;● Bas + Ligne basse : bloc compact et profond, difficile à percer mais subit. Idéal contre équipes supérieures.&#10;● Haut + Ligne basse : pressing haut mais défense profonde — un piège structurel (risque de 'no man's land').&#10;● Bas + Ligne haute : bloc médian avec défense haute — bon équilibre, exploite le hors-jeu.">?</span></label>
+                                    <select id="pressing-height" class="form-select">
+                                        <option value="low">Bloc bas — Défense profonde, subit mais compact</option>
+                                        <option value="medium" selected>Bloc médian — Équilibre pressing/protection</option>
+                                        <option value="high">Pressing haut — Récupération haute, physique requis</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Ligne défensive <span class="help-icon" data-tip="Hauteur de la ligne défensive.&#10;● Haute : réduit l'espace derrière, piège hors-jeu, comprime le jeu en demi-terrain. Risque sur joueurs rapides adverses.&#10;● Basse : protège l'espace derrière la défense. Laisse de l'espace à l'adversaire dans l'entrejeu mais sécurise la profondeur.&#10;Combinaison LOE + ligne : voir tooltip du pressing.">?</span></label>
+                                    <select id="defensive-line" class="form-select">
+                                        <option value="much-lower">Beaucoup plus basse — Protection maximale derrière</option>
+                                        <option value="lower">Plus basse — Sécurise la profondeur</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="higher">Plus haute — Comprime le jeu, piège hors-jeu</option>
+                                        <option value="much-higher">Beaucoup plus haute — Risque sur contre, physique requis</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Intensité du pressing <span class="help-icon" data-tip="Fréquence et intensité avec laquelle les joueurs harcèlent le porteur.&#10;● Plus souvent : récupération agressive du ballon, gêne la construction adverse. Très physique.&#10;● Moins souvent : conserve l'énergie, attend une erreur adverse. Convient à un bloc bas.&#10;⚠️ Le pressing intense sans endurance suffisante provoque des baisses de niveau en 2e mi-temps.">?</span></label>
+                                    <select id="pressing-trigger" class="form-select">
+                                        <option value="much-less">Beaucoup moins — Économise l'énergie, attend l'erreur</option>
+                                        <option value="less">Moins souvent — Bloc passif</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="more">Plus souvent — Pressing actif, récupère haut</option>
+                                        <option value="much-more">Beaucoup plus — Pressing maximal, physique élevé requis</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Transition défensive <span class="help-icon" data-tip="Comportement immédiatement après une perte de balle.&#10;● Contre-pressing : harcelé le porteur immédiatement après la perte pour récupérer la balle avant qu'il s'organise. Physique +++ mais très efficace si bien exécuté (Klopp style).&#10;● Regroupement : retour rapide en bloc défensif. Sécurise la défense mais laisse l'initiative à l'adversaire.">?</span></label>
+                                    <select id="defensive-transition" class="form-select">
+                                        <option value="regroup">Regroupement — Retour en bloc, sécurise la défense</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="counter-press">Contre-pressing — Récupère immédiatement après perte</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>En taclant <span class="help-icon" data-tip="Agressivité dans les duels défensifs.&#10;● S'engager plus (Get Stuck In) : les joueurs tackent fort, cherchent la récupération physique. Plus de fautes et cartons mais récupère plus de ballons.&#10;● Ne pas se jeter (Stay on Feet) : les joueurs attendent le bon moment, évitent les fautes. Moins de cartonnages mais plus lent à récupérer.">?</span></label>
+                                    <select id="tackling" class="form-select">
+                                        <option value="ease">Ne pas se jeter — Attend, évite les fautes</option>
+                                        <option value="standard" selected>Standard — Équilibré</option>
+                                        <option value="harder">S'engager plus — Agressif, plus de récupérations</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Pressing sur centres <span class="help-icon" data-tip="Comportement défensif face aux centreurs adverses.&#10;● Empêcher de centrer : les défenseurs latéraux pressent fort le centreur pour bloquer la trajectoire. Risque de laisser de l'espace dans l'axe.&#10;● Laisser centrer : se repositionne dans la surface plutôt que de presser. Idéal si bons défenseurs aériens.">?</span></label>
+                                    <select id="pressing-crosses" class="form-select">
+                                        <option value="stop">Empêcher de centrer — Presse le centreur fort</option>
+                                        <option value="balanced" selected>Équilibré — Adaptatif</option>
+                                        <option value="invite">Laisser centrer — Se repositionne dans la surface</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Piège du pressing <span class="help-icon" data-tip="Direction vers laquelle on pousse l'adversaire avec le ballon.&#10;● Vers l'axe (Inside) : force l'adversaire vers le centre où il y a plus de défenseurs. Idéal si les latéraux adverses sont forts.&#10;● Vers les côtés (Outside) : pousse vers les lignes de touche, réduit les angles de passes. Utile contre équipes qui jouent dans l'axe.">?</span></label>
+                                    <select id="pressing-trap" class="form-select">
+                                        <option value="inside">Vers l'axe — Force vers le centre encombré</option>
+                                        <option value="balanced" selected>Équilibré — Adaptatif</option>
+                                        <option value="outside">Vers les côtés — Pousse vers les lignes de touche</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Comportement ligne déf. <span class="help-icon" data-tip="Comment la ligne défensive réagit aux attaques adverses.&#10;● Avancer plus (Step Up More) : les DC sortent agressivement sur l'adversaire, réduisent l'espace, risque sur les appels en profondeur.&#10;● Équilibré : comportement standard selon la situation.&#10;● Reculer plus (Drop Off More) : les DC reculent, protègent la profondeur, laissent du champ à l'adversaire.">?</span></label>
+                                    <select id="defensive-behavior" class="form-select">
+                                        <option value="step-up">Avancer plus — Les DC sortent agressivement</option>
+                                        <option value="balanced" selected>Équilibré — Comportement standard</option>
+                                        <option value="drop-off">Reculer plus — Protège la profondeur</option>
+                                    </select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label>Empêcher relance courte GB <span class="help-icon" data-tip="Si activé, les attaquants pressent les défenseurs adverses lors des relances courtes du gardien.&#10;Utile contre les équipes qui construisent depuis l'arrière. Nécessite des attaquants avec bon pressing (Vol, Trav élevés).">?</span></label>
+                                    <select id="prevent-short-gk" class="form-select">
+                                        <option value="no" selected>Non — Normal</option>
+                                        <option value="yes">Oui — Presse les relances courtes adverses</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Tab -->
+                <div class="tab-content" id="analysis-tab">
+                    <div class="analysis-container">
+                        <div class="analysis-header">
+                            <h2><i class="bi bi-bar-chart-line"></i> Analyse Tactique FM26</h2>
+                            <button id="run-analysis" class="btn btn-primary">
+                                <span class="btn-icon" aria-hidden="true"><i class="bi bi-search"></i></span> Analyser
+                            </button>
+                        </div>
+                        <div class="analysis-grid">
+                            <div class="analysis-card strengths">
+                                <div class="card-header">
+                                    <span class="card-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+                                    <h3>Points Forts</h3>
+                                </div>
+                                <ul class="analysis-list" id="strengths-list">
+                                    <li class="placeholder">Cliquez sur Analyser pour voir les points forts</li>
+                                </ul>
+                            </div>
+                            <div class="analysis-card weaknesses">
+                                <div class="card-header">
+                                    <span class="card-icon" aria-hidden="true"><i class="bi bi-exclamation-triangle"></i></span>
+                                    <h3>Points Faibles</h3>
+                                </div>
+                                <ul class="analysis-list" id="weaknesses-list">
+                                    <li class="placeholder">Cliquez sur Analyser pour voir les points faibles</li>
+                                </ul>
+                            </div>
+                            <div class="analysis-card recommendations">
+                                <div class="card-header">
+                                    <span class="card-icon" aria-hidden="true"><i class="bi bi-lightbulb"></i></span>
+                                    <h3>Recommandations</h3>
+                                </div>
+                                <ul class="analysis-list" id="recommendations-list">
+                                    <li class="placeholder">Cliquez sur Analyser pour voir les recommandations</li>
+                                </ul>
+                            </div>
+                            <div class="analysis-card counters">
+                                <div class="card-header">
+                                    <span class="card-icon" aria-hidden="true"><i class="bi bi-bullseye"></i></span>
+                                    <h3>Contre-Formations</h3>
+                                </div>
+                                <div class="counters-grid" id="counters-grid">
+                                    <p class="placeholder">Formations efficaces contre votre tactique</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FM26 Dual Formation Analysis -->
+                        <div class="analysis-card dual-formation-analysis">
+                            <div class="card-header">
+                                <span class="card-icon" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></span>
+                                <h3>Analyse FM26 — Double Formation & Transitions</h3>
+                            </div>
+                            <div id="dual-formation-analysis-content">
+                                <p class="placeholder">Analyse de la transition entre vos formations IP et OOP</p>
+                            </div>
+                        </div>
+
+                        <!-- DNA Tactique -->
+                        <div class="analysis-card dna-analysis">
+                            <div class="card-header">
+                                <span class="card-icon" aria-hidden="true"><i class="bi bi-fingerprint"></i></span>
+                                <h3>DNA Tactique — Identité de Jeu</h3>
+                            </div>
+                            <div id="dna-analysis-content">
+                                <p class="placeholder">Cliquez sur Analyser pour identifier votre profil tactique</p>
+                            </div>
+                        </div>
+
+                        <!-- 3 Moments -->
+                        <div class="analysis-card moments-analysis">
+                            <div class="card-header">
+                                <span class="card-icon" aria-hidden="true"><i class="bi bi-shuffle"></i></span>
+                                <h3>Les 3 Moments Clés — Diagnostic Transitions</h3>
+                            </div>
+                            <div id="moments-analysis-content">
+                                <p class="placeholder">Analyse des 3 moments de transition IP↔OOP</p>
+                            </div>
+                        </div>
+
+                        <div class="analysis-card individual-analysis">
+                            <div class="card-header">
+                                <span class="card-icon" aria-hidden="true"><i class="bi bi-person-gear"></i></span>
+                                <h3>Analyse des Consignes Individuelles</h3>
+                            </div>
+                            <ul class="analysis-list" id="individual-analysis-list">
+                                <li class="placeholder">Cliquez sur Analyser pour voir les impacts des consignes individuelles</li>
+                            </ul>
+                        </div>
+
+                        <!-- Completeness Score -->
+                        <div class="analysis-card completeness-card">
+                            <div class="card-header">
+                                <span class="card-icon" aria-hidden="true"><i class="bi bi-patch-check"></i></span>
+                                <h3>Score de Complétude</h3>
+                            </div>
+                            <div id="completeness-content">
+                                <p class="placeholder">Cliquez sur Analyser pour voir le score de complétude de votre tactique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Presets Tab -->
+                <div class="tab-content" id="presets-tab">
+                    <div class="presets-container">
+                        <h2><i class="bi bi-lightning-charge"></i> Tactiques Prédéfinies</h2>
+                        <p class="presets-description">Sélectionnez une tactique prédéfinie pour un démarrage rapide. Toutes les tactiques sont mises à jour pour FM26.</p>
+                        <div class="csv-meta-tool">
+                            <div class="csv-meta-header">
+                                <h3><i class="bi bi-cpu"></i> Preset META depuis ton CSV</h3>
+                                <p>Importe ton export joueurs FM (CSV) pour générer automatiquement une tactique adaptée à ton effectif.</p>
+                            </div>
+                            <div class="csv-meta-controls">
+                                <input type="file" id="csv-meta-file" accept=".csv,text/csv">
+                                <button id="generate-csv-meta" class="btn btn-primary" type="button">Générer et appliquer</button>
+                            </div>
+                            <div class="csv-meta-summary" id="csv-meta-summary">
+                                <p class="placeholder">Aucune analyse CSV effectuée pour le moment.</p>
+                            </div>
+                        </div>
+                        <div class="presets-filter-bar">
+                            <input type="text" id="presets-search" class="presets-search-input" placeholder="Rechercher par nom, coach, formation, style...">
+                            <div class="presets-filter-chips">
+                                <button class="filter-chip active" data-filter="all">Tous</button>
+                                <button class="filter-chip" data-filter="possession">Possession</button>
+                                <button class="filter-chip" data-filter="pressing">Pressing</button>
+                                <button class="filter-chip" data-filter="counter">Contre-attaque</button>
+                                <button class="filter-chip" data-filter="defensive">Défensif</button>
+                                <button class="filter-chip" data-filter="high-mentality">Agressif</button>
+                                <button class="filter-chip" data-filter="low-mentality">Solide</button>
+                            </div>
+                        </div>
+                        <div class="presets-results-count" id="presets-results-count"></div>
+                        <div class="presets-grid" id="presets-grid">
+                            <!-- Presets will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FM26 Visualizer Tab -->
+                <div class="tab-content" id="visualizer-tab">
+                    <div class="visualizer-container">
+                        <h2><i class="bi bi-grid-3x3-gap"></i> Visualiseur FM26 - Zones de Jeu</h2>
+                        <p class="visualizer-description">Nouveau dans FM26 : visualisez où vos joueurs se positionnent dans les différents tiers du terrain.</p>
+                        
+                        <div class="visualizer-controls">
+                            <button class="visualizer-btn active" data-view="ip">En Possession</button>
+                            <button class="visualizer-btn" data-view="oop">Hors Possession</button>
+                            <button class="visualizer-btn" data-view="compare">Comparaison</button>
+                        </div>
+
+                        <div class="visualizer-pitch-container" id="visualizer-single">
+                            <div class="visualizer-pitch" id="visualizer-pitch">
+                                <div class="pitch-zone defensive-third">
+                                    <span class="zone-label">Tiers Défensif</span>
+                                    <div class="zone-players" id="defensive-zone-players"></div>
+                                </div>
+                                <div class="pitch-zone middle-third">
+                                    <span class="zone-label">Tiers Central</span>
+                                    <div class="zone-players" id="middle-zone-players"></div>
+                                </div>
+                                <div class="pitch-zone attacking-third">
+                                    <span class="zone-label">Tiers Offensif</span>
+                                    <div class="zone-players" id="attacking-zone-players"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="visualizer-compare-container" id="visualizer-compare" style="display: none;">
+                            <div class="compare-side">
+                                <h4 class="compare-title ip-title"><i class="bi bi-circle-fill"></i> En Possession</h4>
+                                <div class="visualizer-pitch">
+                                    <div class="pitch-zone defensive-third">
+                                        <span class="zone-label">Tiers Défensif</span>
+                                        <div class="zone-players" id="compare-ip-defensive"></div>
+                                    </div>
+                                    <div class="pitch-zone middle-third">
+                                        <span class="zone-label">Tiers Central</span>
+                                        <div class="zone-players" id="compare-ip-middle"></div>
+                                    </div>
+                                    <div class="pitch-zone attacking-third">
+                                        <span class="zone-label">Tiers Offensif</span>
+                                        <div class="zone-players" id="compare-ip-attacking"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="compare-side">
+                                <h4 class="compare-title oop-title"><i class="bi bi-shield-check"></i> Hors Possession</h4>
+                                <div class="visualizer-pitch">
+                                    <div class="pitch-zone defensive-third">
+                                        <span class="zone-label">Tiers Défensif</span>
+                                        <div class="zone-players" id="compare-oop-defensive"></div>
+                                    </div>
+                                    <div class="pitch-zone middle-third">
+                                        <span class="zone-label">Tiers Central</span>
+                                        <div class="zone-players" id="compare-oop-middle"></div>
+                                    </div>
+                                    <div class="pitch-zone attacking-third">
+                                        <span class="zone-label">Tiers Offensif</span>
+                                        <div class="zone-players" id="compare-oop-attacking"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="visualizer-stats">
+                            <div class="stat-box">
+                                <span class="stat-label">Joueurs en zone défensive</span>
+                                <span class="stat-value" id="stat-defensive">-</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Joueurs en zone centrale</span>
+                                <span class="stat-value" id="stat-middle">-</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Joueurs en zone offensive</span>
+                                <span class="stat-value" id="stat-attacking">-</span>
+                            </div>
+                        </div>
+
+                        <div class="shape-analysis" id="shape-analysis">
+                            <h3><i class="bi bi-rulers"></i> Analyse de la Forme</h3>
+                            <div id="shape-content"></div>
+                        </div>
+
+                        <div class="tactic-compare-panel">
+                            <h3><i class="bi bi-columns-gap"></i> Comparaison de tactiques</h3>
+                            <p class="compare-help">Chargez 2 tactiques sauvegardées pour comparer formations, consignes et rôles.</p>
+                            <div class="tactic-compare-controls">
+                                <div class="instruction-group">
+                                    <label for="compare-tactic-a">Tactique A</label>
+                                    <select id="compare-tactic-a" class="form-select"></select>
+                                </div>
+                                <div class="instruction-group">
+                                    <label for="compare-tactic-b">Tactique B</label>
+                                    <select id="compare-tactic-b" class="form-select"></select>
+                                </div>
+                                <button id="run-tactic-compare" class="btn btn-primary" type="button">Comparer</button>
+                            </div>
+                            <div class="tactic-compare-results" id="tactic-compare-results">
+                                <p class="placeholder">Sélectionnez deux tactiques sauvegardées puis cliquez sur Comparer.</p>
+                            </div>
+                        </div>
+
+                        <div class="visual-export-panel">
+                            <div class="visual-export-header">
+                                <h3><i class="bi bi-image"></i> Export visuel</h3>
+                                <div class="visual-export-actions">
+                                    <button id="export-visual-image" class="btn btn-secondary" type="button">Exporter PNG</button>
+                                    <button id="export-visual-pdf" class="btn btn-secondary" type="button">Exporter PDF</button>
+                                </div>
+                            </div>
+                            <div class="visual-export-card" id="visual-export-card">
+                                <h4 id="visual-export-title">Résumé tactique</h4>
+                                <div class="visual-export-meta" id="visual-export-meta"></div>
+                                <div class="visual-export-rows">
+                                    <div class="visual-export-col">
+                                        <h5>Rôles IP</h5>
+                                        <div id="visual-export-roles-ip"></div>
+                                    </div>
+                                    <div class="visual-export-col">
+                                        <h5>Rôles OOP</h5>
+                                        <div id="visual-export-roles-oop"></div>
+                                    </div>
+                                </div>
+                                <div class="visual-export-rows">
+                                    <div class="visual-export-col">
+                                        <h5>Consignes clés d'équipe</h5>
+                                        <div id="visual-export-team-instr"></div>
+                                    </div>
+                                    <div class="visual-export-col">
+                                        <h5>Consignes individuelles modifiées</h5>
+                                        <div id="visual-export-player-instr"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Set Pieces Tab -->
+                <div class="tab-content" id="setpieces-tab">
+                    <div class="setpieces-container">
+                        <h2><i class="bi bi-flag"></i> Coups de Pied Arrêtés FM26</h2>
+                        <p class="setpieces-description">Configuration complète des coups de pied arrêtés basée sur les meilleures routines FM26. Sélectionnez vos réglages optimaux.</p>
+
+                        <div class="sp-tabs-nav">
+                            <button class="sp-tab-btn active" data-sp-tab="corners-atk">Corners Offensifs</button>
+                            <button class="sp-tab-btn" data-sp-tab="corners-def">Corners Défensifs</button>
+                            <button class="sp-tab-btn" data-sp-tab="freekicks-atk">Coups Francs Offensifs</button>
+                            <button class="sp-tab-btn" data-sp-tab="freekicks-def">Coups Francs Défensifs</button>
+                            <button class="sp-tab-btn" data-sp-tab="throwin">Rentrées de Touche</button>
+                            <button class="sp-tab-btn" data-sp-tab="penalties">Penalties</button>
+                        </div>
+
+                        <!-- Corners Offensifs -->
+                        <div class="sp-tab-content active" id="sp-corners-atk">
+                            <div class="sp-section">
+                                <div class="sp-meta-banner">
+                                    <span class="sp-meta-label">META FM26</span>
+                                    <span>Centres rentrés (inswinging) vers le second poteau + corners courts = meilleure efficacité</span>
+                                </div>
+
+                                <div class="sp-routines-grid">
+                                    <!-- Routine 1 -->
+                                    <div class="sp-routine-card">
+                                        <div class="sp-routine-header">
+                                            <span class="sp-routine-badge recommended">Recommandée #1</span>
+                                            <h4>Corner court + centre bas</h4>
+                                        </div>
+                                        <div class="sp-settings">
+                                            <div class="sp-setting-row">
+                                                <label>Type de centre</label>
+                                                <select class="form-select sp-select" id="sp-ca1-type">
+                                                    <option value="short" selected>Court (Come Short)</option>
+                                                    <option value="near">Proche poteau</option>
+                                                    <option value="far">Second poteau</option>
+                                                    <option value="center">Centre surface</option>
+                                                </select>
+                                            </div>
+                                            <div class="sp-setting-row">
+                                                <label>Effet du centre</label>
+                                                <select class="form-select sp-select" id="sp-ca1-swing">
+                                                    <option value="inswing" selected>Rentrant (Inswinging)</option>
+                                                    <option value="outswing">Sortant (Outswinging)</option>
+                                                </select>
+                                            </div>
+                                            <div class="sp-setting-row">
+                                                <label>Fréquence d'utilisation</label>
+                                                <select class="form-select sp-select" id="sp-ca1-freq">
+                                                    <option value="more">Utiliser plus souvent</option>
+                                                    <option value="standard" selected>Standard</option>
+                                                    <option value="less">Utiliser moins souvent</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="sp-roles">
+                                            <h5>Rôles des joueurs</h5>
+                                            <div class="sp-role-list">
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-arrow-up-circle"></i></span><span class="sp-role-name">Menace Aérienne</span><span class="sp-role-tip">Attaque second poteau</span></div>
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-box"></i></span><span class="sp-role-name">Menace Surface</span><span class="sp-role-tip">2-3 joueurs crashent la surface</span></div>
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-magic"></i></span><span class="sp-role-name">Créateur</span><span class="sp-role-tip">Reçoit le corner court (technique élevée)</span></div>
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-shield"></i></span><span class="sp-role-name">Récupération</span><span class="sp-role-tip">Reste en retrait contre contre-attaque</span></div>
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-hourglass-split"></i></span><span class="sp-role-name">Arrivée tardive</span><span class="sp-role-tip">MC/MDéf arrive en retard dans la surface</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="sp-tip"><strong>Pourquoi ça marche :</strong> Force un défenseur à sortir, crée un 2v1 sur le flanc, puis centre bas pour un arrivant au second poteau ou le retrait pour le MC.</div>
+                                    </div>
+
+                                    <!-- Routine 2 -->
+                                    <div class="sp-routine-card">
+                                        <div class="sp-routine-header">
+                                            <span class="sp-routine-badge recommended">Recommandée #2</span>
+                                            <h4>Surcharge second poteau + MC retardé</h4>
+                                        </div>
+                                        <div class="sp-settings">
+                                            <div class="sp-setting-row">
+                                                <label>Type de centre</label>
+                                                <select class="form-select sp-select" id="sp-ca2-type">
+                                                    <option value="far" selected>Second poteau</option>
+                                                    <option value="short">Court</option>
+                                                    <option value="near">Proche poteau</option>
+                                                    <option value="center">Centre surface</option>
+                                                </select>
+                                            </div>
+                                            <div class="sp-setting-row">
+                                                <label>Effet du centre</label>
+                                                <select class="form-select sp-select" id="sp-ca2-swing">
+                                                    <option value="inswing" selected>Rentrant (Inswinging)</option>
+                                                    <option value="outswing">Sortant (Outswinging)</option>
+                                                </select>
+                                            </div>
+                                            <div class="sp-setting-row">
+                                                <label>Fréquence d'utilisation</label>
+                                                <select class="form-select sp-select" id="sp-ca2-freq">
+                                                    <option value="more" selected>Utiliser plus souvent</option>
+                                                    <option value="standard">Standard</option>
+                                                    <option value="less">Utiliser moins souvent</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="sp-roles">
+                                            <h5>Rôles des joueurs</h5>
+                                            <div class="sp-role-list">
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-arrow-up-circle"></i></span><span class="sp-role-name">2-3x Menace Aérienne</span><span class="sp-role-tip">Surcharge second poteau (grand gabarit)</span></div>
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-box"></i></span><span class="sp-role-name">Decoy proche poteau</span><span class="sp-role-tip">Distrait les défenseurs</span></div>
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-hourglass-split"></i></span><span class="sp-role-name">MC Arrivée tardive</span><span class="sp-role-tip">Cours profond depuis l'extérieur, prend les défenseurs à plat</span></div>
+                                                <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-shield"></i></span><span class="sp-role-name">Récupération x2</span><span class="sp-role-tip">2 joueurs rapides en retrait</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="sp-tip"><strong>Pourquoi ça marche :</strong> Le second poteau est moins protégé. L'arrivée tardive du MC surprend les défenseurs aplatis sur leur ligne.</div>
+                                    </div>
+                                </div>
+
+                                <div class="sp-principle-box">
+                                    <h4>Principe clé FM26</h4>
+                                    <p>Utilisez <strong>plusieurs routines avec des fréquences différentes</strong> pour que l'adversaire ne puisse pas anticiper. Corner court en "Standard", second poteau en "Plus souvent", routine directe en "Moins souvent".</p>
+                                    <p>Le buteur corner doit avoir : <strong>Technique élevée + Centre + Sang-Froid + Balles arrêtées</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Corners Défensifs -->
+                        <div class="sp-tab-content" id="sp-corners-def">
+                            <div class="sp-section">
+                                <div class="sp-meta-banner">
+                                    <span class="sp-meta-label">META FM26</span>
+                                    <span>Marquage hybride = consensus de la communauté FM26 comme configuration la plus efficace</span>
+                                </div>
+                                <div class="sp-def-grid">
+                                    <div class="sp-def-card">
+                                        <h4>Type de marquage</h4>
+                                        <div class="sp-setting-row">
+                                            <label>Système de marquage</label>
+                                            <select class="form-select sp-select" id="sp-cd-marking">
+                                                <option value="hybrid" selected>Hybride (Recommandé)</option>
+                                                <option value="zonal">Zonal</option>
+                                                <option value="manto">Homme à homme</option>
+                                            </select>
+                                        </div>
+                                        <div class="sp-tip">Zonal sur les 3 zones clés (proche poteau, surface 6m, second poteau) + marquage individuel sur la plus grande menace aérienne adverse</div>
+                                    </div>
+                                    <div class="sp-def-card">
+                                        <h4>Assignations défensives</h4>
+                                        <div class="sp-role-list">
+                                            <div class="sp-role-item priority"><span class="sp-prio-badge">PRIORITÉ</span><span class="sp-role-name">Gardien proche poteau</span><span class="sp-role-tip">Toujours protégé (la plupart des buts viennent de là)</span></div>
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-circle-fill"></i></span><span class="sp-role-name">Zone 6m central</span><span class="sp-role-tip">Meilleur défenseur aérien en zone</span></div>
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-circle-fill"></i></span><span class="sp-role-name">Zone second poteau</span><span class="sp-role-tip">Couverture second poteau</span></div>
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-record-fill"></i></span><span class="sp-role-name">Marquer la menace adverse</span><span class="sp-role-tip">Suivre le meilleur joueur de tête adverse</span></div>
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-lightning-charge"></i></span><span class="sp-role-name">Outlet contre-attaque</span><span class="sp-role-tip">1 attaquant rapide avancé = force l'adversaire à laisser des défenseurs</span></div>
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-aspect-ratio"></i></span><span class="sp-role-name">Bord de surface</span><span class="sp-role-tip">Intercepte les dégagements / bloque les tirs</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sp-principle-box">
+                                    <h4>Ajustements situationnels</h4>
+                                    <ul>
+                                        <li>Si l'adversaire marque souvent au second poteau : ajouter un joueur zonal supplémentaire au second poteau</li>
+                                        <li>Si un joueur adverse domine en jeu aérien : envisager le double-marquage</li>
+                                        <li>Toujours garder l'outlet contre-attaque : force l'adversaire à laisser des défenseurs en retrait</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coups Francs Offensifs -->
+                        <div class="sp-tab-content" id="sp-freekicks-atk">
+                            <div class="sp-section">
+                                <div class="sp-routines-grid">
+                                    <div class="sp-routine-card">
+                                        <div class="sp-routine-header">
+                                            <span class="sp-routine-badge">Zone de tir direct (18-30m)</span>
+                                            <h4>Tir direct</h4>
+                                        </div>
+                                        <div class="sp-settings">
+                                            <div class="sp-setting-row">
+                                                <label>Type de frappe</label>
+                                                <select class="form-select sp-select" id="sp-fka-direct">
+                                                    <option value="direct" selected>Tir direct</option>
+                                                    <option value="inswing">Centre rentrant</option>
+                                                    <option value="low">Frappe à ras de terre</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="sp-tip">Tireur doit avoir : <strong>Technique + Coups Francs + Tirs de loin + Sang-Froid élevés</strong></div>
+                                    </div>
+                                    <div class="sp-routine-card">
+                                        <div class="sp-routine-header">
+                                            <span class="sp-routine-badge">Coup franc large/indirect</span>
+                                            <h4>Centre rentrant au second poteau</h4>
+                                        </div>
+                                        <div class="sp-settings">
+                                            <div class="sp-setting-row">
+                                                <label>Effet du centre</label>
+                                                <select class="form-select sp-select" id="sp-fka-swing">
+                                                    <option value="inswing" selected>Rentrant (Inswinging)</option>
+                                                    <option value="outswing">Sortant (Outswinging)</option>
+                                                    <option value="drilled">Frappe tendue</option>
+                                                    <option value="lofted">Lobé/Arc élevé</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="sp-tip">Même principe que les corners : surcharge au second poteau, arrivée tardive du MC. Cible préférentielle : <strong>second poteau rentrant = META FM26</strong></div>
+                                    </div>
+                                </div>
+                                <div class="sp-principle-box">
+                                    <h4>Par zone du terrain</h4>
+                                    <div class="sp-zone-table">
+                                        <div class="sp-zone-row header"><span>Zone</span><span>Stratégie recommandée</span></div>
+                                        <div class="sp-zone-row"><span>Propre moitié</span><span>Conserver la possession / Jouer sur la ligne</span></div>
+                                        <div class="sp-zone-row"><span>Flanc milieu</span><span>Centre rentrant + même chargement que corner</span></div>
+                                        <div class="sp-zone-row"><span>Zone de tir (18-30m)</span><span>Tir direct (tireur spécialiste requis)</span></div>
+                                        <div class="sp-zone-row"><span>Central proche</span><span>Options directes/indirectes selon la distance</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coups Francs Défensifs -->
+                        <div class="sp-tab-content" id="sp-freekicks-def">
+                            <div class="sp-section">
+                                <div class="sp-def-grid">
+                                    <div class="sp-def-card">
+                                        <h4>Configuration du Mur</h4>
+                                        <div class="sp-setting-row">
+                                            <label>Placement du mur</label>
+                                            <select class="form-select sp-select" id="sp-fkd-wall">
+                                                <option value="wall" selected>Mur standard</option>
+                                                <option value="conditional">Mur si nécessaire</option>
+                                            </select>
+                                        </div>
+                                        <div class="sp-setting-row">
+                                            <label>Type de marquage</label>
+                                            <select class="form-select sp-select" id="sp-fkd-marking">
+                                                <option value="hybrid" selected>Hybride (Recommandé)</option>
+                                                <option value="zonal">Zonal</option>
+                                                <option value="manto">Homme à homme</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="sp-def-card">
+                                        <h4>Couverture</h4>
+                                        <div class="sp-role-list">
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-people"></i></span><span class="sp-role-name">Grands défenseurs sur zones de chute</span><span class="sp-role-tip">Particulièrement second poteau</span></div>
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-rulers"></i></span><span class="sp-role-name">Hauteur de la ligne sur CF larges</span><span class="sp-role-tip">Réglable spécifiquement pour CF larges en FM26</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rentrées de Touche -->
+                        <div class="sp-tab-content" id="sp-throwin">
+                            <div class="sp-section">
+                                <div class="sp-meta-banner">
+                                    <span class="sp-meta-label">CONSEIL FM26</span>
+                                    <span>Désigner un spécialiste des longues touches (Long Throws + Anticipation + Décisions élevés)</span>
+                                </div>
+                                <div class="sp-zone-table">
+                                    <div class="sp-zone-row header"><span>Zone</span><span>Option 1</span><span>Option 2</span><span>Recommandation</span></div>
+                                    <div class="sp-zone-row">
+                                        <span>Tiers défensif</span>
+                                        <span>Conserver la possession</span>
+                                        <span>Jouer la ligne</span>
+                                        <span class="sp-rec">Conserver la possession</span>
+                                    </div>
+                                    <div class="sp-zone-row">
+                                        <span>Tiers central</span>
+                                        <span>Conserver la possession</span>
+                                        <span>Jouer la ligne</span>
+                                        <span class="sp-rec">Conserver la possession</span>
+                                    </div>
+                                    <div class="sp-zone-row">
+                                        <span>Tiers offensif</span>
+                                        <span>Jouer dans la surface</span>
+                                        <span>Longue touche</span>
+                                        <span class="sp-rec">Longue touche (META)</span>
+                                    </div>
+                                </div>
+                                <div class="sp-principle-box">
+                                    <h4>Longue touche dans le tiers offensif</h4>
+                                    <ul>
+                                        <li>Désigner UN spécialiste longue touche : <strong>Longues Touches élevées + Anticipation + Décisions</strong></li>
+                                        <li>Même système de rôles que les corners : Menace Aérienne + Menace Surface + Récupération</li>
+                                        <li>Conseil : touche plate rapide = plus efficace que le centre lobé. Traverse plus vite, perfore la ligne défensive</li>
+                                        <li>Utiliser UNIQUEMENT la longue touche dans le tiers offensif final (conseil de la communauté)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Penalties -->
+                        <div class="sp-tab-content" id="sp-penalties">
+                            <div class="sp-section">
+                                <div class="sp-def-grid">
+                                    <div class="sp-def-card">
+                                        <h4>Tireurs de Penalties</h4>
+                                        <div class="sp-role-list">
+                                            <div class="sp-role-item priority"><span class="sp-prio-badge">1er</span><span class="sp-role-name">Tireur principal</span><span class="sp-role-tip">Technique + Sang-Froid + Finition + Penalties élevés</span></div>
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-2-circle"></i></span><span class="sp-role-name">Tireur de secours</span><span class="sp-role-tip">Assigné en cas de manqué du 1er</span></div>
+                                            <div class="sp-role-item"><span class="sp-role-icon"><i class="bi bi-3-circle"></i></span><span class="sp-role-name">Tireur tertiaire</span><span class="sp-role-tip">Ordre de rotation</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="sp-def-card">
+                                        <h4>Arrêts de Penalties (GK)</h4>
+                                        <div class="sp-tip">Configuration séparée pour le gardien. En FM26, le gardien possède ses propres instructions d'arrêt de penalty (côté préférentiel de plongeon) assignables dans l'entraînement.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Position Instructions Tab -->
+                <div class="tab-content" id="positioninstructions-tab">
+                    <div class="posinstr-container">
+                        <h2><i class="bi bi-bullseye"></i> Consignes Particulières par Poste FM26</h2>
+                        <p class="posinstr-description">Meilleures consignes individuelles recommandées par la communauté FM26 pour chaque poste. Basées sur les META FM26 et les analyses de la communauté.</p>
+
+                        <div class="posinstr-grid" id="posinstr-grid">
+
+                            <!-- GB -->
+                            <div class="posinstr-card">
+                                <div class="posinstr-header gb">
+                                    <span class="posinstr-pos-badge">GB</span>
+                                    <h4>Gardien de But</h4>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Avec le ballon</h5>
+                                    <div class="posinstr-table">
+                                        <div class="posinstr-row header"><span>Consigne</span><span>Pressing</span><span>Possession</span><span>Contre-attaque</span></div>
+                                        <div class="posinstr-row"><span>Distribution</span><span class="rec">Passes courtes défenseurs</span><span class="rec">Passes courtes défenseurs</span><span class="rec">Longs dégagements</span></div>
+                                        <div class="posinstr-row"><span>Cible de passe</span><span>Vers défenseurs</span><span>Vers défenseurs</span><span>Vers avant spécifique</span></div>
+                                        <div class="posinstr-row"><span>Vitesse de distribution</span><span>Relance rapide</span><span>Standard</span><span>Relance rapide</span></div>
+                                    </div>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Sans le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag">Standard</span><span>Conserver sa position dans les buts, ne pas sortir sauf nécessaire</span></div>
+                                </div>
+                            </div>
+
+                            <!-- DC -->
+                            <div class="posinstr-card">
+                                <div class="posinstr-header dc">
+                                    <span class="posinstr-pos-badge">DC</span>
+                                    <h4>Défenseur Central</h4>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Avec le ballon</h5>
+                                    <div class="posinstr-table">
+                                        <div class="posinstr-row header"><span>Consigne</span><span>Pressing</span><span>Possession</span><span>Contre-attaque</span></div>
+                                        <div class="posinstr-row"><span>Style de passe</span><span class="rec">Plus directes</span><span class="rec">Plus courtes</span><span class="rec">Beaucoup plus directes</span></div>
+                                        <div class="posinstr-row"><span>Monter</span><span>Jamais (sauf DC Ballon)</span><span>Jamais (sauf DC Ballon)</span><span>Jamais</span></div>
+                                        <div class="posinstr-row"><span>Garder position</span><span class="rec">Oui</span><span class="rec">Oui</span><span class="rec">Oui</span></div>
+                                    </div>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Sans le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Pressing moins urgent</span><span>Rester dans la forme, ne pas presser</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag">Tackler normalement</span><span>Éviter le retrait vs attaquants agiles et rapides</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag">Marquer un joueur spécifique</span><span>Neutraliser le meilleur avant adverse (situationnel)</span></div>
+                                </div>
+                            </div>
+
+                            <!-- DD / DG -->
+                            <div class="posinstr-card">
+                                <div class="posinstr-header fb">
+                                    <span class="posinstr-pos-badge">DD/DG</span>
+                                    <h4>Défenseur Latéral / Piston</h4>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Avec le ballon</h5>
+                                    <div class="posinstr-table">
+                                        <div class="posinstr-row header"><span>Consigne</span><span>Latéral Offensif</span><span>Latéral Inversé</span><span>Piston Défensif</span></div>
+                                        <div class="posinstr-row"><span>Monter</span><span class="rec">Oui</span><span>Non</span><span class="rec">Oui</span></div>
+                                        <div class="posinstr-row"><span>Rester plus large</span><span class="rec">Oui</span><span>Non</span><span class="rec">Oui</span></div>
+                                        <div class="posinstr-row"><span>Centrer plus souvent</span><span class="rec">Oui</span><span>Non</span><span class="rec">Oui</span></div>
+                                        <div class="posinstr-row"><span>Cible de centre</span><span class="rec">Second poteau</span><span>—</span><span class="rec">Second poteau</span></div>
+                                        <div class="posinstr-row"><span>Couper vers le centre</span><span>Non</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>S'asseoir plus axial</span><span>Non</span><span class="rec">Oui</span><span>Non</span></div>
+                                    </div>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Sans le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Garder position</span><span>Pour le rôle Piston Défensif (nouveau FM26)</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag">Pressing plus urgent</span><span>Pour le rôle Piston Pressant</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Marquage strict</span><span>Sur l'ailier adverse (consigne d'opposition)</span></div>
+                                </div>
+                                <div class="sp-tip"><strong>META FM26 :</strong> Centre cible <strong>second poteau</strong> = plus efficace. Les pistons derrière les AID sont la combinaison dominante.</div>
+                            </div>
+
+                            <!-- MDéf -->
+                            <div class="posinstr-card">
+                                <div class="posinstr-header dm">
+                                    <span class="posinstr-pos-badge">MDéf</span>
+                                    <h4>Milieu Défensif</h4>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Avec le ballon</h5>
+                                    <div class="posinstr-table">
+                                        <div class="posinstr-row header"><span>Consigne</span><span>Ancre</span><span>Récupérateur</span><span>Relayeur défensif</span></div>
+                                        <div class="posinstr-row"><span>Garder position</span><span class="rec">Oui</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Passes plus courtes</span><span class="rec">Oui</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Moins de risques</span><span class="rec">Oui</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Monter</span><span>Jamais</span><span>Jamais</span><span>Parfois</span></div>
+                                    </div>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Sans le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Pressing plus urgent</span><span>Dans les systèmes gegenpress</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Marquer le MO/N°10 adverse</span><span>Neutraliser le créateur adverse</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Tackler plus fort</span><span>Standard pour le MDéf</span></div>
+                                </div>
+                            </div>
+
+                            <!-- MC -->
+                            <div class="posinstr-card">
+                                <div class="posinstr-header cm">
+                                    <span class="posinstr-pos-badge">MC</span>
+                                    <h4>Milieu Central</h4>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Avec le ballon</h5>
+                                    <div class="posinstr-table">
+                                        <div class="posinstr-row header"><span>Consigne</span><span>Box-to-Box</span><span>Relayeur</span><span>MC Défensif</span></div>
+                                        <div class="posinstr-row"><span>Varier position</span><span class="rec">Oui</span><span>Non</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Monter</span><span class="rec">Oui</span><span>Non</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Garder position</span><span>Non</span><span>Non</span><span class="rec">Oui</span></div>
+                                        <div class="posinstr-row"><span>Plus de risques</span><span>Non</span><span class="rec">Oui (relayeur profond)</span><span>Non</span></div>
+                                    </div>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Sans le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Pressing plus urgent</span><span>Systèmes gegenpress</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag">Marquer le poste adverse</span><span>MC adverse standard</span></div>
+                                </div>
+                                <div class="sp-tip"><strong>META FM26 :</strong> Le <strong>Relayeur Box-to-Box</strong> est qualifié de "surpuissant" : descend profond puis surgit vers l'avant.</div>
+                            </div>
+
+                            <!-- MOC / MO -->
+                            <div class="posinstr-card">
+                                <div class="posinstr-header am">
+                                    <span class="posinstr-pos-badge">MOC</span>
+                                    <h4>Milieu Offensif Central / N°10</h4>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Avec le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Varier position</span><span>Trouver des poches d'espace hors de la zone</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Courir dans les couloirs</span><span>Exploiter les demi-espaces entre DC-DL</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Tirer plus souvent</span><span>Pour Relayeur Offensif / Ombre offensive</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Dribbler plus</span><span>Si technique élevée</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Plus de risques</span><span>Encourage les passes en profondeur</span></div>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Sans le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag">Pressing moins urgent</span><span>Sauf système à pressing intense (économiser l'énergie)</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag">S'asseoir plus axial</span><span>Presser les zones centrales</span></div>
+                                </div>
+                            </div>
+
+                            <!-- ALD / ALG -->
+                            <div class="posinstr-card">
+                                <div class="posinstr-header winger">
+                                    <span class="posinstr-pos-badge">ALD/ALG</span>
+                                    <h4>Ailier / Ailier Intérieur</h4>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Avec le ballon</h5>
+                                    <div class="posinstr-table">
+                                        <div class="posinstr-row header"><span>Consigne</span><span>Ailier Classique</span><span>Ailier Intérieur (AID)</span><span>Avant Large (nouveau FM26)</span></div>
+                                        <div class="posinstr-row"><span>Rester plus large</span><span class="rec">Oui</span><span>Non</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Centrer plus souvent</span><span class="rec">Oui</span><span>Non</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Cible de centre</span><span class="rec">Second poteau</span><span>—</span><span>—</span></div>
+                                        <div class="posinstr-row"><span>Centrer depuis la ligne de fond</span><span class="rec">Oui</span><span>Non</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Couper vers le centre</span><span>Non</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>S'asseoir plus axial</span><span>Non</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Tirer plus souvent</span><span>Non</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Dribbler plus</span><span>Non</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Courir dans les couloirs</span><span>Non</span><span>Non</span><span class="rec">Oui</span></div>
+                                        <div class="posinstr-row"><span>Monter</span><span>Non</span><span>Non</span><span class="rec">Oui</span></div>
+                                    </div>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Sans le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Pressing plus urgent</span><span>Initier le press depuis l'avant (systèmes gegenpress)</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag">Garder position</span><span>Ailiers en bloc bas</span></div>
+                                </div>
+                                <div class="sp-tip"><strong>META FM26 :</strong> Les <strong>ailiers sont surpuissants</strong>. Avant Large (nouveau rôle hybride) est actuellement le plus dominant. AID devant piston avancé = combinaison dominante.</div>
+                            </div>
+
+                            <!-- BTC / AT -->
+                            <div class="posinstr-card">
+                                <div class="posinstr-header st">
+                                    <span class="posinstr-pos-badge">BTC/AT</span>
+                                    <h4>Buteur / Avant-Centre</h4>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Avec le ballon</h5>
+                                    <div class="posinstr-table">
+                                        <div class="posinstr-row header"><span>Consigne</span><span>Pointe</span><span>Renard Surface</span><span>Pivot</span><span>Faux 9</span></div>
+                                        <div class="posinstr-row"><span>Conserver le ballon</span><span class="rec">Oui</span><span>Non</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Tirer plus souvent</span><span class="rec">Oui</span><span class="rec">Oui</span><span class="rec">Oui</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Courir dans les couloirs</span><span class="rec">Oui</span><span class="rec">Oui</span><span>Non</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Monter</span><span>Non</span><span class="rec">Oui</span><span>Non</span><span>Non</span></div>
+                                        <div class="posinstr-row"><span>Varier position</span><span>Non</span><span>Non</span><span class="rec">Oui</span><span class="rec">Oui</span></div>
+                                        <div class="posinstr-row"><span>Plus de risques</span><span>Non</span><span>Non</span><span class="rec">Oui</span><span class="rec">Oui</span></div>
+                                        <div class="posinstr-row"><span>Passes plus courtes</span><span>Non</span><span>Non</span><span>Non</span><span class="rec">Oui</span></div>
+                                    </div>
+                                </div>
+                                <div class="posinstr-section">
+                                    <h5>Sans le ballon</h5>
+                                    <div class="posinstr-row"><span class="pi-tag rec">Pressing plus urgent</span><span>Gegenpress (BTC initie le press haut)</span></div>
+                                    <div class="posinstr-row"><span class="pi-tag">Pressing moins urgent</span><span>Contre-attaque (économiser énergie, rester avancé)</span></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Instructions d'opposition -->
+                        <div class="posinstr-opposition-section">
+                            <h3><i class="bi bi-journal-check"></i> Consignes d'Opposition (par match)</h3>
+                            <p>Ces consignes s'appliquent aux joueurs adverses spécifiques, match par match.</p>
+                            <div class="opp-instr-grid">
+                                <div class="opp-instr-card">
+                                    <h4>Marquage strict</h4>
+                                    <div class="opp-row good"><span class="opp-icon"><i class="bi bi-check-circle"></i></span><span><strong>Utiliser sur :</strong> Joueurs créatifs lents, relayeurs profonds, pivots, attaquants isolés, bons passeurs</span></div>
+                                    <div class="opp-row bad"><span class="opp-icon"><i class="bi bi-x-circle"></i></span><span><strong>Éviter sur :</strong> Ailiers rapides, dribbleurs explosifs (ils l'éliminent facilement)</span></div>
+                                </div>
+                                <div class="opp-instr-card">
+                                    <h4>Déclencher le pressing</h4>
+                                    <div class="opp-row good"><span class="opp-icon"><i class="bi bi-check-circle"></i></span><span><strong>Utiliser sur :</strong> Joueurs avec sang-froid/décisions faibles, première touche fragile, faible courage/volume de travail, revenants de blessure, joueurs avec le trait "Garde le ballon"</span></div>
+                                    <div class="opp-row bad"><span class="opp-icon"><i class="bi bi-x-circle"></i></span><span><strong>Éviter sur :</strong> Ailiers rapides, créatifs avec flair élevé, joueurs non-menaçants (gaspille l'énergie)</span></div>
+                                </div>
+                                <div class="opp-instr-card">
+                                    <h4>Tacle dur</h4>
+                                    <div class="opp-row good"><span class="opp-icon"><i class="bi bi-check-circle"></i></span><span><strong>Utiliser sur :</strong> Joueurs avec faible courage/agressivité, créatifs techniques mais immobiles, adversaires fatigués</span></div>
+                                    <div class="opp-row bad"><span class="opp-icon"><i class="bi bi-x-circle"></i></span><span><strong>Éviter sur :</strong> Joueurs physiquement dominants, dribbleurs agiles, quand vous gagnez confortablement</span></div>
+                                </div>
+                                <div class="opp-instr-card">
+                                    <h4>Forcer sur mauvais pied</h4>
+                                    <div class="opp-row good"><span class="opp-icon"><i class="bi bi-check-circle"></i></span><span><strong>Forcer sur mauvais pied :</strong> Joueurs à un pied, les affaiblir</span></div>
+                                    <div class="opp-row good"><span class="opp-icon"><i class="bi bi-arrow-right"></i></span><span><strong>Forcer à droite :</strong> Ailiers inversés gauche (les éloigner du but)</span></div>
+                                    <div class="opp-row good"><span class="opp-icon"><i class="bi bi-arrow-left"></i></span><span><strong>Forcer à gauche :</strong> Ailiers inversés droite (les éloigner du but)</span></div>
+                                    <div class="sp-tip" style="margin-top:8px">Principe : "Les consignes d'opposition doivent soutenir votre tactique, pas s'y opposer"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- XI Detailed Report Tab -->
+                <div class="tab-content" id="xireport-tab">
+                    <div class="xireport-container">
+                        <h2>📑 XI détaillé du preset</h2>
+                        <p class="xireport-description">Vue ligne par ligne des 11 joueurs : poste et rôle avec ballon, poste et rôle sans ballon, puis consignes individuelles effectives.</p>
+
+                        <div class="xireport-table-wrap">
+                            <table class="xireport-table">
+                                <thead>
+                                    <tr>
+                                        <th>Joueur</th>
+                                        <th>Avec ballon (IP)</th>
+                                        <th>Sans ballon (OOP)</th>
+                                        <th>Consignes individuelles</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="xi-report-content">
+                                    <tr>
+                                        <td colspan="4" class="xireport-empty">Charge un preset ou configure ton XI pour afficher le détail.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scoring Tab -->
+                <div class="tab-content" id="scoring-tab">
+                    <div class="scoring-container">
+                        <div class="scoring-header">
+                            <div class="scoring-title-row">
+                                <h2><i class="bi bi-clipboard-data"></i> Notation Joueurs & Analyse Effectif</h2>
+                                <div class="scoring-header-actions">
+                                    <button id="scoring-export-btn" class="btn btn-secondary" style="display:none">
+                                        <span class="btn-icon" aria-hidden="true"><i class="bi bi-box-arrow-up"></i></span> Exporter
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="scoring-subtitle">Importez votre CSV FM26 pour scorer chaque joueur sur les rôles de votre tactique active et identifier les lacunes de l'effectif.</p>
+                        </div>
+
+                        <!-- Setup -->
+                        <div class="scoring-setup">
+                            <div class="scoring-setup-card">
+                                <div class="scoring-setup-icon" aria-hidden="true"><i class="bi bi-folder2-open"></i></div>
+                                <div class="scoring-setup-text">
+                                    <strong>Fichier joueurs FM26</strong>
+                                    <span id="scoring-csv-name" class="scoring-csv-name">Aucun fichier sélectionné</span>
+                                </div>
+                                <input type="file" id="scoring-csv-file" accept=".csv,text/csv" style="display:none">
+                                <button class="btn btn-secondary" onclick="document.getElementById('scoring-csv-file').click()">Parcourir</button>
+                            </div>
+                            <div class="scoring-setup-card">
+                                <div class="scoring-setup-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></div>
+                                <div class="scoring-setup-text">
+                                    <strong>Tactique active</strong>
+                                    <span id="scoring-active-tactic" class="scoring-active-badge">—</span>
+                                </div>
+                                <button id="run-scoring-btn" class="btn btn-primary"><span class="btn-icon" aria-hidden="true"><i class="bi bi-search"></i></span> Analyser l'effectif</button>
+                            </div>
+                        </div>
+
+                        <!-- View switcher -->
+                        <div class="scoring-view-bar" id="scoring-view-bar" style="display:none">
+                            <button class="scoring-view-btn active" data-view="role-scorer"><i class="bi bi-bullseye"></i> Role Scorer</button>
+                            <button class="scoring-view-btn" data-view="squad-overview"><i class="bi bi-bar-chart-line"></i> Vue d'ensemble</button>
+                            <button class="scoring-view-btn" data-view="recruitment"><i class="bi bi-search"></i> Recrutement</button>
+                        </div>
+
+                        <!-- Role Scorer View -->
+                        <div class="scoring-view active" id="sv-role-scorer">
+                            <!-- Role filter -->
+                            <div class="role-scorer-controls" id="role-scorer-controls" style="display:none">
+                                <div class="rs-filter-row">
+                                    <input type="text" id="rs-search" class="rs-search" placeholder="Filtrer par nom...">
+                                    <select id="rs-role-filter" class="rs-role-select">
+                                        <option value="">Tous les rôles de la tactique</option>
+                                    </select>
+                                    <select id="rs-pos-filter" class="rs-pos-select">
+                                        <option value="">Tous les postes</option>
+                                        <option value="GB">Gardien</option>
+                                        <option value="DEF">Défenseur</option>
+                                        <option value="MDF">Milieu déf.</option>
+                                        <option value="MIL">Milieu</option>
+                                        <option value="AIL">Ailier</option>
+                                        <option value="ATT">Attaquant</option>
+                                    </select>
+                                    <label class="rs-toggle-label">
+                                        <input type="checkbox" id="rs-top-only"> Top joueurs seulement
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="role-scorer-grid" class="role-scorer-grid"></div>
+                        </div>
+
+                        <!-- Squad Overview View -->
+                        <div class="scoring-view" id="sv-squad-overview">
+                            <div id="squad-overview-content"></div>
+                        </div>
+
+                        <!-- Recruitment View -->
+                        <div class="scoring-view" id="sv-recruitment">
+                            <div id="recruitment-content"></div>
+                        </div>
+
+                        <!-- Placeholder -->
+                        <div class="scoring-placeholder" id="scoring-placeholder">
+                            <div class="scoring-placeholder-icon" aria-hidden="true"><i class="bi bi-bullseye"></i></div>
+                            <p>Importez votre export CSV FM26 et cliquez sur <strong>Analyser l'effectif</strong></p>
+                            <p class="scoring-placeholder-sub">Chaque joueur sera scoré sur les rôles IP et OOP de votre tactique active</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide du Gaffer Tab -->
+                <!-- Training Tab -->
+                <div class="tab-content" id="training-tab">
+                    <div class="training-container">
+                        <div class="training-header">
+                            <h2><i class="bi bi-activity"></i> Entraînement Individuel FM26</h2>
+                            <p class="training-subtitle">Générez le plan d'entraînement individuel optimal pour chaque joueur en fonction de la tactique active et de leurs attributs CSV.</p>
+                        </div>
+
+                        <div class="training-setup">
+                            <div class="training-setup-card">
+                                <div class="training-setup-icon" aria-hidden="true"><i class="bi bi-folder2-open"></i></div>
+                                <div class="training-setup-text">
+                                    <h3>Importer votre effectif CSV</h3>
+                                    <p>Même fichier CSV que pour le générateur de preset — attributs FM26 exportés depuis la vue joueurs.</p>
+                                </div>
+                                <div class="training-setup-action">
+                                    <input type="file" id="training-csv-file" accept=".csv,.txt" class="csv-file-input">
+                                    <label for="training-csv-file" class="btn btn-secondary">Choisir CSV</label>
+                                    <span id="training-csv-name" class="csv-filename"></span>
+                                </div>
+                            </div>
+                            <div class="training-setup-card">
+                                <div class="training-setup-icon" aria-hidden="true"><i class="bi bi-diagram-2"></i></div>
+                                <div class="training-setup-text">
+                                    <h3>Tactique active</h3>
+                                    <p>Les rôles IP et OOP du preset actif seront utilisés pour déterminer les focus d'entraînement.</p>
+                                </div>
+                                <div class="training-setup-action">
+                                    <span id="training-active-preset" class="training-preset-badge">Aucun preset actif</span>
+                                </div>
+                            </div>
+                            <button id="generate-training-btn" class="btn btn-primary training-generate-btn" onclick="app.generateTrainingPlan()">
+                                <span class="btn-icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></span> Générer les plans d'entraînement
+                            </button>
+                        </div>
+
+                        <div id="training-results" class="training-results" style="display:none;">
+                            <div class="training-results-header">
+                                <h3 id="training-results-title">Plan d'entraînement — <span id="training-preset-name"></span></h3>
+                                <p class="training-results-legend">
+                                    <span class="tleg tleg-role">Rôle IP</span>
+                                    <span class="tleg tleg-oop">Rôle OOP</span>
+                                    <span class="tleg tleg-prio">Priorité</span>
+                                    <span class="tleg tleg-focus">Focus entraînement</span>
+                                </p>
+                            </div>
+                            <div id="training-players-grid" class="training-players-grid"></div>
+                        </div>
+
+                        <div id="training-placeholder" class="training-placeholder">
+                            <div class="training-placeholder-icon" aria-hidden="true"><i class="bi bi-activity"></i></div>
+                            <p>Importez un CSV et cliquez sur <strong>Générer</strong> pour obtenir le plan d'entraînement individualisé de chaque joueur.</p>
+                            <p class="training-placeholder-sub">Les recommandations tiennent compte du rôle avec et sans ballon, des attributs déficitaires, et de l'identité tactique de votre équipe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="gaffer-tab">
+                    <div class="gaffer-container">
+                        <div class="gaffer-header">
+                            <h2><i class="bi bi-mortarboard"></i> Guide du Gaffer FM26</h2>
+                            <p class="gaffer-subtitle">Basé sur <em>Mastering FM26</em> — Roy Rovers. Les 5 piliers d'un gaffer complet.</p>
+                        </div>
+
+                        <!-- 5 Pilliers -->
+                        <div class="gaffer-pillars">
+                            <div class="pillar-card pillar-identity">
+                                <div class="pillar-icon" aria-hidden="true"><i class="bi bi-bullseye"></i></div>
+                                <h3>1. Identité</h3>
+                                <p>Ton style de jeu en une phrase. Avant de choisir un rôle ou une consigne, sais-tu exactement quel football tu veux produire ?</p>
+                                <div class="pillar-types">
+                                    <span class="pillar-type"><i class="bi bi-lightning-charge"></i> Pressing Évangéliste</span>
+                                    <span class="pillar-type"><i class="bi bi-bezier2"></i> Contrôle Possession</span>
+                                    <span class="pillar-type"><i class="bi bi-forward"></i> Contre-Assassin</span>
+                                    <span class="pillar-type"><i class="bi bi-grid-3x3-gap"></i> Pragmatiste Hybride</span>
+                                </div>
+                            </div>
+                            <div class="pillar-card pillar-people">
+                                <div class="pillar-icon" aria-hidden="true"><i class="bi bi-people"></i></div>
+                                <h3>2. Personnes</h3>
+                                <p>Joueurs, staff, board, fans. Les Dynamics, les Promesses et le Leadership décident plus de saisons que la tactique.</p>
+                                <ul class="pillar-tips">
+                                    <li>Vérifie la Hiérarchie et les Groupes Sociaux 1×/semaine</li>
+                                    <li>Ne casse jamais une Promesse faite à un Team Leader</li>
+                                    <li>Le Capitaine doit incarner ton identité de jeu</li>
+                                </ul>
+                            </div>
+                            <div class="pillar-card pillar-resources">
+                                <div class="pillar-icon" aria-hidden="true"><i class="bi bi-cash-coin"></i></div>
+                                <h3>3. Ressources</h3>
+                                <p>Budget, installations, confiance du Board. Les salaires tuent plus de saves que les transferts.</p>
+                                <ul class="pillar-tips">
+                                    <li>Structure salariale en 5 bandes (Star → Jeune)</li>
+                                    <li>Investis dans les installations avant les stars</li>
+                                    <li>Suit les projections, pas seulement le budget actuel</li>
+                                </ul>
+                            </div>
+                            <div class="pillar-card pillar-time">
+                                <div class="pillar-icon" aria-hidden="true"><i class="bi bi-hourglass-split"></i></div>
+                                <h3>4. Temps</h3>
+                                <p>Cycles de 3 saisons. Succession planning. Rebuild volontaire. Le long terme bat le court terme.</p>
+                                <ul class="pillar-tips">
+                                    <li>Remplace les héros AVANT qu'ils déclinent</li>
+                                    <li>Une saison de rebuild bien gérée = nouveau cycle d'or</li>
+                                    <li>Profil d'âge idéal : 1-2 leaders 28-32, cœur 23-27, jeunes</li>
+                                </ul>
+                            </div>
+                            <div class="pillar-card pillar-interface">
+                                <div class="pillar-icon" aria-hidden="true"><i class="bi bi-display"></i></div>
+                                <h3>5. Interface</h3>
+                                <p>Portal, Bookmarks, Power Search, Visualiseur. Moins de friction = plus de football.</p>
+                                <ul class="pillar-tips">
+                                    <li>Crée tes Bookmarks dès le début (Squad, Tactics, Recrutement, Finances)</li>
+                                    <li>Utilise le Visualiseur FM26 avant chaque match important</li>
+                                    <li>Data Hub après chaque match : 1 point à améliorer</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Dual Formation expliqué -->
+                        <div class="gaffer-section">
+                            <h3><i class="bi bi-arrow-left-right"></i> Le Système Dual FM26 — Comment ça marche vraiment</h3>
+                            <div class="dual-explainer">
+                                <div class="dual-phase">
+                                    <div class="dual-phase-header ip-header"><i class="bi bi-circle-fill"></i> En Possession (IP)</div>
+                                    <p>Ton squelette offensif. Définit les triangles, les supp demi-espaces, et comment tu crées des occasions. Les rôles IP décrivent <strong>comment le joueur se positionne et se déplace quand ton équipe a le ballon.</strong></p>
+                                    <div class="dual-tips">
+                                        <div class="dual-tip">Où veux-tu tes surnombres ?</div>
+                                        <div class="dual-tip">Quelles zones doivent toujours être occupées en construction ?</div>
+                                        <div class="dual-tip">Quelle profondeur d'attaque veux-tu ?</div>
+                                    </div>
+                                </div>
+                                <div class="dual-arrow"><i class="bi bi-arrow-left-right"></i></div>
+                                <div class="dual-phase">
+                                    <div class="dual-phase-header oop-header"><i class="bi bi-shield-check"></i> Hors Possession (OOP)</div>
+                                    <p>Ton bloc défensif. Définit les couloirs de pressing, la couverture défensive et la structure de transition. Les rôles OOP décrivent <strong>comment le même joueur se comporte quand tu défends.</strong></p>
+                                    <div class="dual-tips">
+                                        <div class="dual-tip">Combien de joueurs pressent en premier rideau ?</div>
+                                        <div class="dual-tip">As-tu un MDF clair qui protège la défense ?</div>
+                                        <div class="dual-tip">Quelle couverture horizontale en largeur ?</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gaffer-warning">
+                                <i class="bi bi-exclamation-triangle"></i> FM26 t'avertit si tes changements de position entre phases créent des trous trop extrêmes. Commence avec des transitions naturelles (ex: 4-3-3 IP → 4-1-4-1 OOP) et complexifie quand ta compréhension est plus forte.
+                            </div>
+                        </div>
+
+                        <!-- 3 moments de transition -->
+                        <div class="gaffer-section">
+                            <h3><i class="bi bi-lightning-charge"></i> Les 3 Moments Qui Décident Chaque Match</h3>
+                            <div class="moments-grid">
+                                <div class="moment-card moment-lose">
+                                    <div class="moment-num">1</div>
+                                    <h4>Perte du ballon</h4>
+                                    <p>Où sont tes défenseurs de repli dans la forme IP ? As-tu 1-2 joueurs qui peuvent retarder le contre immédiatement ?</p>
+                                    <div class="moment-check">→ Rôles IP : qui reste en place ? (MD, DC strict…)</div>
+                                </div>
+                                <div class="moment-card moment-win">
+                                    <div class="moment-num">2</div>
+                                    <h4>Récupération du ballon</h4>
+                                    <p>As-tu des sorties immédiates dans ta forme OOP, ou tous tes joueurs sont derrière le ballon ? Les joueurs larges sont-ils assez haut ?</p>
+                                    <div class="moment-check">→ Transition off. : Contre-attaque ou Rester en place ?</div>
+                                </div>
+                                <div class="moment-card moment-settle">
+                                    <div class="moment-num">3</div>
+                                    <h4>Installation dans le bloc</h4>
+                                    <p>Tes joueurs se repositionnent-ils vite dans ta structure OOP ? Y a-t-il des espaces évidents entre les lignes où l'IA peut placer un meneur ?</p>
+                                    <div class="moment-check">→ Transition déf. : Contre-pressing ou Regroupement ?</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plan B/C -->
+                        <div class="gaffer-section">
+                            <h3><i class="bi bi-grid-3x3-gap"></i> Construire ton Plan B et Plan C sans perdre ton identité</h3>
+                            <div class="planbc-grid">
+                                <div class="planbc-card">
+                                    <h4><i class="bi bi-check-circle"></i> Bon Plan B</h4>
+                                    <p>Garde les mêmes formations IP/OOP, modifie 1-2 rôles et le niveau de pressing pour être plus prudent à l'extérieur contre des équipes élites.</p>
+                                </div>
+                                <div class="planbc-card">
+                                    <h4><i class="bi bi-check-circle"></i> Bon Plan C</h4>
+                                    <p>Monte un milieu central plus haut en IP pour chasser un match. Devient un 4-2-4 de fait en conservant ta forme OOP de base.</p>
+                                </div>
+                                <div class="planbc-card planbc-bad">
+                                    <h4><i class="bi bi-x-circle"></i> Fausse adaptation</h4>
+                                    <p>Changer entièrement de formations IP et OOP à chaque mauvais résultat. Les joueurs ne construisent jamais de familiarité. L'identité disparaît.</p>
+                                </div>
+                            </div>
+                            <div class="gaffer-rule">
+                                <strong>Règle d'or :</strong> Si tu as besoin de plus de 2-3 consignes individuelles pour qu'un joueur se comporte correctement, tu as choisi le mauvais rôle ou la mauvaise formation.
+                            </div>
+                        </div>
+
+                        <!-- Checklist hebdomadaire -->
+                        <div class="gaffer-section">
+                            <h3><i class="bi bi-calendar-week"></i> Rituel Hebdomadaire du Gaffer</h3>
+                            <div class="ritual-grid">
+                                <div class="ritual-day">
+                                    <div class="ritual-day-name">Lundi</div>
+                                    <ul>
+                                        <li>Récupération des titulaires</li>
+                                        <li>Revue Data Hub : 1 point tactique à corriger</li>
+                                    </ul>
+                                </div>
+                                <div class="ritual-day">
+                                    <div class="ritual-day-name">Mardi</div>
+                                    <ul>
+                                        <li>Travail physique + tactique</li>
+                                        <li>Exercices selon ton style (pressing ou possession)</li>
+                                    </ul>
+                                </div>
+                                <div class="ritual-day">
+                                    <div class="ritual-day-name">Mercredi</div>
+                                    <ul>
+                                        <li>Travail technique et combinaisons</li>
+                                        <li>Focus sur les zones clés de tes formations dual</li>
+                                    </ul>
+                                </div>
+                                <div class="ritual-day">
+                                    <div class="ritual-day-name">Jeudi</div>
+                                    <ul>
+                                        <li>Préparation match + Coups de pied arrêtés</li>
+                                        <li>Vérification fraîcheur physique</li>
+                                    </ul>
+                                </div>
+                                <div class="ritual-day">
+                                    <div class="ritual-day-name">Vendredi</div>
+                                    <ul>
+                                        <li>Session légère — Protège les jambes</li>
+                                        <li>Vérification Dynamics : Promesses à tenir ?</li>
+                                    </ul>
+                                </div>
+                                <div class="ritual-day">
+                                    <div class="ritual-day-name">Samedi</div>
+                                    <ul>
+                                        <li>MATCH — Observe, ajuste, plan B si nécessaire</li>
+                                    </ul>
+                                </div>
+                                <div class="ritual-day">
+                                    <div class="ritual-day-name">Dimanche</div>
+                                    <ul>
+                                        <li>Repos pour les titulaires</li>
+                                        <li>Session légère pour remplaçants/réservistes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Checklist recrutement -->
+                        <div class="gaffer-section">
+                            <h3><i class="bi bi-person-plus"></i> Recrutement — Le Rituel de Fenêtre</h3>
+                            <div class="checklist-grid">
+                                <div class="checklist-col">
+                                    <h4>Avant d'ouvrir la liste de transferts</h4>
+                                    <label class="check-item"><input type="checkbox"> Ouvrir le Squad Planner en premier (pas la liste de transferts)</label>
+                                    <label class="check-item"><input type="checkbox"> Taguer chaque joueur : Core / Rotation / Développement / À vendre</label>
+                                    <label class="check-item"><input type="checkbox"> Identifier 3 postes prioritaires à recruter</label>
+                                    <label class="check-item"><input type="checkbox"> Identifier 2 zones surchargées à vendre</label>
+                                    <label class="check-item"><input type="checkbox"> Vérifier le profil d'âge de la colonne vertébrale</label>
+                                </div>
+                                <div class="checklist-col">
+                                    <h4>Pour chaque recrue potentielle</h4>
+                                    <label class="check-item"><input type="checkbox"> Correspond-il aux rôles IP ET OOP de mon système ?</label>
+                                    <label class="check-item"><input type="checkbox"> Sa personnalité correspond-elle à la culture de vestiaire ?</label>
+                                    <label class="check-item"><input type="checkbox"> Son salaire s'inscrit-il dans ma structure salariale par statut ?</label>
+                                    <label class="check-item"><input type="checkbox"> Ai-je les minutes pour tenir mes promesses sur son temps de jeu ?</label>
+                                    <label class="check-item"><input type="checkbox"> Sa présence perturbera-t-elle la Hiérarchie en place ?</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Planification long terme -->
+                        <div class="gaffer-section">
+                            <h3><i class="bi bi-calendar3"></i> Planning Long Terme — 3 Cycles de 3 Saisons</h3>
+                            <div class="longterm-grid">
+                                <div class="longterm-cycle cycle-1">
+                                    <div class="cycle-label">Saisons 1-3</div>
+                                    <h4><i class="bi bi-building"></i> Fondation</h4>
+                                    <ul>
+                                        <li>Installer le modèle de jeu dual IP/OOP</li>
+                                        <li>Assainir la masse salariale</li>
+                                        <li>Construire une colonne vertébrale 23-28 ans</li>
+                                        <li>Stabiliser les résultats</li>
+                                        <li>1 upgrade d'installation si budget permet</li>
+                                    </ul>
+                                </div>
+                                <div class="longterm-cycle cycle-2">
+                                    <div class="cycle-label">Saisons 4-6</div>
+                                    <h4><i class="bi bi-trophy"></i> Premier Pic</h4>
+                                    <ul>
+                                        <li>Premier défi majeur (titre, Coupe, Europe)</li>
+                                        <li>Intégrer progressivement la prochaine génération</li>
+                                        <li>Vendre 1-2 joueurs au pic de valeur pour reinvestir</li>
+                                        <li>Évolution tactique subtile (pas révolution)</li>
+                                    </ul>
+                                </div>
+                                <div class="longterm-cycle cycle-3">
+                                    <div class="cycle-label">Saisons 7-9</div>
+                                    <h4><i class="bi bi-arrow-repeat"></i> Régénération</h4>
+                                    <ul>
+                                        <li>Rebuild contrôlé si nécessaire</li>
+                                        <li>Promouvoir les jeunes dans des rôles prêts</li>
+                                        <li>Rafraîchir un aspect majeur du style</li>
+                                        <li>Nouveau capitaine identifié et intégré</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Hub guide -->
+                        <div class="gaffer-section">
+                            <h3><i class="bi bi-bar-chart"></i> Data Hub — Ce qu'il faut vraiment regarder</h3>
+                            <div class="datahub-grid">
+                                <div class="datahub-card">
+                                    <h4><i class="bi bi-bullseye"></i> Après chaque match</h4>
+                                    <p>Résumé dernier match : Es-tu constamment dominé en tirs, en xG, ou tu perds juste sur la finition ?</p>
+                                </div>
+                                <div class="datahub-card">
+                                    <h4><i class="bi bi-geo-alt"></i> Sur un bloc de matchs</h4>
+                                    <p>Carte des tirs : Tes tirs viennent-ils de zones centrales de qualité ou tu spammes des frappes lointaines à faible %xG ?</p>
+                                </div>
+                                <div class="datahub-card">
+                                    <h4><i class="bi bi-diagram-3"></i> Réseau de passes</h4>
+                                    <p>Construis-tu vraiment par les zones que ta tactique prétend utiliser ? Les surcharges prévues se matérialisent-elles ?</p>
+                                </div>
+                                <div class="datahub-card">
+                                    <h4><i class="bi bi-activity"></i> Distance / Sprints</h4>
+                                    <p>Un joueur clé qui s'effondre dans les 20 dernières minutes = surentraînement, mauvais rôle, ou refus de rotation.</p>
+                                </div>
+                            </div>
+                            <div class="datahub-link-box">
+                                <strong>Lien avec l'entraînement :</strong>
+                                <span>Trop de centres concédés → travail défensif couloirs + rôles latéraux à revoir.</span>
+                                <span>Attaquants tirent depuis de mauvais angles → travail de conversion + mouvement entre les lignes.</span>
+                                <span>Milieux invisibles en construction → travail sur les patterns de possession et soutien.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Studio Tactique FM26 - Optimisé pour Football Manager 26</p>
+            <p class="footer-note">Nouveautés FM26 : Double Formation (IP/OOP) • Nouveaux Rôles • Visualiseur de Zones</p>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="save-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sauvegarder la Tactique</h3>
+                <button class="modal-close" onclick="closeSaveModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nom de la tactique</label>
+                    <input type="text" id="save-name" class="form-input" placeholder="Ma Tactique FM26">
+                </div>
+                <div class="saved-tactics-list" id="saved-tactics-list">
+                    <h4>Tactiques Sauvegardées</h4>
+                    <div id="saved-items"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="confirmSave()">Sauvegarder</button>
+                <button class="btn btn-secondary" onclick="closeSaveModal()">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="load-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Charger une Tactique</h3>
+                <button class="modal-close" onclick="closeLoadModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="load-tactics-list" id="load-tactics-list">
+                    <!-- Saved tactics will be listed here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeLoadModal()">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+    (function() {
+        const landing = document.getElementById('landing-screen');
+        const app = document.getElementById('app-container');
+
+        function enterApp() {
+            landing.classList.add('landing-exit');
+            setTimeout(() => {
+                landing.style.display = 'none';
+                app.style.display = '';
+                app.classList.add('app-enter');
+                setTimeout(() => app.classList.remove('app-enter'), 500);
+            }, 350);
+        }
+
+        ['landing-enter-main', 'landing-enter-bottom', 'landing-nav-enter'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('click', enterApp);
+        });
+    })();
+    </script>
+</body>
+</html>
