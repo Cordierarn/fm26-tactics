@@ -2685,14 +2685,33 @@ class FM26TacticsTool {
         }
 
         // ── Indispensabilité : slots où le joueur est le MEILLEUR ou l'un des 2 seuls ──
+        // On utilise ipScore comme critère primaire pour éviter qu'un mauvais rôle OOP
+        // ne pénalise un joueur qui est objectivement bon à ce poste en possession.
         const slotTopPlayer = {};
         for (const slot of tacticSlots) {
             const ranked = players
                 .map(p => ({ player: p, s: scorePlayerOnSlot(p, slot) }))
-                .sort((a, b) => b.s.combinedScore - a.s.combinedScore);
+                // Tri par ipScore d'abord (résistant aux mauvais rôles OOP), puis combinedScore
+                .sort((a, b) => b.s.ipScore !== a.s.ipScore
+                    ? b.s.ipScore - a.s.ipScore
+                    : b.s.combinedScore - a.s.combinedScore);
             slotTopPlayer[slot.slotCode] = ranked.slice(0, 2).map(r => r.player);
         }
+
+        // Starters identifiés par le XI optimisé
+        const starterSet = new Set(bestIP.starters.map(s => s.player));
+
         const isIndispensable = (player) => {
+            // Protection 1 : joueur titulaire dont le ipScore est ≥ 55 à son slot attribué
+            const starterIdx = bestIP.starters.findIndex(s => s.player === player);
+            if (starterIdx >= 0) {
+                const assignedSlot = tacticSlots[starterIdx];
+                if (assignedSlot) {
+                    const s = scorePlayerOnSlot(player, assignedSlot);
+                    if (s.ipScore >= 55) return true;
+                }
+            }
+            // Protection 2 : dans le top2 d'un slot avec profondeur faible
             return tacticSlots.some(slot => {
                 const top2 = slotTopPlayer[slot.slotCode] || [];
                 const depth = slotDepth[slot.slotCode] || 0;
@@ -2797,10 +2816,19 @@ class FM26TacticsTool {
             // IP/OOP gap sur le meilleur joueur de ce slot
             const ipOopGap = best.ipScore && best.oopScore ? Math.round(best.ipScore - best.oopScore) : 0;
 
+            // Si le meilleur joueur est titulaire incontesté avec bon score IP,
+            // le rôle OOP ne peut pas faire monter l'urgence au-delà de 'high'.
+            // Cas typique : GK avec rôle Libéro OOP inadapté → ipScore bon mais oopScore effondré.
+            const bestIsStarter = best.player && starterSet.has(best.player);
+            const ipGapInflation = best.ipScore >= 55 && best.combinedScore < 55; // OOP tire le score vers le bas
+
             // Urgence : combinaison score + profondeur
             let urgency = best.combinedScore < 55 ? 'urgent' : best.combinedScore < 65 ? 'high' : 'medium';
-            if (depth <= 1 && urgency === 'medium') urgency = 'high'; // 1 seul joueur viable = upgrade urgency
+            if (depth <= 1 && urgency === 'medium') urgency = 'high';
             if (depth === 0) urgency = 'urgent';
+
+            // Cap : titulaire incontesté avec bon IP → au maximum 'high', jamais 'urgent'
+            if (urgency === 'urgent' && bestIsStarter && ipGapInflation) urgency = 'high';
 
             const roleProfile = self.getRoleAttributeProfile(slot.roleIP || slot.slotCode || '');
             const keyAttrs = [...new Set([...(roleProfile.ipAttrs || []), ...(roleProfile.oopAttrs || [])])].slice(0, 5);
@@ -2839,7 +2867,21 @@ class FM26TacticsTool {
         });
 
         // ── Filtrer : garder uniquement les slots qui méritent vraiment une action ──
-        const buyPriorities = slotNeeds.filter(s => s.bestScore < 70 || s.depth <= 1).slice(0, 8);
+        // Dédupliquer les slots qui ont exactement le même roleIP + roleOOP (ex: 2× CM Milieu Axial)
+        const seenRolePairs = new Map();
+        const slotNeedsDeduped = slotNeeds.map(s => {
+            const key = `${s.roleIP || s.slotCode}||${s.roleOOP || s.roleIP || s.slotCode}`;
+            if (seenRolePairs.has(key)) {
+                const existing = seenRolePairs.get(key);
+                existing.count = (existing.count || 1) + 1;
+                return null; // doublon
+            }
+            const entry = { ...s, count: 1 };
+            seenRolePairs.set(key, entry);
+            return entry;
+        }).filter(Boolean);
+
+        const buyPriorities = slotNeedsDeduped.filter(s => s.bestScore < 70 || s.depth <= 1).slice(0, 8);
 
         // ── Slots sans doublure (profondeur = 1 = que le titulaire) ──
         const fragilityWarnings = slotNeeds
@@ -2984,7 +3026,7 @@ class FM26TacticsTool {
             const depthWarn = item.depth <= 1 ? ` <span class="csv-depth-warn" title="Profondeur faible"><i class="bi bi-exclamation-triangle-fill"></i> ${item.depth} joueur viable</span>` : `<span class="csv-depth-ok"><i class="bi bi-people"></i> ${item.depth} joueurs viables</span>`;
             const threshStr = escapeHtml((item.thresholds || []).join(' · '));
             return `<li>
-                <div class="csv-buy-header">${urgencyBadge(item.urgency)} <strong>${escapeHtml(item.slotCode)}</strong> — IP: ${escapeHtml(item.roleIP || '-')} | OOP: ${escapeHtml(item.roleOOP || '-')} ${depthWarn}</div>
+                <div class="csv-buy-header">${urgencyBadge(item.urgency)} <strong>${escapeHtml(item.slotCode)}${item.count > 1 ? ` ×${item.count}` : ''}</strong> — IP: ${escapeHtml(item.roleIP || '-')} | OOP: ${escapeHtml(item.roleOOP || '-')} ${depthWarn}</div>
                 <div class="csv-buy-score">Meilleur actuel: <strong>${escapeHtml(String(item.bestScore || 0))}/100</strong> (IP ${escapeHtml(String(item.ipScore || 0))} · OOP ${escapeHtml(String(item.oopScore || 0))})</div>
                 ${threshStr ? `<div class="csv-buy-thresholds">Attributs cibles: ${threshStr}</div>` : ''}
                 ${currentPlayers ? `<div class="csv-buy-current">Meilleurs actuels: ${currentPlayers}</div>` : ''}

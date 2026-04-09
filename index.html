@@ -868,6 +868,33 @@
                                 <input type="file" id="csv-meta-file" accept=".csv,text/csv">
                                 <button id="generate-csv-meta" class="btn btn-primary" type="button">Générer et appliquer</button>
                             </div>
+                            <div class="csv-plugin-banner">
+                                <div class="csv-plugin-banner-main">
+                                    <i class="bi bi-plugin"></i>
+                                    <span>Besoin d'exporter ton effectif FM26 ?</span>
+                                    <button class="csv-plugin-toggle" onclick="this.closest('.csv-plugin-banner').classList.toggle('open')" type="button">
+                                        <i class="bi bi-chevron-down"></i> Comment faire
+                                    </button>
+                                    <a href="all_stats.fmf" download class="btn-dl-fmf">
+                                        <i class="bi bi-download"></i> all_stats.fmf
+                                    </a>
+                                </div>
+                                <div class="csv-plugin-steps">
+                                    <div class="csv-plugin-req">
+                                        <i class="bi bi-exclamation-triangle"></i>
+                                        Prérequis : <strong>BepInEx 6</strong> (Unity IL2CPP) installé dans le dossier Football Manager 26 + plugin <strong>FM26 Player Export v4</strong> de vinteset sur FMScout.
+                                    </div>
+                                    <ol>
+                                        <li>Télécharge et installe <strong>BepInEx 6</strong> dans le dossier du jeu, lance FM26 une fois pour générer les dossiers.</li>
+                                        <li>Télécharge le plugin <strong>FM26PlayerExport.dll</strong> depuis FMScout et place-le dans <code>BepInEx\plugins\FM26PlayerExport\</code>.</li>
+                                        <li>Télécharge le fichier <strong>all_stats.fmf</strong> ci-contre et charge-le dans FM26 : <em>Vue joueurs → icône vue → Charger vue → all_stats.fmf</em>.</li>
+                                        <li>Sélectionne tous tes joueurs puis appuie sur <kbd>F9</kbd> (ou <kbd>Ctrl+P</kbd>). Ne touche pas la souris pendant le défilement.</li>
+                                        <li>Le CSV est sauvegardé dans <code>Documents\Sports Interactive\Football Manager 2026\FM26PlayerExport by vinteset\</code>.</li>
+                                        <li>Importe ce fichier ici avec le bouton ci-dessus.</li>
+                                    </ol>
+                                    <p class="csv-plugin-note"><i class="bi bi-info-circle"></i> Windows peut bloquer le .dll : clic droit → Propriétés → cocher "Débloquer". Le plugin ne modifie pas ta sauvegarde.</p>
+                                </div>
+                            </div>
                             <div class="csv-meta-summary" id="csv-meta-summary">
                                 <p class="placeholder">Aucune analyse CSV effectuée pour le moment.</p>
                             </div>
@@ -1624,6 +1651,34 @@
                             <p class="scoring-subtitle">Importez votre CSV FM26 pour scorer chaque joueur sur les rôles de votre tactique active et identifier les lacunes de l'effectif.</p>
                         </div>
 
+                        <!-- Plugin banner scoring -->
+                        <div class="csv-plugin-banner">
+                            <div class="csv-plugin-banner-main">
+                                <i class="bi bi-plugin"></i>
+                                <span>Besoin d'exporter ton effectif FM26 ?</span>
+                                <button class="csv-plugin-toggle" onclick="this.closest('.csv-plugin-banner').classList.toggle('open')" type="button">
+                                    <i class="bi bi-chevron-down"></i> Comment faire
+                                </button>
+                                <a href="all_stats.fmf" download class="btn-dl-fmf">
+                                    <i class="bi bi-download"></i> all_stats.fmf
+                                </a>
+                            </div>
+                            <div class="csv-plugin-steps">
+                                <div class="csv-plugin-req">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Prérequis : <strong>BepInEx 6</strong> (Unity IL2CPP) + plugin <strong>FM26 Player Export v4</strong> de vinteset sur FMScout.
+                                </div>
+                                <ol>
+                                    <li>Installe <strong>BepInEx 6</strong> dans le dossier FM26, lance le jeu une fois.</li>
+                                    <li>Place <strong>FM26PlayerExport.dll</strong> dans <code>BepInEx\plugins\FM26PlayerExport\</code>.</li>
+                                    <li>Charge <strong>all_stats.fmf</strong> dans FM26 : <em>Vue joueurs → icône vue → Charger vue</em>.</li>
+                                    <li>Sélectionne tes joueurs, appuie sur <kbd>F9</kbd> et ne touche pas la souris.</li>
+                                    <li>Récupère le CSV dans <code>Documents\Sports Interactive\Football Manager 2026\FM26PlayerExport by vinteset\</code>.</li>
+                                </ol>
+                                <p class="csv-plugin-note"><i class="bi bi-info-circle"></i> Windows peut bloquer le .dll : clic droit → Propriétés → cocher "Débloquer".</p>
+                            </div>
+                        </div>
+
                         <!-- Setup -->
                         <div class="scoring-setup">
                             <div class="scoring-setup-card">
@@ -1704,6 +1759,34 @@
                         <div class="training-header">
                             <h2><i class="bi bi-activity"></i> Entraînement Individuel FM26</h2>
                             <p class="training-subtitle">Générez le plan d'entraînement individuel optimal pour chaque joueur en fonction de la tactique active et de leurs attributs CSV.</p>
+                        </div>
+
+                        <!-- Plugin banner training -->
+                        <div class="csv-plugin-banner">
+                            <div class="csv-plugin-banner-main">
+                                <i class="bi bi-plugin"></i>
+                                <span>Besoin d'exporter ton effectif FM26 ?</span>
+                                <button class="csv-plugin-toggle" onclick="this.closest('.csv-plugin-banner').classList.toggle('open')" type="button">
+                                    <i class="bi bi-chevron-down"></i> Comment faire
+                                </button>
+                                <a href="all_stats.fmf" download class="btn-dl-fmf">
+                                    <i class="bi bi-download"></i> all_stats.fmf
+                                </a>
+                            </div>
+                            <div class="csv-plugin-steps">
+                                <div class="csv-plugin-req">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Prérequis : <strong>BepInEx 6</strong> (Unity IL2CPP) + plugin <strong>FM26 Player Export v4</strong> de vinteset sur FMScout.
+                                </div>
+                                <ol>
+                                    <li>Installe <strong>BepInEx 6</strong> dans le dossier FM26, lance le jeu une fois.</li>
+                                    <li>Place <strong>FM26PlayerExport.dll</strong> dans <code>BepInEx\plugins\FM26PlayerExport\</code>.</li>
+                                    <li>Charge <strong>all_stats.fmf</strong> dans FM26 : <em>Vue joueurs → icône vue → Charger vue</em>.</li>
+                                    <li>Sélectionne tes joueurs, appuie sur <kbd>F9</kbd> et ne touche pas la souris.</li>
+                                    <li>Récupère le CSV dans <code>Documents\Sports Interactive\Football Manager 2026\FM26PlayerExport by vinteset\</code>.</li>
+                                </ol>
+                                <p class="csv-plugin-note"><i class="bi bi-info-circle"></i> Windows peut bloquer le .dll : clic droit → Propriétés → cocher "Débloquer".</p>
+                            </div>
                         </div>
 
                         <div class="training-setup">

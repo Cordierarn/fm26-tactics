@@ -1527,6 +1527,167 @@ body {
     color: var(--text-primary);
 }
 
+/* ── Bandeau plugin CSV ── */
+.csv-plugin-banner {
+    margin: 0.75rem 0 1rem;
+    border: 1px solid rgba(230, 57, 70, 0.25);
+    border-radius: 10px;
+    background: rgba(230, 57, 70, 0.05);
+    overflow: hidden;
+}
+
+.csv-plugin-banner-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    flex-wrap: wrap;
+}
+
+.csv-plugin-banner-main > i.bi-plugin {
+    font-size: 1.1rem;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.csv-plugin-banner-main > span {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    flex: 1;
+    min-width: 120px;
+}
+
+.csv-plugin-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.csv-plugin-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.csv-plugin-banner.open .csv-plugin-toggle i {
+    transform: rotate(180deg);
+}
+
+.csv-plugin-toggle i {
+    transition: transform 0.2s;
+}
+
+.btn-dl-fmf {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.btn-dl-fmf:hover {
+    background: var(--primary-dark);
+}
+
+.csv-plugin-steps {
+    display: none;
+    padding: 0 14px 14px;
+    border-top: 1px solid rgba(230, 57, 70, 0.15);
+    margin-top: 0;
+}
+
+.csv-plugin-banner.open .csv-plugin-steps {
+    display: block;
+}
+
+.csv-plugin-req {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    background: rgba(244, 162, 97, 0.1);
+    border: 1px solid rgba(244, 162, 97, 0.3);
+    border-radius: 7px;
+    padding: 8px 10px;
+    margin: 12px 0 10px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.csv-plugin-req i {
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.csv-plugin-steps ol {
+    margin: 0 0 10px;
+    padding-left: 1.4rem;
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.csv-plugin-steps ol li {
+    margin-bottom: 2px;
+}
+
+.csv-plugin-steps code {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.78rem;
+    color: var(--text-primary);
+    word-break: break-all;
+}
+
+.csv-plugin-steps kbd {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    box-shadow: 0 1px 0 var(--border-light);
+}
+
+.csv-plugin-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 8px 0 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.csv-plugin-note i {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--secondary);
+}
+
 /* ── Plan mercato amélioré ── */
 .csv-market-summary {
     color: var(--text-secondary);
