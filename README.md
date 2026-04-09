@@ -14,7 +14,7 @@ Outil tactique expert pour Football Manager 2026 — entièrement dans le naviga
 - **Plan mercato** — détecte les postes fragiles, protège les titulaires indispensables, liste les priorités de recrutement avec seuils d'attributs par style de jeu
 - **Presets experts** — tactiques prêtes à l'emploi (Pressing, Possession, Contre, Hybride)
 - **Coups de pied arrêtés** — configuration détaillée corners, coups-francs, lancers
-- **Guide du Gaffer** — 5 piliers FM26, transitions, plans B/C, rituels hebdomadaires
+- **Guide Tactique** — 5 piliers FM26, transitions, plans B/C, rituels hebdomadaires
 
 ---
 
