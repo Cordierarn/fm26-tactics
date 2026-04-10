@@ -620,6 +620,33 @@ body {
 .player.midfielder .player-circle { background: var(--midfielder); }
 .player.attacker .player-circle { background: var(--attacker); }
 
+/* Snap grid ghosts */
+.snap-ghost {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 5;
+    transition: border-color 0.1s ease, background 0.1s ease, color 0.1s ease;
+}
+
+.snap-ghost.snap-active {
+    border-color: var(--accent);
+    background: rgba(244, 162, 97, 0.2);
+    color: var(--accent);
+    border-style: solid;
+}
+
 .player-role {
     position: absolute;
     bottom: -18px;

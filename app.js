@@ -122,7 +122,23 @@ class FM26TacticsTool {
             }
         });
 
-        // Formation Select
+        // Formation Select — update IP or OOP formation when select changes
+        const formationSelect = document.getElementById('formation-select');
+        if (formationSelect) {
+            formationSelect.addEventListener('change', (e) => {
+                const val = e.target.value;
+                if (this.currentPhase === 'ip') {
+                    this.formationIP = val;
+                    this.updateOOPSuggestions();
+                } else {
+                    this.formationOOP = val;
+                }
+                this.invalidateInstructionMapCache();
+                this.animateFormationTransition();
+                this.updateStrikerlessNotice();
+            });
+        }
+
         document.getElementById('run-analysis').addEventListener('click', () => this.runAnalysis());
         const csvMetaBtn = document.getElementById('generate-csv-meta');
         if (csvMetaBtn) {
@@ -757,6 +773,52 @@ class FM26TacticsTool {
     // ==========================================
     // Drag & Drop
     // ==========================================
+
+    // Show ghost snap-zone indicators for all formation positions
+    showSnapGrid() {
+        this.hideSnapGrid();
+        const pitch = document.getElementById('pitch');
+        const currentFormation = this.currentPhase === 'ip' ? this.formationIP : this.formationOOP;
+        const positions = window.FM26Data.FORMATIONS[currentFormation];
+        if (!positions || !pitch) return;
+
+        positions.forEach((pos, i) => {
+            const ghost = document.createElement('div');
+            ghost.className = 'snap-ghost';
+            ghost.dataset.snapIndex = i;
+            ghost.style.left = `${pos.x}%`;
+            ghost.style.top = `${pos.y}%`;
+            ghost.textContent = pos.pos;
+            pitch.appendChild(ghost);
+        });
+    }
+
+    hideSnapGrid() {
+        document.querySelectorAll('.snap-ghost').forEach(g => g.remove());
+    }
+
+    // Highlight the nearest snap ghost during drag
+    updateSnapHighlight(curX, curY, draggedIndex) {
+        const currentFormation = this.currentPhase === 'ip' ? this.formationIP : this.formationOOP;
+        const positions = window.FM26Data.FORMATIONS[currentFormation];
+        if (!positions) return null;
+
+        let best = null, bestDist = Infinity;
+        positions.forEach((pos, i) => {
+            if (i === draggedIndex) return; // skip own slot
+            const dx = pos.x - curX, dy = pos.y - curY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < bestDist) { bestDist = dist; best = i; }
+        });
+
+        document.querySelectorAll('.snap-ghost').forEach(g => {
+            const snapping = bestDist < 15 && parseInt(g.dataset.snapIndex) === best;
+            g.classList.toggle('snap-active', snapping);
+        });
+
+        return bestDist < 15 ? best : null;
+    }
+
     makeDraggable() {
         const players = document.querySelectorAll('.player');
         const pitch = document.getElementById('pitch');
@@ -767,6 +829,7 @@ class FM26TacticsTool {
             const startDrag = (clientX, clientY) => {
                 isDragging = true;
                 player.style.zIndex = '100';
+                this.showSnapGrid();
             };
 
             const moveDrag = (clientX, clientY) => {
@@ -784,13 +847,61 @@ class FM26TacticsTool {
 
                 const index = parseInt(player.dataset.index);
                 this.playerPositions[this.currentPhase][index] = { x: clampedX, y: clampedY };
+
+                this.updateSnapHighlight(clampedX, clampedY, index);
             };
 
             const endDrag = () => {
-                if (isDragging) {
-                    isDragging = false;
-                    player.style.zIndex = '';
+                if (!isDragging) return;
+                isDragging = false;
+                player.style.zIndex = '';
+
+                const index = parseInt(player.dataset.index);
+                const currentPos = this.playerPositions[this.currentPhase][index];
+                if (currentPos) {
+                    // Snap to nearest formation slot if within radius
+                    const currentFormation = this.currentPhase === 'ip' ? this.formationIP : this.formationOOP;
+                    const positions = window.FM26Data.FORMATIONS[currentFormation];
+                    if (positions) {
+                        let best = null, bestDist = Infinity;
+                        positions.forEach((pos, i) => {
+                            if (i === index) return;
+                            const dx = pos.x - currentPos.x, dy = pos.y - currentPos.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < bestDist) { bestDist = dist; best = i; }
+                        });
+
+                        if (bestDist < 15 && best !== null) {
+                            // Swap positions with the target slot
+                            const targetPos = this.playerPositions[this.currentPhase][best]
+                                || { x: positions[best].x, y: positions[best].y };
+                            this.playerPositions[this.currentPhase][index] = {
+                                x: positions[best].x, y: positions[best].y
+                            };
+                            this.playerPositions[this.currentPhase][best] = {
+                                x: positions[index].x, y: positions[index].y
+                            };
+                            // Also swap roles and names
+                            const roleA = this.playerRoles[this.currentPhase][index];
+                            const roleB = this.playerRoles[this.currentPhase][best];
+                            if (roleA !== undefined) this.playerRoles[this.currentPhase][best] = roleA;
+                            else delete this.playerRoles[this.currentPhase][best];
+                            if (roleB !== undefined) this.playerRoles[this.currentPhase][index] = roleB;
+                            else delete this.playerRoles[this.currentPhase][index];
+
+                            const nameA = this.playerNames[index];
+                            const nameB = this.playerNames[best];
+                            if (nameA !== undefined) this.playerNames[best] = nameA;
+                            else delete this.playerNames[best];
+                            if (nameB !== undefined) this.playerNames[index] = nameB;
+                            else delete this.playerNames[index];
+
+                            setTimeout(() => this.renderFormation(), 50);
+                        }
+                    }
                 }
+
+                this.hideSnapGrid();
             };
 
             // Mouse events
