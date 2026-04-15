@@ -35,7 +35,11 @@ class FM26TacticsTool {
         this.compareTacticA = '__current__';
         this.compareTacticB = '';
         this.lastCsvMetaReport = null;
-
+        this.squadPlayers = [];          // Parsed players from squad CSV
+        this.leaguePlayers = null;      // All players from league CSV
+        this.leagueProfile = null;      // Average profile of the league
+        this.leagueTeams = {};          // { teamName: [players] }
+        this.userClub = '';             // Detected user's club name
 
         // Initialize
         this.init();
@@ -143,6 +147,29 @@ class FM26TacticsTool {
         const csvMetaBtn = document.getElementById('generate-csv-meta');
         if (csvMetaBtn) {
             csvMetaBtn.addEventListener('click', () => this.generateMetaPresetFromCSV());
+        }
+
+        // League CSV — parse on file select to populate opponent dropdown
+        const leagueCsvInput = document.getElementById('csv-league-file');
+        if (leagueCsvInput) {
+            leagueCsvInput.addEventListener('change', async (e) => {
+                if (!e.target.files || !e.target.files[0]) return;
+                try {
+                    const csvText = await e.target.files[0].text();
+                    this.parseLeagueCSV(csvText);
+                    const nTeams = Object.keys(this.leagueTeams).filter(t => t !== this.userClub).length;
+                    const excl = this.userClub ? ` (${this.userClub} exclu)` : '';
+                    this.showNotification(`Ligue chargée: ${nTeams} adversaires, ${this.leaguePlayers.length} joueurs${excl}`);
+                } catch (err) {
+                    this.showNotification(`Erreur CSV ligue: ${err.message}`, 'error');
+                }
+            });
+        }
+
+        // Opponent analysis
+        const opponentBtn = document.getElementById('csv-opponent-analyze');
+        if (opponentBtn) {
+            opponentBtn.addEventListener('click', () => this.analyzeOpponent());
         }
 
         // Training CSV file name display
@@ -1902,6 +1929,9 @@ class FM26TacticsTool {
                 return;
             }
 
+            // Store parsed squad players for club detection
+            this.squadPlayers = parsedPlayers;
+
             const { preset, report } = this.buildMetaPresetFromPlayers(parsedPlayers);
             const presetKey = 'meta-csv-auto';
             window.FM26Data.PRESETS[presetKey] = preset;
@@ -1912,10 +1942,356 @@ class FM26TacticsTool {
             this.tacticName = preset.name;
             document.getElementById('tactic-name').value = this.tacticName;
             this.renderCsvMetaSummary(report);
+
+            // If league CSV was already loaded, re-run exclusion with now-available squad data
+            if (this.leaguePlayers && this.leaguePlayers.length) {
+                this.refreshLeagueExclusion();
+            }
+
             this.showNotification('Preset META généré depuis ton CSV et appliqué');
         } catch (err) {
             this.showNotification(`Erreur CSV: ${err.message}`, 'error');
         }
+    }
+
+    parseLeagueCSV(csvText) {
+        const players = this.parseFMCSVPlayers(csvText);
+        if (!players.length) throw new Error('Aucun joueur trouvé dans le CSV ligue');
+
+        this.leaguePlayers = players;
+
+        // Group by club
+        this.leagueTeams = {};
+        players.forEach(p => {
+            const club = p.club || 'Inconnu';
+            if (!this.leagueTeams[club]) this.leagueTeams[club] = [];
+            this.leagueTeams[club].push(p);
+        });
+
+        // Detect user's club from squad CSV (most common club among named players)
+        this.userClub = this.detectUserClub();
+
+        // Build league-wide profile as average of each team's top 10 (excluding user's club)
+        const excluded = this.userClub || '';
+        const avg = (arr) => arr.length ? arr.reduce((s, n) => s + n, 0) / arr.length : 0;
+        const teamNames = Object.keys(this.leagueTeams).filter(t => t !== excluded);
+        const teamProfiles = teamNames.map(t => this.buildTeamProfile(this.leagueTeams[t])).filter(p => p);
+        this.leagueProfile = {
+            pressing: avg(teamProfiles.map(p => p.pressing)),
+            technique: avg(teamProfiles.map(p => p.technique)),
+            pace: avg(teamProfiles.map(p => p.pace)),
+            aerial: avg(teamProfiles.map(p => p.aerial)),
+            creativity: avg(teamProfiles.map(p => p.creativity)),
+            defensive: avg(teamProfiles.map(p => p.defensive)),
+            stamina: avg(teamProfiles.map(p => p.stamina)),
+            decisions: avg(teamProfiles.map(p => p.decisions))
+        };
+
+        // Populate opponent dropdown (excluding user's club)
+        const select = document.getElementById('csv-opponent-select');
+        const panel = document.getElementById('csv-opponent-panel');
+        if (select && panel) {
+            const teams = Object.keys(this.leagueTeams)
+                .filter(t => t !== excluded)
+                .sort();
+            select.innerHTML = '<option value="">-- Choisir un adversaire --</option>' +
+                teams.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)} (${this.leagueTeams[t].length})</option>`).join('');
+            panel.style.display = 'block';
+        }
+    }
+
+    // Detect user's club from squad CSV (most common club in squad players)
+    detectUserClub() {
+        const squad = this.squadPlayers || [];
+        if (!squad.length) return '';
+
+        const clubCounts = {};
+        for (const p of squad) {
+            const c = (p.club || '').trim();
+            if (c) clubCounts[c] = (clubCounts[c] || 0) + 1;
+        }
+        const sorted = Object.entries(clubCounts).sort((a, b) => b[1] - a[1]);
+        return (sorted.length && sorted[0][1] >= 2) ? sorted[0][0] : '';
+    }
+
+    // Re-apply league exclusion after squad data becomes available
+    refreshLeagueExclusion() {
+        this.userClub = this.detectUserClub();
+        const excluded = this.userClub || '';
+        const avg = (arr) => arr.length ? arr.reduce((s, n) => s + n, 0) / arr.length : 0;
+
+        // Rebuild league profile as average of each team's top 10
+        const teamNames = Object.keys(this.leagueTeams).filter(t => t !== excluded);
+        const teamProfiles = teamNames.map(t => this.buildTeamProfile(this.leagueTeams[t])).filter(p => p);
+        this.leagueProfile = {
+            pressing: avg(teamProfiles.map(p => p.pressing)),
+            technique: avg(teamProfiles.map(p => p.technique)),
+            pace: avg(teamProfiles.map(p => p.pace)),
+            aerial: avg(teamProfiles.map(p => p.aerial)),
+            creativity: avg(teamProfiles.map(p => p.creativity)),
+            defensive: avg(teamProfiles.map(p => p.defensive)),
+            stamina: avg(teamProfiles.map(p => p.stamina)),
+            decisions: avg(teamProfiles.map(p => p.decisions))
+        };
+
+        // Rebuild opponent dropdown without user's club
+        const select = document.getElementById('csv-opponent-select');
+        if (select) {
+            const teams = Object.keys(this.leagueTeams)
+                .filter(t => t !== excluded)
+                .sort();
+            select.innerHTML = '<option value="">-- Choisir un adversaire --</option>' +
+                teams.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)} (${this.leagueTeams[t].length})</option>`).join('');
+        }
+
+        if (excluded) {
+            this.showNotification(`Club détecté: ${excluded} — exclu de la baseline ligue`);
+        }
+    }
+
+    buildTeamProfile(players) {
+        const outfield = players.filter(p => !(p.position || '').includes('GB'));
+        if (!outfield.length) return null;
+        const avg = (arr) => arr.length ? arr.reduce((s, n) => s + n, 0) / arr.length : 0;
+
+        // Detect best squad (top 22 = typical matchday squad)
+        const sorted = [...outfield].sort((a, b) => (b.na || 0) - (a.na || 0));
+        const bestXI = sorted.slice(0, Math.min(22, sorted.length));
+
+        return {
+            squad: outfield,
+            bestXI,
+            avgNA: avg(outfield.map(p => p.na || 0)),
+            topNA: Math.max(...outfield.map(p => p.na || 0)),
+            pressing: avg(bestXI.map(p => (p.wor + p.team + p.sta + p.ant) / 4)),
+            technique: avg(bestXI.map(p => (p.pas + p.tec + p.fir + p.vis) / 4)),
+            pace: avg(bestXI.map(p => (p.acc + p.pac) / 2)),
+            aerial: avg(bestXI.map(p => (p.hea + p.jmp + p.str) / 3)),
+            creativity: avg(bestXI.map(p => (p.vis + p.dec + p.dri + p.comp) / 4)),
+            defensive: avg(bestXI.map(p => (p.mar + p.tac + p.conc + p.ant) / 4)),
+            stamina: avg(bestXI.map(p => p.sta || 0)),
+            decisions: avg(bestXI.map(p => p.dec || 0)),
+            // Position coverage
+            gkCount: players.filter(p => (p.position || '').includes('GB')).length,
+            defCount: outfield.filter(p => (p.position || '').toLowerCase().match(/d\s*\(/)).length,
+            midCount: outfield.filter(p => (p.position || '').toLowerCase().match(/m\s*\(|md/)).length,
+            attCount: outfield.filter(p => (p.position || '').toLowerCase().match(/mo\s*\(|bt|al/)).length,
+            // Key players (top 3 by NA)
+            keyPlayers: sorted.slice(0, 3).map(p => ({ name: p.name, na: p.na, position: p.position }))
+        };
+    }
+
+    analyzeOpponent() {
+        const select = document.getElementById('csv-opponent-select');
+        const reportEl = document.getElementById('csv-opponent-report');
+        if (!select || !reportEl) return;
+
+        const teamName = select.value;
+        if (!teamName || !this.leagueTeams[teamName]) {
+            this.showNotification('Sélectionne une équipe adverse', 'error');
+            return;
+        }
+
+        const basePresetKey = 'meta-csv-auto';
+        const basePreset = window.FM26Data.PRESETS[basePresetKey];
+        if (!basePreset || !this.lastCsvMetaReport) {
+            this.showNotification('Génère d\'abord ton preset META depuis le CSV effectif', 'error');
+            return;
+        }
+
+        const oppPlayers = this.leagueTeams[teamName];
+        const oppProfile = this.buildTeamProfile(oppPlayers);
+        if (!oppProfile) return;
+        const avg = (arr) => arr.length ? arr.reduce((s, n) => s + n, 0) / arr.length : 0;
+        const myProfile = this.lastCsvMetaReport.profile;
+
+        const profileBar = (val, refVal, max = 20) => {
+            const pct = Math.round((val / max) * 100);
+            const diff = val - refVal;
+            const diffStr = diff >= 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
+            const color = diff > 0.3 ? '#e63946' : diff < -0.3 ? '#2ecc71' : '#f4a261';
+            return `<span class="csv-bar" style="display:inline-block;width:${pct}%;max-width:100px;height:8px;background:${color};border-radius:4px;vertical-align:middle;margin-left:4px;" title="${val.toFixed(1)} (ton XI: ${refVal.toFixed(1)})"></span> ${val.toFixed(1)} <span style="color:${color};font-size:0.75rem">(${diffStr})</span>`;
+        };
+
+        // ── Build anti-opponent preset ──
+        const antiPreset = JSON.parse(JSON.stringify(basePreset));
+        antiPreset.name = `Anti-${teamName}`;
+        const gap = (dim) => oppProfile[dim] - myProfile[dim];
+        const changes = [];
+        const instrNames = {
+            'tempo': 'Tempo', 'passing-style': 'Style de passe', 'pass-target': 'Cible passe',
+            'width-attack': 'Largeur attaque', 'attack-focus': 'Focus attaque',
+            'crossing-style': 'Style de centre', 'crossing-patience': 'Patience centre',
+            'dribbling': 'Dribbles', 'long-shots': 'Tirs de loin', 'creative-freedom': 'Liberté créative',
+            'pressing-strategy': 'Stratégie pressing', 'goal-kicks': 'Coups de pied de but',
+            'distribution-target': 'Cible distribution', 'distribution-speed': 'Vitesse distribution',
+            'counter-attack': 'Contre-attaque', 'defensive-line': 'Ligne défensive',
+            'pressing-height': 'Hauteur pressing', 'pressing-trigger': 'Déclencheur pressing',
+            'defensive-transition': 'Transition défensive', 'tackling': 'Tacles',
+            'pressing-crosses': 'Bloquer centres', 'defensive-behavior': 'Comportement défensif',
+            'prevent-short-gk': 'Empêcher relance courte'
+        };
+
+        const setAntiIP = (key, val, reason) => {
+            const old = basePreset.instructionsIP[key];
+            antiPreset.instructionsIP[key] = val;
+            if (old !== val) changes.push({ key, name: instrNames[key] || key, old, val, reason, phase: 'IP' });
+        };
+        const setAntiOOP = (key, val, reason) => {
+            const old = basePreset.instructionsOOP[key];
+            antiPreset.instructionsOOP[key] = val;
+            if (old !== val) changes.push({ key, name: instrNames[key] || key, old, val, reason, phase: 'OOP' });
+        };
+
+        // ── IP adjustments based on opponent gaps ──
+        // Helper: tempo rank for comparison (don't downgrade)
+        const tempoRank = { 'much-lower': 0, 'lower': 1, 'standard': 2, 'higher': 3, 'much-higher': 4 };
+        const baseTempoRank = tempoRank[basePreset.instructionsIP['tempo']] || 2;
+
+        // Tempo — never downgrade if opponent is slower
+        if (gap('pace') <= -0.8) {
+            if (baseTempoRank < 4) setAntiIP('tempo', 'much-higher', `Adversaire très lent (${oppProfile.pace.toFixed(1)} vs toi ${myProfile.pace.toFixed(1)}) → tempo max`);
+        } else if (gap('pace') > 0.5) {
+            setAntiIP('tempo', 'standard', `Adversaire rapide (${oppProfile.pace.toFixed(1)}) → ne pas se précipiter`);
+        } else if (gap('pressing') >= 0.5) {
+            if (baseTempoRank < 3) setAntiIP('tempo', 'higher', `Pressing adverse fort → accélérer pour les contourner`);
+        }
+
+        // Passing style
+        if (gap('pressing') >= 0.5) setAntiIP('passing-style', 'direct', `Pressing adverse fort (${oppProfile.pressing.toFixed(1)}) → passes directes pour sortir`);
+        else if (gap('defensive') <= -0.5) setAntiIP('passing-style', 'direct', `Défense adverse fragile (${oppProfile.defensive.toFixed(1)}) → passes directes pour l'exposer`);
+        else if (gap('technique') >= 0.5) setAntiIP('passing-style', 'shorter', `Adversaire technique → garder le ballon, passes courtes`);
+        else if (gap('creativity') >= 0.5) setAntiIP('passing-style', 'shorter', `Adversaire créatif → possession pour limiter leurs occasions`);
+
+        // Pass target
+        if (gap('pace') <= -0.5) setAntiIP('pass-target', 'space', `Adversaire lent (${oppProfile.pace.toFixed(1)}) → passes dans l'espace`);
+        else if (gap('defensive') >= 0.5) setAntiIP('pass-target', 'feet', `Défense adverse solide → passes dans les pieds, pas de risque`);
+
+        // Width
+        if (gap('defensive') <= -0.5) setAntiIP('width-attack', 'very-wide', `Défense adverse fragile (${oppProfile.defensive.toFixed(1)}) → étirer le jeu`);
+        else if (gap('defensive') >= 0.5) setAntiIP('width-attack', 'narrow', `Défense solide → resserrer, créer le surnombre axial`);
+
+        // Crossing & aerial
+        if (gap('aerial') <= -0.5) {
+            setAntiIP('crossing-style', 'floated', `Adversaire faible en l'air (${oppProfile.aerial.toFixed(1)} vs ${myProfile.aerial.toFixed(1)}) → centres flottés`);
+            setAntiIP('attack-focus', 'flanks', `Faiblesse aérienne → attaquer par les flancs`);
+        } else if (gap('aerial') >= 0.5) {
+            setAntiIP('crossing-style', 'low', `Adversaire dominant en l'air → centres bas`);
+        }
+        if (gap('pace') <= -0.5) setAntiIP('crossing-patience', 'early', `Adversaire lent → centrer tôt en transition`);
+
+        // Dribbles
+        if (gap('defensive') <= -0.5) setAntiIP('dribbling', 'encourage', `Défense adverse fragile → encourager les dribbles`);
+        else if (gap('defensive') >= 0.5) setAntiIP('dribbling', 'discourage', `Défense solide → éviter de perdre le ballon en dribblant`);
+
+        // Long shots
+        if (gap('defensive') <= -0.8) setAntiIP('long-shots', 'encourage', `Défense très faible → tenter les tirs de loin`);
+        else if (gap('defensive') >= 0.5) setAntiIP('long-shots', 'discourage', `Défense solide → ne pas gaspiller la possession`);
+
+        // Creative freedom
+        if (gap('defensive') <= -0.5) setAntiIP('creative-freedom', 'expressive', `Défense fragile → laisser les joueurs s'exprimer`);
+        else if (gap('defensive') >= 0.5 && gap('pressing') >= 0.3) setAntiIP('creative-freedom', 'disciplined', `Adversaire fort → discipline tactique`);
+
+        // Pressing strategy
+        if (gap('technique') <= -0.5) setAntiIP('pressing-strategy', 'bypass', `Adversaire peu technique (${oppProfile.technique.toFixed(1)}) → presser leur relance`);
+        else if (gap('pressing') >= 0.5) setAntiIP('pressing-strategy', 'manage', `Pressing adverse fort → gérer prudemment`);
+
+        // Counter-attack
+        if (gap('pace') <= -0.5) setAntiIP('counter-attack', 'yes', `Plus rapide qu'eux → contre-attaques activées`);
+
+        // Distribution
+        if (gap('pressing') >= 0.5) {
+            setAntiIP('goal-kicks', 'long', `Pressing adverse fort → dégagement long`);
+            setAntiIP('distribution-speed', 'fast', `Pressing adverse → distribuer vite`);
+        } else if (gap('technique') <= -0.5) {
+            setAntiIP('goal-kicks', 'short', `Adversaire peu technique → relance courte sûre`);
+        }
+
+        // ── OOP adjustments ──
+        // Defensive line
+        if (gap('pace') >= 0.5) setAntiOOP('defensive-line', 'lower', `Adversaire rapide (${oppProfile.pace.toFixed(1)}) → ligne basse pour éviter la profondeur`);
+        else if (gap('pace') <= -0.8) setAntiOOP('defensive-line', 'higher', `Adversaire très lent → monter la ligne pour étouffer`);
+
+        // Pressing — based on opponent technique AND creativity
+        if (gap('technique') <= -0.5) {
+            setAntiOOP('pressing-height', 'high', `Adversaire peu technique → presser haut`);
+            setAntiOOP('pressing-trigger', 'much-more', `Technique faible → pressing intensif pour forcer les erreurs`);
+            setAntiOOP('defensive-transition', 'counter-press', `Peu techniques → contre-pressing immédiat`);
+        } else if (gap('creativity') >= 0.5) {
+            setAntiOOP('pressing-height', 'high', `Adversaire créatif (${oppProfile.creativity.toFixed(1)}) → presser haut pour les empêcher de s'installer`);
+            setAntiOOP('pressing-trigger', 'more', `Créativité dangereuse → pressing renforcé`);
+            setAntiOOP('defensive-transition', 'counter-press', `Adversaire créatif → récupérer vite le ballon`);
+        } else if (gap('technique') >= 0.5) {
+            setAntiOOP('pressing-height', 'low', `Adversaire très technique → bloc bas, ne pas se faire éliminer`);
+            setAntiOOP('pressing-trigger', 'less', `Technique supérieure → pressing réduit, compacité`);
+            setAntiOOP('defensive-transition', 'regroup', `Très techniques → regrouper plutôt que contre-presser`);
+        }
+        if (gap('pressing') >= 0.5) {
+            setAntiOOP('prevent-short-gk', 'yes', `Pressing adverse fort → empêcher leur relance courte aussi`);
+        }
+
+        // Tackling
+        if (gap('creativity') >= 0.5) setAntiOOP('tackling', 'harder', `Adversaire créatif (${oppProfile.creativity.toFixed(1)}) → tacles appuyés, pas de liberté`);
+        else if (gap('creativity') <= -0.5) setAntiOOP('tackling', 'standard', `Peu créatifs → tacles normaux suffisants`);
+
+        // Crosses
+        if (gap('aerial') >= 0.3 || gap('pace') >= 0.3) setAntiOOP('pressing-crosses', 'stop', `Adversaire aérien/rapide → bloquer les centres`);
+
+        // Defensive behavior
+        if (gap('pace') >= 0.5) setAntiOOP('defensive-behavior', 'balanced', `Adversaire rapide → ne pas monter au duel, rester en place`);
+        else if (gap('technique') <= -0.5) setAntiOOP('defensive-behavior', 'step-up', `Peu techniques → monter au duel pour récupérer`);
+        else if (gap('creativity') >= 0.5) setAntiOOP('defensive-behavior', 'step-up', `Adversaire créatif → monter au duel pour couper les lignes de passe`);
+
+        // Store anti-preset
+        const antiKey = `anti-${teamName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+        window.FM26Data.PRESETS[antiKey] = antiPreset;
+
+        // ── Render ──
+        const keyPlayersRows = oppProfile.keyPlayers.map(p =>
+            `<li><strong>${escapeHtml(p.name)}</strong> (NA ${p.na}) — ${escapeHtml(p.position)}</li>`
+        ).join('');
+
+        const changesRows = changes.length
+            ? changes.map(c => `<tr>
+                <td><span class="csv-instr-phase-badge">${c.phase}</span> ${escapeHtml(c.name)}</td>
+                <td><span class="csv-instr-default">${escapeHtml(c.old || 'standard')}</span> → <span class="csv-instr-active">${escapeHtml(c.val)}</span></td>
+                <td class="csv-instr-reason">${escapeHtml(c.reason)}</td>
+            </tr>`).join('')
+            : '<tr><td colspan="3" style="text-align:center;color:var(--text-secondary)">Aucun changement — ton preset de base est déjà optimal contre cet adversaire</td></tr>';
+
+        reportEl.innerHTML = `
+            <div class="csv-report csv-opponent-report-inner">
+                <div class="csv-report-section">
+                    <h5><i class="bi bi-bar-chart-line"></i> ${escapeHtml(teamName)} vs ton XI</h5>
+                    <p style="font-size:0.8rem;color:var(--text-secondary)">NA moyen (22): ${avg(oppProfile.bestXI.map(p => p.na || 0)).toFixed(0)} | Meilleur: ${oppProfile.topNA} | Effectif: ${oppProfile.squad.length + oppProfile.gkCount} joueurs</p>
+                    <table class="csv-profile-table">
+                        <tr><td><i class="bi bi-lightning-charge"></i> Vitesse</td><td>${profileBar(oppProfile.pace, myProfile.pace)}</td></tr>
+                        <tr><td><i class="bi bi-tools"></i> Technique</td><td>${profileBar(oppProfile.technique, myProfile.technique)}</td></tr>
+                        <tr><td><i class="bi bi-activity"></i> Pressing</td><td>${profileBar(oppProfile.pressing, myProfile.pressing)}</td></tr>
+                        <tr><td><i class="bi bi-lightbulb"></i> Créativité</td><td>${profileBar(oppProfile.creativity, myProfile.creativity)}</td></tr>
+                        <tr><td><i class="bi bi-shield-check"></i> Défensif</td><td>${profileBar(oppProfile.defensive, myProfile.defensive)}</td></tr>
+                        <tr><td><i class="bi bi-arrow-up-circle"></i> Aérien</td><td>${profileBar(oppProfile.aerial, myProfile.aerial)}</td></tr>
+                    </table>
+                </div>
+                <div class="csv-report-section">
+                    <h5><i class="bi bi-star"></i> Joueurs clés</h5>
+                    <ul class="csv-best-list">${keyPlayersRows}</ul>
+                </div>
+                <div class="csv-report-section">
+                    <h5><i class="bi bi-sliders"></i> Tactique Anti-${escapeHtml(teamName)} — ${changes.length} consigne${changes.length > 1 ? 's' : ''} modifiée${changes.length > 1 ? 's' : ''}</h5>
+                    <p style="font-size:0.8rem;color:var(--text-secondary)">Base: ton preset META · Formation: ${antiPreset.formationIP} / ${antiPreset.formationOOP} · Mêmes rôles et joueurs</p>
+                    <table class="csv-instr-table">
+                        <thead><tr><th>Consigne</th><th>Changement</th><th>Raison</th></tr></thead>
+                        <tbody>${changesRows}</tbody>
+                    </table>
+                </div>
+                <div style="text-align:center;margin-top:12px;">
+                    <button class="csv-scout-export-btn" onclick="app.applyPreset('${antiKey}'); app.showNotification('Tactique Anti-${escapeHtml(teamName)} appliquée');">
+                        <i class="bi bi-play-circle"></i> Appliquer la tactique Anti-${escapeHtml(teamName)}
+                    </button>
+                </div>
+            </div>
+        `;
     }
 
     parseFMCSVPlayers(csvText) {
@@ -1995,6 +2371,7 @@ class FM26TacticsTool {
             players.push({
                 name,
                 position,
+                club: strVal(row, 'Club'),
                 bpos: required.bpos !== undefined ? (row[required.bpos] || '') : '',
                 role: required.role !== undefined ? (row[required.role] || '') : '',
                 rightFootLabel: strVal(row, 'Pied droit'),
@@ -2278,19 +2655,32 @@ class FM26TacticsTool {
         // ── PI dynamiques : locks rôle + suggestions attributs, sans double-lock ──
         const buildPlayerPI = (player, roleIP, roleOOP) => {
             const pi = {};
+            const piReasons = {};
             // 1. PI verrouillées par le rôle IP (source de vérité)
             const lockedIP  = lockedInstructions[roleIP]  || {};
             const lockedOOP = lockedInstructions[roleOOP] || {};
-            Object.assign(pi, lockedIP);
+            for (const [k, v] of Object.entries(lockedIP)) {
+                pi[k] = v;
+                piReasons[k] = `Verrouillé par rôle IP: ${roleIP}`;
+            }
             for (const [k, v] of Object.entries(lockedOOP)) {
-                if (!(k in pi)) pi[k] = v;
+                if (!(k in pi)) {
+                    pi[k] = v;
+                    piReasons[k] = `Verrouillé par rôle OOP: ${roleOOP}`;
+                }
             }
-            // 2. Suggestions basées sur les attributs, sans écraser les locks
+            // 2. Suggestions basées sur les attributs, sans écraser les locks (max 5)
             const suggestions = self.suggestPlayerInstructions(player, roleIP);
+            let added = 0;
             for (const s of suggestions) {
-                if (!(s.id in pi)) pi[s.id] = s.value;
+                if (added >= 5) break;
+                if (!(s.id in pi)) {
+                    pi[s.id] = s.value;
+                    piReasons[s.id] = s.reason || s.label;
+                    added++;
+                }
             }
-            return pi;
+            return { pi, piReasons };
         };
 
         // ── Évaluation d'une formation (score role-aware + affectation optimale) ──
@@ -2529,7 +2919,7 @@ class FM26TacticsTool {
         const squadWidePlayers = squadOutfield.filter(p =>
             canPlay(p, 'LM') || canPlay(p, 'RM') || canPlay(p, 'LW') || canPlay(p, 'RW') || canPlay(p, 'LWB') || canPlay(p, 'RWB')
         );
-        const squadProfile = {
+        const _squadProfile = {
             pressing: avg(squadOutfield.map(p => (p.wor + p.team + p.sta + p.ant) / 4)),
             technique: avg(squadOutfield.map(p => (p.pas + p.tec + p.fir + p.vis) / 4)),
             pace: avg(squadOutfield.map(p => (p.acc + p.pac) / 2)),
@@ -2539,6 +2929,9 @@ class FM26TacticsTool {
             stamina: avg(squadOutfield.map(p => p.sta || 0)),
             decisions: avg(squadOutfield.map(p => p.dec || 0))
         };
+        // Use league profile as baseline if available, otherwise fallback to squad
+        const squadProfile = self.leagueProfile || _squadProfile;
+        const baselineLabel = self.leagueProfile ? 'ligue' : 'effectif';
         const squadWingPace = squadWidePlayers.length
             ? avg(squadWidePlayers.map(p => (p.acc + p.pac) / 2))
             : wingPace;
@@ -2559,13 +2952,13 @@ class FM26TacticsTool {
 
         if (above(wingPace, squadWingPace, 0.7) && above(wingCreative, squadWingCreative, 0.6)) {
             style = 'transition'; styleLabel = 'Transitions couloirs / attaquants intérieurs';
-            styleReason = `Ailiers au-dessus du niveau effectif (vitesse ${wingPace.toFixed(1)} vs ${squadWingPace.toFixed(1)}, percussion ${wingCreative.toFixed(1)} vs ${squadWingCreative.toFixed(1)}).`;
+            styleReason = `Ailiers au-dessus du niveau ${baselineLabel} (vitesse ${wingPace.toFixed(1)} vs ${squadWingPace.toFixed(1)}, percussion ${wingCreative.toFixed(1)} vs ${squadWingCreative.toFixed(1)}).`;
         } else if (highTechniqueProfile && highCreativeProfile) {
             style = 'possession'; styleLabel = 'Contrôle possession';
-            styleReason = `Niveau technique/créatif supérieur à l'effectif (tech ${teamProfile.technique.toFixed(1)}, créa ${teamProfile.creativity.toFixed(1)}).`;
+            styleReason = `Niveau technique/créatif supérieur à la ${baselineLabel} (tech ${teamProfile.technique.toFixed(1)}, créa ${teamProfile.creativity.toFixed(1)}).`;
         } else if (highPaceProfile && highPressProfile) {
             style = 'press'; styleLabel = 'Pressing vertical';
-            styleReason = `Vitesse et pressing supérieurs au baseline effectif (pace ${teamProfile.pace.toFixed(1)}, pressing ${teamProfile.pressing.toFixed(1)}).`;
+            styleReason = `Vitesse et pressing supérieurs à la ${baselineLabel} (pace ${teamProfile.pace.toFixed(1)}, pressing ${teamProfile.pressing.toFixed(1)}).`;
         } else if (teamProfile.pace >= 13.3 && teamProfile.pressing >= 13.3) {
             style = 'press'; styleLabel = 'Pressing vertical';
             styleReason = `Valeurs absolues élevées (pace ${teamProfile.pace.toFixed(1)}, pressing ${teamProfile.pressing.toFixed(1)}).`;
@@ -2574,7 +2967,7 @@ class FM26TacticsTool {
             styleReason = `Niveau absolu des couloirs élevé (vitesse ${wingPace.toFixed(1)}, percussion ${wingCreative.toFixed(1)}).`;
         } else if (above(teamProfile.aerial, squadProfile.aerial, 0.6)) {
             style = 'aerial'; styleLabel = 'Jeu direct / centres';
-            styleReason = `Domination aérienne notable (XI ${teamProfile.aerial.toFixed(1)} vs effectif ${squadProfile.aerial.toFixed(1)}).`;
+            styleReason = `Domination aérienne notable (XI ${teamProfile.aerial.toFixed(1)} vs ${baselineLabel} ${squadProfile.aerial.toFixed(1)}).`;
         } else {
             styleReason = `Effectif homogène (NA moy. ${teamProfile.avgNA.toFixed(0)}).`;
         }
@@ -2625,8 +3018,9 @@ class FM26TacticsTool {
         const cbPlayers = bestIP.starters.filter(s => s.slot === 'CB').map(s => s.player);
         const cbPace    = avg(cbPlayers.map(p => (p.acc + p.pac) / 2));
 
-        // ── IP instructions ──
+        // ── IP instructions (valeur + raison) ──
         const instrIP = {};
+        const instrIPReasons = {};
 
         const staminaEdge = teamProfile.stamina - squadProfile.stamina;
         const techniqueEdge = teamProfile.technique - squadProfile.technique;
@@ -2634,59 +3028,97 @@ class FM26TacticsTool {
         const paceEdge = teamProfile.pace - squadProfile.pace;
         const pressingEdge = teamProfile.pressing - squadProfile.pressing;
 
-        instrIP['tempo']              = (pressingEdge >= 0.55 && paceEdge >= 0.55 && staminaEdge >= -0.1) ? 'much-higher'
-                          : paceEdge >= 0.2 ? 'higher' : 'standard';
+        const setIP = (key, value, reason) => { instrIP[key] = value; instrIPReasons[key] = reason; };
 
-        instrIP['passing-style']      = techniqueEdge <= -0.6 ? 'direct'
-                          : (techniqueEdge >= 0.5 && creativityEdge >= 0.45) ? 'shorter'
-                          : 'standard';
+        setIP('tempo',
+            (pressingEdge >= 0.55 && paceEdge >= 0.55 && staminaEdge >= -0.1) ? 'much-higher'
+                : paceEdge >= 0.2 ? 'higher' : 'standard',
+            `Vitesse XI ${teamProfile.pace.toFixed(1)} vs ${baselineLabel} ${squadProfile.pace.toFixed(1)} (écart ${paceEdge >= 0 ? '+' : ''}${paceEdge.toFixed(2)})`
+        );
 
-        instrIP['pass-target']        = creativityEdge >= 0.45 ? 'feet'
-                          : paceEdge >= 0.45 ? 'space' : 'standard';
+        setIP('passing-style',
+            techniqueEdge <= -0.6 ? 'direct'
+                : (techniqueEdge >= 0.5 && creativityEdge >= 0.45) ? 'shorter' : 'standard',
+            `Technique XI ${teamProfile.technique.toFixed(1)} vs ${baselineLabel} ${squadProfile.technique.toFixed(1)} (écart ${techniqueEdge >= 0 ? '+' : ''}${techniqueEdge.toFixed(2)})`
+        );
 
-        instrIP['width-attack']       = (wingDrib >= squadWingCreative + 1.1 || wingPace >= squadWingPace + 1.0) ? 'very-wide'
-                          : wingPace >= squadWingPace + 0.35 ? 'wide' : 'narrow';
+        setIP('pass-target',
+            creativityEdge >= 0.45 ? 'feet' : paceEdge >= 0.45 ? 'space' : 'standard',
+            creativityEdge >= 0.45 ? `Créativité supérieure (+${creativityEdge.toFixed(2)}) → passes dans les pieds` : `Vitesse ${paceEdge >= 0.45 ? 'supérieure → passes dans l\'espace' : 'normale → standard'}`
+        );
 
-        instrIP['attack-focus']       = hasPivot ? 'flanks' : 'balanced';
-        instrIP['crossing-style']     = hasPivot ? 'floated' : 'low';
-        instrIP['crossing-patience']  = paceEdge >= 0.4 ? 'early' : 'work-ball';
-        instrIP['dribbling']          = dribSkill >= (squadWingCreative + 0.6) ? 'encourage' : 'standard';
-        instrIP['long-shots']         = creativityEdge >= 0.35 ? 'standard' : 'discourage';
-        instrIP['creative-freedom']   = hasCreativeRole || creativityEdge >= 0.65 ? 'expressive' : 'balanced';
-        instrIP['pressing-strategy']  = pressingEdge >= 0.7 ? 'bypass'
-                          : pressingEdge >= 0.15 ? 'balanced' : 'manage';
-        instrIP['goal-kicks']         = techniqueEdge >= 0.45 ? 'short' : paceEdge >= 0.5 ? 'long' : 'mixed';
-        instrIP['distribution-target']= techniqueEdge >= 0.45 ? 'cb' : 'flanks';
-        instrIP['distribution-speed'] = paceEdge >= 0.5 ? 'fast' : 'balanced';
-        instrIP['counter-attack']     = paceEdge >= 0.45 ? 'yes' : 'standard';
-        instrIP['time-wasting']       = 'normal';
-        instrIP['set-pieces']         = 'yes';
+        setIP('width-attack',
+            (wingDrib >= squadWingCreative + 1.1 || wingPace >= squadWingPace + 1.0) ? 'very-wide'
+                : wingPace >= squadWingPace + 0.35 ? 'wide' : 'narrow',
+            `Ailiers: percussion ${wingCreative.toFixed(1)} vs ${baselineLabel} ${squadWingCreative.toFixed(1)}, vitesse ${wingPace.toFixed(1)} vs ${squadWingPace.toFixed(1)}`
+        );
 
-        // ── OOP instructions ──
+        setIP('attack-focus', hasPivot ? 'flanks' : 'balanced',
+            hasPivot ? `AC pivot aérien (tête ${stStarter.player.hea}, détente ${stStarter.player.jmp}) → jeu sur les flancs` : 'Pas de pivot aérien marqué → attaque équilibrée');
+        setIP('crossing-style', hasPivot ? 'floated' : 'low',
+            hasPivot ? 'Pivot aérien en ST → centres flottés en profondeur' : 'Pas de pivot → centres bas');
+        setIP('crossing-patience', paceEdge >= 0.4 ? 'early' : 'work-ball',
+            paceEdge >= 0.4 ? `Vitesse XI élevée (+${paceEdge.toFixed(2)}) → centrer tôt en transition` : 'Vitesse normale → travailler le ballon avant de centrer');
+        setIP('dribbling', dribSkill >= (squadWingCreative + 0.6) ? 'encourage' : 'standard',
+            `Dribble attaquants ${dribSkill.toFixed(1)} vs baseline ${squadWingCreative.toFixed(1)}`);
+        setIP('long-shots', creativityEdge >= 0.35 ? 'standard' : 'discourage',
+            creativityEdge >= 0.35 ? 'Créativité suffisante pour tirs de loin opportunistes' : 'Créativité limitée → éviter les tirs lointains');
+        setIP('creative-freedom', hasCreativeRole || creativityEdge >= 0.65 ? 'expressive' : 'balanced',
+            hasCreativeRole ? 'Meneur/Rôle Libre détecté → liberté expressive' : `Créativité écart ${creativityEdge.toFixed(2)} → ${creativityEdge >= 0.65 ? 'expressive' : 'équilibré'}`);
+        setIP('pressing-strategy', pressingEdge >= 0.7 ? 'bypass'
+                : pressingEdge >= 0.15 ? 'balanced' : 'manage',
+            `Pressing XI ${teamProfile.pressing.toFixed(1)} vs ${baselineLabel} ${squadProfile.pressing.toFixed(1)} (écart ${pressingEdge >= 0 ? '+' : ''}${pressingEdge.toFixed(2)})`);
+        setIP('goal-kicks', techniqueEdge >= 0.45 ? 'short' : paceEdge >= 0.5 ? 'long' : 'mixed',
+            techniqueEdge >= 0.45 ? 'Technique élevée → relance courte sûre' : paceEdge >= 0.5 ? 'Vitesse élevée → dégagement long vers les appels' : 'Profil mixte → distribution variée');
+        setIP('distribution-target', techniqueEdge >= 0.45 ? 'cb' : 'flanks',
+            techniqueEdge >= 0.45 ? 'Relance propre → vers les DC' : 'Jeu direct → vers les flancs');
+        setIP('distribution-speed', paceEdge >= 0.5 ? 'fast' : 'balanced',
+            paceEdge >= 0.5 ? 'Vitesse élevée → distribution rapide' : 'Distribution normale');
+        setIP('counter-attack', paceEdge >= 0.45 ? 'yes' : 'standard',
+            paceEdge >= 0.45 ? `Vitesse XI supérieure (+${paceEdge.toFixed(2)}) → contre-attaques activées` : 'Vitesse insuffisante pour contre-attaques systématiques');
+        setIP('time-wasting', 'normal', 'Standard');
+        setIP('set-pieces', 'yes', 'Toujours activé');
+
+        // ── OOP instructions (valeur + raison) ──
         const instrOOP = {};
+        const instrOOPReasons = {};
+        const setOOP = (key, value, reason) => { instrOOP[key] = value; instrOOPReasons[key] = reason; };
 
         // Ligne défensive : vérifier aussi que le GK peut sortir si ligne haute
         const gkStarter = bestIP.starters.find(s => s.slot === 'GK');
         const gkAcc = gkStarter ? (gkStarter.player.acc || 0) : 0;
         const safeHighLine = cbPace >= (squadProfile.pace + 0.8) && gkAcc >= 10;
-        instrOOP['defensive-line']       = safeHighLine ? 'higher' : cbPace >= (squadProfile.pace - 0.2) ? 'standard' : 'lower';
+        setOOP('defensive-line',
+            safeHighLine ? 'higher' : cbPace >= (squadProfile.pace - 0.2) ? 'standard' : 'lower',
+            `Vitesse DC ${cbPace.toFixed(1)} vs ${baselineLabel} ${squadProfile.pace.toFixed(1)}, GK acc ${gkAcc} → ${safeHighLine ? 'ligne haute sûre' : 'ligne prudente'}`);
 
-        instrOOP['pressing-height']      = pressingEdge >= 0.7 ? 'high'
-                         : pressingEdge >= 0.15 ? 'medium' : 'low';
-        instrOOP['pressing-trigger']     = pressingEdge >= 0.8 ? 'much-more'
-                         : pressingEdge >= 0.35 ? 'more' : 'less';
-        instrOOP['defensive-transition'] = pressingEdge >= 0.5 ? 'counter-press' : 'regroup';
-        instrOOP['tackling']             = (teamProfile.defensive - squadProfile.defensive) >= 0.6 ? 'harder'
-                         : (teamProfile.defensive - squadProfile.defensive) >= 0.1 ? 'standard' : 'ease';
-        instrOOP['pressing-crosses']     = 'stop';
+        setOOP('pressing-height',
+            pressingEdge >= 0.7 ? 'high' : pressingEdge >= 0.15 ? 'medium' : 'low',
+            `Pressing XI écart ${pressingEdge >= 0 ? '+' : ''}${pressingEdge.toFixed(2)} → hauteur ${pressingEdge >= 0.7 ? 'haute' : pressingEdge >= 0.15 ? 'moyenne' : 'basse'}`);
+        setOOP('pressing-trigger',
+            pressingEdge >= 0.8 ? 'much-more' : pressingEdge >= 0.35 ? 'more' : 'less',
+            `Pressing écart ${pressingEdge >= 0 ? '+' : ''}${pressingEdge.toFixed(2)} → intensité ${pressingEdge >= 0.8 ? 'très forte' : pressingEdge >= 0.35 ? 'forte' : 'réduite'}`);
+        setOOP('defensive-transition',
+            pressingEdge >= 0.5 ? 'counter-press' : 'regroup',
+            pressingEdge >= 0.5 ? `Pressing fort (+${pressingEdge.toFixed(2)}) → contre-pressing immédiat` : 'Pressing limité → regroupement défensif');
+
+        const defEdge = teamProfile.defensive - squadProfile.defensive;
+        setOOP('tackling',
+            defEdge >= 0.6 ? 'harder' : defEdge >= 0.1 ? 'standard' : 'ease',
+            `Défense XI ${teamProfile.defensive.toFixed(1)} vs ${baselineLabel} ${squadProfile.defensive.toFixed(1)} (écart ${defEdge >= 0 ? '+' : ''}${defEdge.toFixed(2)})`);
+        setOOP('pressing-crosses', 'stop', 'Bloquer les centres — toujours recommandé');
 
         // Pressing trap : si milieux axiaux défensivement forts → vers l'intérieur
         const cmPlayers = bestIP.starters.filter(s => s.slot === 'CM' || s.slot === 'DM').map(s => s.player);
         const cmDefensive = cmPlayers.length ? avg(cmPlayers.map(p => (p.mar + p.tac + p.conc) / 3)) : 0;
-        instrOOP['pressing-trap']        = (style === 'possession' || cmDefensive >= 14) ? 'inside' : 'outside';
+        setOOP('pressing-trap',
+            (style === 'possession' || cmDefensive >= 14) ? 'inside' : 'outside',
+            cmDefensive >= 14 ? `MC/MDéf défensifs forts (${cmDefensive.toFixed(1)}) → piège intérieur` : style === 'possession' ? 'Style possession → piège intérieur' : 'Milieux normaux → piège extérieur');
 
-        instrOOP['defensive-behavior']   = pressingEdge >= 0.45 ? 'step-up' : 'balanced';
-        instrOOP['prevent-short-gk']     = pressingEdge >= 0.25 ? 'yes' : 'no';
+        setOOP('defensive-behavior', pressingEdge >= 0.45 ? 'step-up' : 'balanced',
+            pressingEdge >= 0.45 ? `Pressing fort → monter au duel` : 'Pressing normal → comportement équilibré');
+        setOOP('prevent-short-gk', pressingEdge >= 0.25 ? 'yes' : 'no',
+            pressingEdge >= 0.25 ? 'Pressing actif → empêcher relance courte GK adverse' : 'Pas assez de pressing pour bloquer la relance');
 
         // ── Overlaps dynamiques ──
         const hasWB = bestIP.starters.some(s => s.slot === 'LWB' || s.slot === 'RWB');
@@ -2706,12 +3138,15 @@ class FM26TacticsTool {
                         : 3;
 
         // ── Assignation finale joueurs + PI ──
+        const playerPIReasons = {};
         bestIP.starters.forEach((starter, idx) => {
             playerNames[idx] = starter.player.name;
             const roleIP  = rolesIPFinal[idx]  || '';
             const mappedOOPIndex = canonicalToOOPIndex[idx];
             const roleOOP = mappedOOPIndex !== undefined ? (rolesOOPFinal[mappedOOPIndex] || '') : '';
-            playerInstructions[idx] = buildPlayerPI(starter.player, roleIP, roleOOP);
+            const { pi, piReasons } = buildPlayerPI(starter.player, roleIP, roleOOP);
+            playerInstructions[idx] = pi;
+            playerPIReasons[idx] = piReasons;
         });
 
         // ── Meilleurs joueurs par poste ──
@@ -3040,11 +3475,14 @@ class FM26TacticsTool {
                 'Ajustements contextuels requis selon adversaire'
             ],
             instructionsIP: instrIP,
+            instructionsIPReasons: instrIPReasons,
             instructionsOOP: instrOOP,
+            instructionsOOPReasons: instrOOPReasons,
             overlaps,
             rolesIP: rolesIPFinal,
             rolesOOP: rolesOOPFinal,
             playerInstructions,
+            playerPIReasons,
             playerNames,
             marketPlan,
             phasePlayerMap: {
@@ -3056,13 +3494,23 @@ class FM26TacticsTool {
         };
 
         const report = {
-            style, styleLabel, styleReason,
+            style, styleLabel, styleReason, baselineLabel,
             profile: teamProfile,
+            baselineProfile: squadProfile,
             formationIP: bestDual.formationIP,
             formationOOP: bestDual.formationOOP,
             transitionPenalty: bestDual.transitionPenalty,
             cohesionPenalty: bestDual.cohesionPenalty || 0,
-            starters: bestIP.starters.map(s => ({ slot: s.slot, player: s.player })),
+            starters: bestIP.starters.map((s, idx) => ({
+                slot: s.slot,
+                player: s.player,
+                roleIP: rolesIPFinal[idx] || '',
+                roleOOP: rolesOOPFinal[canonicalToOOPIndex[idx]] || '',
+                pi: playerInstructions[idx] || {},
+                piReasons: playerPIReasons[idx] || {}
+            })),
+            instrIP, instrIPReasons,
+            instrOOP, instrOOPReasons,
             bestByPos,
             topFormations,
             marketPlan,
@@ -3084,16 +3532,109 @@ class FM26TacticsTool {
             return `<span class="csv-bar" style="display:inline-block;width:${pct}%;max-width:100px;height:8px;background:var(--accent-color,#4CAF50);border-radius:4px;vertical-align:middle;margin-left:4px;" title="${val.toFixed(1)}"></span> ${val.toFixed(1)}`;
         };
 
+        // ── PI labels pour affichage humain ──
+        const piLabels = {
+            'pi-pass-risk': { more: 'Passes risquées', less: 'Passes sûres', standard: 'Standard' },
+            'pi-dribbling': { more: 'Plus de dribbles', less: 'Moins de dribbles', standard: 'Standard' },
+            'pi-shooting': { more: 'Plus de tirs', less: 'Moins de tirs', standard: 'Standard' },
+            'pi-pressing': { 'much-more': 'Pressing max', more: 'Plus de pressing', less: 'Moins de pressing', 'much-less': 'Pressing minimal', standard: 'Standard' },
+            'pi-tackling': { harder: 'Tacles appuyés', ease: 'Tacles relâchés', standard: 'Standard' },
+            'pi-forward-runs': { more: 'Montez davantage', fewer: 'Moins de courses', hold: 'Restez en place', standard: 'Standard' },
+            'pi-freedom': { roam: 'Décrochez plus souvent', hold: 'Suivez le positionnement', standard: 'Standard' },
+            'pi-run-frequency': { more: 'Plus de courses', less: 'Moins de courses', standard: 'Standard' },
+            'pi-crossing-frequency': { more: 'Centrer plus souvent', less: 'Centrer moins souvent', standard: 'Standard' },
+            'pi-cross-from': { byline: 'Centre depuis ligne de but', deep: 'Centre de loin', standard: 'Standard' },
+            'pi-cross-aim': { 'near-post': 'Centre 1er poteau', 'far-post': 'Centre 2nd poteau', center: 'Centre du but', 'target-man': 'Vers le pivot', near: 'Centre 1er poteau', far: 'Centre 2nd poteau', standard: 'Standard' },
+            'pi-hold-ball': { yes: 'Garder le ballon', no: 'Jouer vite', standard: 'Standard' },
+            'pi-marking': { tighter: 'Marquage serré', tight: 'Marquage serré', zonal: 'Marquage zone', standard: 'Standard' },
+            'pi-marking-individual': { 'specific-player': 'Marquer un joueur', 'specific-position': 'Marquer un poste', standard: 'Standard' },
+            'pi-defensive-position': { higher: 'Rester plus haut', deeper: 'Rester plus bas', standard: 'Standard' },
+            'pi-attacking-width': { wider: 'Plus large', narrower: 'Plus étroit', channels: 'Couloirs de jeu', spaces: 'Prenez les espaces', standard: 'Standard' },
+            'pi-run-direction': { inside: 'Repiquer dans l\'axe', outside: 'Prendre le couloir', standard: 'Standard' },
+            'pi-passing-style': { shorter: 'Passes courtes', direct: 'Passes directes', standard: 'Standard' }
+        };
+
+        const getPILabel = (id, value) => {
+            const map = piLabels[id];
+            if (map && map[value]) return map[value];
+            return `${id.replace('pi-', '')}: ${value}`;
+        };
+
+        // ── Starters table with PI ──
         const starterRows = report.starters.slice(0, 11).map(s => {
             const p = s.player;
+            const pi = s.pi || {};
+            const piReasons = s.piReasons || {};
+            const piEntries = Object.entries(pi).filter(([, v]) => v && v !== 'standard');
+            const piTags = piEntries.map(([id, val]) => {
+                const label = getPILabel(id, val);
+                const reason = piReasons[id] || '';
+                return `<span class="csv-pi-tag" title="${escapeHtml(reason)}">${escapeHtml(label)}</span>`;
+            }).join(' ');
+
             return `<tr>
                 <td><strong>${escapeHtml(s.slot)}</strong></td>
                 <td>${escapeHtml(p.name)}</td>
                 <td>${p.na || '?'}</td>
                 <td>${p.age || '?'} ans</td>
-                <td>${escapeHtml(p.role || '-')}</td>
+                <td>
+                    <div class="csv-starter-roles">
+                        <span class="csv-role-ip" title="Rôle En Possession">IP: ${escapeHtml(s.roleIP || p.role || '-')}</span>
+                        <span class="csv-role-oop" title="Rôle Hors Possession">OOP: ${escapeHtml(s.roleOOP || '-')}</span>
+                    </div>
+                    ${piTags ? `<div class="csv-pi-row">${piTags}</div>` : ''}
+                </td>
             </tr>`;
         }).join('');
+
+        // ── Team instructions with reasons ──
+        const instrLabelMap = {
+            'tempo': 'Tempo', 'passing-style': 'Style de passe', 'pass-target': 'Cible passe',
+            'width-attack': 'Largeur attaque', 'attack-focus': 'Focus attaque',
+            'crossing-style': 'Style de centre', 'crossing-patience': 'Patience centre',
+            'dribbling': 'Dribbles', 'long-shots': 'Tirs de loin', 'creative-freedom': 'Liberté créative',
+            'pressing-strategy': 'Stratégie pressing', 'goal-kicks': 'Coups de pied de but',
+            'distribution-target': 'Cible distribution', 'distribution-speed': 'Vitesse distribution',
+            'counter-attack': 'Contre-attaque', 'time-wasting': 'Perte de temps', 'set-pieces': 'Coups de pied arrêtés',
+            'defensive-line': 'Ligne défensive', 'pressing-height': 'Hauteur pressing',
+            'pressing-trigger': 'Déclencheur pressing', 'defensive-transition': 'Transition défensive',
+            'tackling': 'Tacles', 'pressing-crosses': 'Bloquer centres', 'pressing-trap': 'Piège pressing',
+            'defensive-behavior': 'Comportement défensif', 'prevent-short-gk': 'Empêcher relance courte'
+        };
+
+        const instrValueLabels = {
+            'much-higher': 'Beaucoup plus haut', 'higher': 'Plus haut', 'standard': 'Standard', 'lower': 'Plus bas', 'much-lower': 'Beaucoup plus bas',
+            'shorter': 'Plus court', 'direct': 'Direct', 'feet': 'Dans les pieds', 'space': 'Dans l\'espace',
+            'very-wide': 'Très large', 'wide': 'Large', 'narrow': 'Étroit', 'flanks': 'Flancs', 'balanced': 'Équilibré',
+            'floated': 'Flottés', 'low': 'Bas', 'early': 'Tôt', 'work-ball': 'Travailler le ballon',
+            'encourage': 'Encourager', 'discourage': 'Décourager', 'expressive': 'Expressive',
+            'bypass': 'Contourner', 'manage': 'Gérer', 'short': 'Court', 'long': 'Long', 'mixed': 'Mixte',
+            'cb': 'Vers DC', 'fast': 'Rapide', 'yes': 'Oui', 'no': 'Non', 'normal': 'Normal',
+            'high': 'Haut', 'medium': 'Moyen', 'much-more': 'Beaucoup plus',
+            'more': 'Plus', 'less': 'Moins', 'counter-press': 'Contre-pressing', 'regroup': 'Regroupement',
+            'harder': 'Appuyés', 'ease': 'Relâchés', 'stop': 'Bloquer',
+            'inside': 'Intérieur', 'outside': 'Extérieur', 'step-up': 'Monter au duel'
+        };
+
+        const renderInstrRow = (key, value, reason) => {
+            const label = instrLabelMap[key] || key;
+            const valLabel = instrValueLabels[value] || value;
+            const isDefault = value === 'standard' || value === 'normal' || value === 'balanced';
+            const cls = isDefault ? 'csv-instr-default' : 'csv-instr-active';
+            return `<tr class="${cls}" title="${escapeHtml(reason || '')}">
+                <td>${escapeHtml(label)}</td>
+                <td><strong>${escapeHtml(valLabel)}</strong></td>
+                <td class="csv-instr-reason"><i class="bi bi-info-circle"></i> ${escapeHtml(reason || '')}</td>
+            </tr>`;
+        };
+
+        const instrIPRows = Object.entries(report.instrIP || {}).map(([k, v]) =>
+            renderInstrRow(k, v, (report.instrIPReasons || {})[k] || '')
+        ).join('');
+
+        const instrOOPRows = Object.entries(report.instrOOP || {}).map(([k, v]) =>
+            renderInstrRow(k, v, (report.instrOOPReasons || {})[k] || '')
+        ).join('');
 
         const bestRows = Object.entries(report.bestByPos || {}).map(([slot, names]) => {
             return `<li><strong>${escapeHtml(slot)}:</strong> ${names.map(n => escapeHtml(n)).join(', ')}</li>`;
@@ -3148,6 +3689,15 @@ class FM26TacticsTool {
             return `<li><i class="bi bi-exclamation-triangle-fill" style="color:#e63946"></i> <strong>${escapeHtml(item.slotCode)}</strong> (${escapeHtml(item.roleIP || '-')}) — 1 seul joueur viable · score ${escapeHtml(String(item.bestScore))}/100</li>`;
         }).join('');
 
+        // ── Scouting brief data ──
+        const scoutingBriefData = marketPlan?.buyPriorities?.map(item => ({
+            slot: item.slotCode,
+            roleIP: item.roleIP,
+            roleOOP: item.roleOOP,
+            urgency: item.urgency,
+            thresholds: item.thresholds || []
+        })) || [];
+
         container.innerHTML = `
             <div class="csv-report">
                 <div class="csv-report-section">
@@ -3155,6 +3705,7 @@ class FM26TacticsTool {
                     <p class="csv-reason">${escapeHtml(report.styleReason || '')}</p>
                     <p><strong>Formations:</strong> En possession <em>${escapeHtml(report.formationIP)}</em> | Hors possession <em>${escapeHtml(report.formationOOP)}</em></p>
                     <p><strong>Effectif analysé:</strong> ${report.totalPlayers || '?'} joueurs (${report.outfieldCount || '?'} de champ)</p>
+                    <p><strong>Baseline consignes:</strong> ${report.baselineLabel === 'ligue' ? '<i class="bi bi-globe"></i> Moyenne du championnat' : '<i class="bi bi-people"></i> Moyenne de ton effectif'}</p>
                     <p><strong>Formations testées:</strong> ${report.analysedFormations || '?'} du tool FM26</p>
                     <p><strong>Cohérence transition:</strong> pénalité transition ${Math.round(report.transitionPenalty || 0)} | pénalité cohérence OOP -${Math.round(report.cohesionPenalty || 0)}</p>
                 </div>
@@ -3170,9 +3721,23 @@ class FM26TacticsTool {
                     </table>
                 </div>
                 <div class="csv-report-section">
-                    <h4><i class="bi bi-people"></i> Onze de départ optimisé</h4>
-                    <table class="csv-starters-table">
-                        <thead><tr><th>Poste</th><th>Joueur</th><th>NA</th><th>Âge</th><th>Rôle FM</th></tr></thead>
+                    <h4><i class="bi bi-sliders"></i> Consignes d'équipe — En Possession</h4>
+                    <table class="csv-instr-table">
+                        <thead><tr><th>Consigne</th><th>Valeur</th><th>Raison</th></tr></thead>
+                        <tbody>${instrIPRows}</tbody>
+                    </table>
+                </div>
+                <div class="csv-report-section">
+                    <h4><i class="bi bi-shield-lock"></i> Consignes d'équipe — Hors Possession</h4>
+                    <table class="csv-instr-table">
+                        <thead><tr><th>Consigne</th><th>Valeur</th><th>Raison</th></tr></thead>
+                        <tbody>${instrOOPRows}</tbody>
+                    </table>
+                </div>
+                <div class="csv-report-section">
+                    <h4><i class="bi bi-people"></i> Onze de départ optimisé + Instructions individuelles</h4>
+                    <table class="csv-starters-table csv-starters-pi">
+                        <thead><tr><th>Poste</th><th>Joueur</th><th>NA</th><th>Âge</th><th>Rôles + PI</th></tr></thead>
                         <tbody>${starterRows}</tbody>
                     </table>
                 </div>
@@ -3199,9 +3764,55 @@ class FM26TacticsTool {
                         <h5>Priorités de recrutement</h5>
                         <ul class="csv-buy-list">${marketBuyRows}</ul>
                     </div>` : ''}
+                    ${scoutingBriefData.length ? `<div class="csv-report-subsection">
+                        <h5><i class="bi bi-clipboard-check"></i> Fiche de recrutement</h5>
+                        <p class="csv-scout-intro">Attributs minimum par poste pour filtrer dans FM26.</p>
+                        <button class="btn btn-sm csv-scout-export-btn" onclick="app.exportScoutingBrief()"><i class="bi bi-download"></i> Exporter fiche scouting (.txt)</button>
+                    </div>` : ''}
                 </div>` : ''}
             </div>
         `;
+
+        // Store scouting data for export
+        this._scoutingBriefData = scoutingBriefData;
+        this._lastReportForScouting = report;
+    }
+
+    exportScoutingBrief() {
+        const data = this._scoutingBriefData;
+        const report = this._lastReportForScouting;
+        if (!data || !data.length) {
+            this.showNotification('Aucune priorité de recrutement à exporter', 'error');
+            return;
+        }
+
+        const urgencyLabel = { urgent: 'URGENT', high: 'ELEVE', medium: 'MOYEN' };
+        let text = `FICHE DE RECRUTEMENT — ${report?.styleLabel || 'Style META'}\n`;
+        text += `Formation IP: ${report?.formationIP || '?'} | OOP: ${report?.formationOOP || '?'}\n`;
+        text += `${'='.repeat(60)}\n\n`;
+
+        data.forEach(item => {
+            text += `[${urgencyLabel[item.urgency] || item.urgency}] ${item.slot}\n`;
+            text += `  Rôle IP: ${item.roleIP || '-'}\n`;
+            text += `  Rôle OOP: ${item.roleOOP || '-'}\n`;
+            if (item.thresholds.length) {
+                text += `  Attributs minimum:\n`;
+                item.thresholds.forEach(t => { text += `    - ${t}\n`; });
+            }
+            text += `\n`;
+        });
+
+        text += `${'='.repeat(60)}\n`;
+        text += `Généré par FM26 Tactical Studio\n`;
+
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `scouting_brief_${(report?.formationIP || 'tactic').replace(/[^a-z0-9]/gi, '_')}.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+        this.showNotification('Fiche de recrutement exportée');
     }
     
     // ==========================================
@@ -5429,12 +6040,14 @@ class FM26TacticsTool {
         const suggestions = [];
         const locked = (window.FM26Data.ROLE_LOCKED_INSTRUCTIONS || {})[roleName] || {};
 
+        // GK: no field PI suggestions — role locks only
+        const r = (roleName || '').toLowerCase();
+        if (r.includes('gardien')) return suggestions;
+
         // Helper: check if attr is above threshold
         const has = (attr, threshold = 13) => (player[attr] || 0) >= threshold;
         const lacks = (attr, threshold = 10) => (player[attr] || 0) < threshold;
         const val = (attr) => player[attr] || 0;
-
-        const r = (roleName || '').toLowerCase();
 
         // --- Passes / Vision ---
         if (!locked['pi-pass-risk']) {
@@ -5493,6 +6106,61 @@ class FM26TacticsTool {
             const isCreative = r.includes('meneur') || r.includes('trequartista') || r.includes('rôle libre');
             if (isCreative && has('vis', 14) && has('dec', 13) && has('tec', 13)) {
                 suggestions.push({ id: 'pi-freedom', value: 'roam', label: 'Liberté de mouvement', reason: `Vis ${val('vis')}, Déc ${val('dec')}, Tec ${val('tec')} → peut dicter librement` });
+            }
+        }
+
+        // --- Centres (fréquence) ---
+        if (!locked['pi-crossing-frequency']) {
+            const isWide = r.includes('ailier') || r.includes('piston') || r.includes('latéral') || r.includes('milieu latéral');
+            if (isWide) {
+                if (has('vis', 13) && has('pas', 13) && has('tec', 12)) {
+                    suggestions.push({ id: 'pi-crossing-frequency', value: 'less', label: 'Centrer moins souvent', reason: `Vis ${val('vis')}, Passes ${val('pas')} → peut garder la balle et combiner plutôt que centrer` });
+                } else if (lacks('vis', 10) || lacks('pas', 10)) {
+                    suggestions.push({ id: 'pi-crossing-frequency', value: 'more', label: 'Centrer plus souvent', reason: `Vis ${val('vis')} ou Passes ${val('pas')} faibles → mieux vaut centrer que combiner` });
+                }
+            }
+        }
+
+        // --- Cible des centres ---
+        if (!locked['pi-cross-aim']) {
+            const isWide = r.includes('ailier') || r.includes('piston') || r.includes('latéral') || r.includes('milieu latéral');
+            if (isWide) {
+                if (has('pac', 14) && has('acc', 14)) {
+                    suggestions.push({ id: 'pi-cross-aim', value: 'near-post', label: 'Centre au 1er poteau', reason: `Vit ${val('pac')}, Acc ${val('acc')} → centres rapides au 1er poteau` });
+                } else if (has('vis', 14) && has('tec', 13)) {
+                    suggestions.push({ id: 'pi-cross-aim', value: 'far-post', label: 'Centre au 2nd poteau', reason: `Vis ${val('vis')}, Tec ${val('tec')} → centres longs précis` });
+                }
+            }
+        }
+
+        // --- Garder le ballon (AM, LW, RW, ST only) ---
+        if (!locked['pi-hold-ball']) {
+            const isAttacker = r.includes('ailier') || r.includes('attaquant') || r.includes('avant-centre') || r.includes('meneur') || r.includes('faux 9');
+            if (isAttacker) {
+                if (has('comp', 14) && has('tec', 13) && has('fir', 13)) {
+                    suggestions.push({ id: 'pi-hold-ball', value: 'yes', label: 'Garder le ballon', reason: `Sang-froid ${val('comp')}, Tec ${val('tec')}, Contrôle ${val('fir')} → peut temporiser sous pression` });
+                } else if (lacks('comp', 9) || lacks('fir', 9)) {
+                    suggestions.push({ id: 'pi-hold-ball', value: 'no', label: 'Ne pas garder le ballon', reason: `Sang-froid ${val('comp')} ou Contrôle ${val('fir')} faibles → jouer vite` });
+                }
+            }
+        }
+
+        // --- Marquage individuel ---
+        if (!locked['pi-marking']) {
+            const isDef = r.includes('défenseur') || r.includes('arrière') || r.includes('milieu défensif') || r.includes('sentinelle');
+            if (isDef) {
+                if (has('mar', 14) && has('ant', 14) && has('conc', 13)) {
+                    suggestions.push({ id: 'pi-marking', value: 'tighter', label: 'Marquage serré', reason: `Mar ${val('mar')}, Ant ${val('ant')}, Conc ${val('conc')} → peut coller l'adversaire` });
+                }
+            }
+        }
+
+        // --- Position défensive ---
+        if (!locked['pi-defensive-position']) {
+            if (has('wor', 14) && has('sta', 14) && has('acc', 12)) {
+                suggestions.push({ id: 'pi-defensive-position', value: 'higher', label: 'Rester plus haut', reason: `Trav ${val('wor')}, End ${val('sta')}, Acc ${val('acc')} → peut presser haut et revenir` });
+            } else if (lacks('sta', 10) || lacks('wor', 10)) {
+                suggestions.push({ id: 'pi-defensive-position', value: 'deeper', label: 'Rester plus bas', reason: `End ${val('sta')} ou Trav ${val('wor')} faibles → économiser, rester en place` });
             }
         }
 

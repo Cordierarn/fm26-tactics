@@ -1440,10 +1440,97 @@ body {
 
 .csv-meta-controls {
     display: flex;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: var(--spacing-md);
+}
+
+.csv-meta-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    width: 100%;
+}
+
+.csv-meta-label .bi {
+    margin-right: 4px;
+}
+
+.csv-meta-label-league {
+    margin-top: var(--spacing-xs);
+}
+
+/* ── Opponent analysis panel ── */
+.csv-opponent-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.csv-opponent-panel h4 {
+    margin: 0 0 var(--spacing-sm) 0;
+    color: var(--primary, #e63946);
+    font-size: 0.95rem;
+}
+
+.csv-opponent-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+}
+
+.csv-opponent-controls .form-select {
+    flex: 1;
+    min-width: 200px;
+}
+
+.csv-opponent-report-inner {
+    margin-top: var(--spacing-sm);
+}
+
+/* Adjustment badges */
+.csv-adjustments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.csv-adjustments-list li {
+    padding: 8px 12px;
+    border-radius: var(--radius-sm, 4px);
+    font-size: 0.84rem;
+    line-height: 1.4;
+}
+
+.csv-adjustments-list li .bi {
+    margin-right: 6px;
+}
+
+.csv-adj-exploit {
+    background: rgba(46, 204, 113, 0.1);
+    border-left: 3px solid #2ecc71;
+    color: #2ecc71;
+}
+
+.csv-adj-counter {
+    background: rgba(230, 57, 70, 0.1);
+    border-left: 3px solid #e63946;
+    color: #e63946;
+}
+
+.csv-adj-neutral {
+    background: rgba(244, 162, 97, 0.1);
+    border-left: 3px solid #f4a261;
+    color: #f4a261;
 }
 
 .csv-meta-summary {
@@ -1794,6 +1881,153 @@ body {
 .csv-depth-ok {
     font-size: 0.78rem;
     color: var(--text-muted, #888);
+}
+
+/* ── PI tags in starters table ── */
+.csv-pi-row {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.csv-pi-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: rgba(69, 123, 157, 0.2);
+    color: var(--secondary, #457b9d);
+    cursor: help;
+    border: 1px solid rgba(69, 123, 157, 0.3);
+}
+
+.csv-pi-tag:hover {
+    background: rgba(69, 123, 157, 0.35);
+}
+
+.csv-starter-roles {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+}
+
+.csv-role-ip {
+    color: var(--accent-color, #4CAF50);
+    font-weight: 600;
+}
+
+.csv-role-oop {
+    color: var(--secondary, #457b9d);
+    font-weight: 600;
+}
+
+.csv-starters-pi td:nth-child(5) {
+    min-width: 200px;
+}
+
+/* ── Team instructions table ── */
+.csv-instr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+}
+
+.csv-instr-table th {
+    text-align: left;
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.csv-instr-table td {
+    padding: 3px 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: middle;
+}
+
+.csv-instr-table td:first-child {
+    width: 160px;
+    color: var(--text-secondary);
+}
+
+.csv-instr-table td:nth-child(2) {
+    width: 140px;
+}
+
+.csv-instr-reason {
+    color: var(--text-muted, #888);
+    font-size: 0.76rem;
+    font-style: italic;
+}
+
+.csv-instr-reason .bi {
+    margin-right: 3px;
+    font-size: 0.72rem;
+}
+
+tr.csv-instr-default td:nth-child(2) {
+    color: var(--text-muted, #888);
+    font-weight: 400;
+}
+
+tr.csv-instr-active td:nth-child(2) {
+    color: var(--accent-color, #4CAF50);
+}
+
+/* ── Anti-opponent changes table ── */
+span.csv-instr-default {
+    color: var(--text-muted, #888);
+    text-decoration: line-through;
+    font-size: 0.8rem;
+}
+span.csv-instr-active {
+    color: var(--accent-color, #4CAF50);
+    font-weight: 600;
+}
+.csv-instr-phase-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: var(--accent-color, #4CAF50);
+    color: #fff;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+/* ── Scouting brief ── */
+.csv-scout-intro {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.csv-scout-export-btn {
+    background: var(--secondary-dark, #1d3557);
+    color: white;
+    border: 1px solid var(--secondary, #457b9d);
+    padding: 6px 14px;
+    border-radius: var(--radius-sm, 4px);
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: background 0.15s ease;
+}
+
+.csv-scout-export-btn:hover {
+    background: var(--secondary, #457b9d);
+}
+
+.csv-scout-export-btn .bi {
+    margin-right: 4px;
 }
 
 .presets-filter-bar {
